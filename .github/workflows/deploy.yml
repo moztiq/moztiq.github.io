@@ -23,6 +23,6 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          ACCESS_TOKEN: ${{ secrets.ACTION_ACCESS_TOKEN }}
-          BRANCH: main
-          FOLDER: public
+          ssh-key: ${{ secrets.ACTION_ACCESS_TOKEN }}
+          branch: main
+          folder: public
