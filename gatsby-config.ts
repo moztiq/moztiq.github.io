@@ -15,7 +15,7 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: 'vpyfljks33op',
-        accessToken: process.env.CONTENTFUL_DELIVERY_API_ACCESS_TOKEN,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     'gatsby-plugin-image',
