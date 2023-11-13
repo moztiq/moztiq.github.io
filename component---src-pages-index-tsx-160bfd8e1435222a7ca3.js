@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkmoztiq_github_io=self.webpackChunkmoztiq_github_io||[]).push([[691],{7200:function(e,t,n){n.r(t),n.d(t,{Head:function(){return o}});var u=n(7294),i=n(4160);t.default=()=>{(0,i.K2)("1806091131");return u.createElement("div",null,"Coming Soon")};const o=()=>u.createElement("title",null,"Home Page")}}]);
-//# sourceMappingURL=component---src-pages-index-tsx-160bfd8e1435222a7ca3.js.map
