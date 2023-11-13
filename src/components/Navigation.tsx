@@ -78,7 +78,7 @@ const menuItemVariants = {
 
 export default function Navigation() {
   const menuList = ['tech', 'book'];
-  const location = window.location.href;
+  const location = typeof window !== 'undefined' ? window.location.href : '';
 
   return (
     <MenuWrapper>
