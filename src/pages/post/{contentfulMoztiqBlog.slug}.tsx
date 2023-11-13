@@ -7,12 +7,14 @@ import PostDetail from '../../components/PostDetail';
 
 export default function PostDetailPage({
   data,
-}: PageProps<Queries.PostTechDetailQuery>) {
+}: PageProps<Queries.PostDetailQuery>) {
   const post = data.contentfulMoztiqBlog;
-  console.log('post', post);
+
   return (
     <Layout>
-      <ContentContainer title="TECH">
+      <ContentContainer
+        title={post?.category ? post?.category?.toUpperCase() : ''}
+      >
         <PostDetail data={post} />
       </ContentContainer>
     </Layout>
@@ -20,7 +22,7 @@ export default function PostDetailPage({
 }
 
 export const query = graphql`
-  query PostTechDetail($slug: String!) {
+  query PostDetail($slug: String!) {
     contentfulMoztiqBlog(slug: { eq: $slug }) {
       id
       title
@@ -37,4 +39,4 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <Seo title="TECH" />;
+export const Head = () => <Seo title="Post" />;

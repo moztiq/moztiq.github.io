@@ -98,7 +98,7 @@ export default function PostList({ posts }: { posts: [] }) {
     <BlogWrapper>
       {posts &&
         posts.map((post: IPostProps, idx: number) => (
-          <Link to={`/${post.category}/${post.slug}`}>
+          <Link to={`/post/${post.slug}`}>
             <Post key={idx}>
               <Title>{post.title}</Title>
               <PublishDateLine>
