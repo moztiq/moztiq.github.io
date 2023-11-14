@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkmoztiq_github_io=self.webpackChunkmoztiq_github_io||[]).push([[438],{9001:function(e,t,n){n.r(t),n.d(t,{Head:function(){return a}});var l=n(7294),o=n(4160),u=n(3897),c=n(2481),i=n(5583),r=n(3904);t.default=()=>{const e=(0,o.K2)("2705006253").allContentfulMoztiqBlog.nodes;return l.createElement(u.Z,null,l.createElement(i.Z,{title:"TECH"},l.createElement(c.Z,{posts:e})))};const a=()=>l.createElement(r.Z,{title:"Tech"})}}]);
-//# sourceMappingURL=component---src-pages-tech-index-tsx-9b17f59fa923e8a4df60.js.map
