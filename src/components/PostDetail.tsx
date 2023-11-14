@@ -1,5 +1,4 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Moment from 'react-moment';
 
@@ -82,10 +81,7 @@ const LongContent = styled.div`
 
   li {
     list-style-type: disc;
-
-    p {
-      margin: 10px 0;
-    }
+    margin: 10px 0;
   }
 `;
 

@@ -3,15 +3,16 @@ import styled from 'styled-components';
 
 const Title = styled.div`
   width: 100%;
-  height: 150px;
-  min-height: 150px;
+  height: 70px;
+  min-height: 70px;
   color: antiquewhite;
   background-color: tomato;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  padding-right: 35px;
 `;
 
 export default function PostListTopTitle({

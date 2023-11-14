@@ -4,15 +4,15 @@ import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
 
 const MenuWrapper = styled.nav`
-  width: 350px;
-  min-width: 350px;
+  width: 300px;
+  min-width: 300px;
   height: 100vh;
   background-color: rgba(255, 99, 71, 1);
   padding: 30px 0 0 0;
 `;
 
 const Icons = styled.div`
-  height: 50px;
+  height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,13 +21,24 @@ const Icons = styled.div`
   }
 `;
 
-const Intro = styled.div`
-  font-size: 18px;
+const IntroTitle = styled(motion.div)`
+  font-size: 25px;
+  letter-spacing: 5px;
   color: rgba(250, 235, 215, 1);
-  height: 200px;
+  margin-top: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const IntroDescription = styled(motion.div)`
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: rgba(250, 235, 215, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 50px 0;
 `;
 
 const MenuList = styled.ul`
@@ -52,11 +63,11 @@ const MenuItem = styled(motion.li)<{ active?: boolean }>`
 `;
 
 const HomeIcon = styled(motion.svg)`
-  font-size: 25px;
+  font-size: 20px;
 `;
 
 const GithubIcon = styled(motion.svg)`
-  font-size: 30px;
+  font-size: 25px;
 `;
 
 const iconVariants = {
@@ -84,7 +95,7 @@ const menuItemVariants = {
   },
 };
 
-export default function Navigation() {
+function Navigation() {
   const menuList = ['tech', 'book'];
   const location = typeof window !== 'undefined' ? window.location.href : '';
 
@@ -121,7 +132,8 @@ export default function Navigation() {
           </GithubIcon>
         </a>
       </Icons>
-      <Intro>MOZTIQ 의 블로그입니다.</Intro>
+      <IntroTitle>MOZTIQ</IntroTitle>
+      <IntroDescription drag>Life is a journey ..</IntroDescription>
       <MenuList>
         {menuList.map((menu, idx) => (
           <Fragment key={idx}>
@@ -134,7 +146,6 @@ export default function Navigation() {
                   variants={menuItemVariants}
                   initial="initial"
                   whileHover="whileHover"
-                  transition={{ duration: 0.5 }}
                 >
                   {menu.toUpperCase()}
                 </MenuItem>
@@ -146,3 +157,5 @@ export default function Navigation() {
     </MenuWrapper>
   );
 }
+
+export default Navigation;
