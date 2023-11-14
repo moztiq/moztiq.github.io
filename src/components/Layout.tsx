@@ -1,6 +1,7 @@
-import styled from 'styled-components';
-import Navigation from './Navigation';
 import React from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import Navigation from './Navigation';
+import theme from '../theme/theme';
 
 const Main = styled.main`
   width: 100vw;
@@ -15,9 +16,11 @@ interface ILayoutProps {
 }
 export default function Layout({ children }: ILayoutProps) {
   return (
-    <Main>
-      <Navigation></Navigation>
-      {children}
-    </Main>
+    <ThemeProvider theme={theme}>
+      <Main>
+        <Navigation></Navigation>
+        {children}
+      </Main>
+    </ThemeProvider>
   );
 }

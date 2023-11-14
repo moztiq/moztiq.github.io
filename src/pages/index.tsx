@@ -1,14 +1,15 @@
 import * as React from 'react';
 import type { PageProps } from 'gatsby';
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 import { motion } from 'framer-motion';
+import { useContext } from 'react';
 
 const Content = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: antiquewhite;
+  background-color: ${(props) => props.theme.colors.light};
   overflow-y: auto;
   display: flex;
   justify-content: center;
@@ -19,21 +20,23 @@ const SmileyIcon = styled(motion.svg)`
   font-size: 400px;
 `;
 
-const iconVariants = {
-  hidden: {
-    pathLength: 0,
-    fill: 'rgba(255, 255, 255, 1)',
-  },
-  visible: {
-    pathLength: 1,
-    fill: 'rgba(255, 99, 71, 1)',
-    transition: {
-      duration: 1,
-    },
-  },
-};
-
 const IndexPage: React.FC<PageProps> = () => {
+  const theme = useContext(ThemeContext);
+
+  const iconVariants = {
+    hidden: {
+      pathLength: 0,
+      fill: theme?.colors.white,
+    },
+    visible: {
+      pathLength: 1,
+      fill: theme?.colors.primary,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
   return (
     <Layout>
       <Content>

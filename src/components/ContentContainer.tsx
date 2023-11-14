@@ -7,7 +7,7 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background-color: antiquewhite;
+  background-color: ${(props) => props.theme.colors.background};
 `;
 
 interface IContentContainerProps {

@@ -31,8 +31,8 @@ const PublishDate = styled.div`
   font-weight: bold;
   width: 150px;
   height: 30px;
-  color: tomato;
-  background-color: antiquewhite;
+  color: ${(props) => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.light};
   position: absolute;
   display: flex;
   justify-content: center;
@@ -55,15 +55,15 @@ const LongContent = styled.div`
   text-align: justify;
 
   a {
-    color: tomato;
+    color: ${(props) => props.theme.colors.primary};
     text-decoration: underline;
   }
   blockquote {
-    color: rgb(82, 44, 34);
+    color: ${(props) => props.theme.colors.textBlack};
     margin: 30px 0;
     padding: 1px 20px;
-    border-left: 10px solid rgba(255, 99, 71, 0.5);
-    background-color: rgba(255, 99, 71, 0.1);
+    border-left: 10px solid ${(props) => props.theme.colors.blockquoteLine};
+    background-color: ${(props) => props.theme.colors.blockquoteBackground};
   }
 
   p {
@@ -77,9 +77,9 @@ const LongContent = styled.div`
 
   ul,
   ol {
-    color: rgb(1, 117, 134);
-    background-color: rgb(3, 164, 187, 0.05);
-    border: 1px solid rgb(3, 164, 187);
+    color: ${(props) => props.theme.colors.boxText};
+    background-color: ${(props) => props.theme.colors.boxBackground};
+    border: 1px solid ${(props) => props.theme.colors.boxBorder};
     padding: 20px 40px;
     margin: 5px;
     border-radius: 5px;
@@ -92,7 +92,7 @@ const LongContent = styled.div`
 
   h3 {
     color: #484848;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 600;
     margin: 20px 0 10px 0;
   }

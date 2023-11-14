@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import styled from 'styled-components';
+import React, { Fragment, useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
 
@@ -7,8 +7,9 @@ const MenuWrapper = styled.nav`
   width: 300px;
   min-width: 300px;
   height: 100vh;
-  background-color: rgba(255, 99, 71, 1);
+  background-color: ${(props) => props.theme.colors.primary};
   padding: 30px 0 0 0;
+  position: relative;
 `;
 
 const Icons = styled.div`
@@ -24,7 +25,7 @@ const Icons = styled.div`
 const IntroTitle = styled(motion.div)`
   font-size: 25px;
   letter-spacing: 5px;
-  color: rgba(250, 235, 215, 1);
+  color: ${(props) => props.theme.colors.light};
   margin-top: 120px;
   display: flex;
   justify-content: center;
@@ -34,7 +35,7 @@ const IntroTitle = styled(motion.div)`
 const IntroDescription = styled(motion.div)`
   font-size: 14px;
   letter-spacing: 3px;
-  color: rgba(250, 235, 215, 1);
+  color: ${(props) => props.theme.colors.light};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,18 +50,18 @@ const MenuList = styled.ul`
 
 const MenuItem = styled(motion.li)<{ active?: boolean }>`
   color: ${(props) =>
-    props.active ? 'rgba(250, 235, 215, 1)' : 'rgba(255, 99, 71, 1)'};
+    props.active ? props.theme.colors.light : props.theme.colors.primary};
   height: 80px;
   font-size: 35px;
   font-weight: 800;
   letter-spacing: 5px;
-  border-bottom: 1px dashed antiquewhite;
+  border-bottom: 1px dashed ${(props) => props.theme.colors.light};
   padding: 10px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: ${(props) =>
-    props.active ? 'rgba(255, 99, 71, 1)' : 'rgba(250, 235, 215, 1)'};
+    props.active ? props.theme.colors.primary : props.theme.colors.light};
 `;
 
 const HomeIcon = styled(motion.svg)`
@@ -71,34 +72,49 @@ const GithubIcon = styled(motion.svg)`
   font-size: 25px;
 `;
 
-const iconVariants = {
-  hidden: {
-    pathLength: 0,
-    fill: 'rgba(255, 255, 255, 1)',
-  },
-  visible: {
-    pathLength: 1,
-    fill: 'rgba(0, 0, 0, 1)',
-    transition: {
-      duration: 1,
-    },
-  },
-};
-
-const menuItemVariants = {
-  initial: {
-    color: 'rgba(250, 235, 215, 1)',
-    backgroundColor: 'rgba(255, 99, 71, 1)',
-  },
-  whileHover: {
-    color: 'rgba(255, 99, 71, 1)',
-    backgroundColor: 'rgba(250, 235, 215, 1)',
-  },
-};
+const CopyRight = styled.div`
+  width: 100%;
+  position: absolute;
+  color: ${(props) => props.theme.colors.light};
+  bottom: 30px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 3px;
+`;
 
 function Navigation() {
+  const theme = useContext(ThemeContext);
+
   const menuList = ['tech', 'book'];
   const location = typeof window !== 'undefined' ? window.location.href : '';
+
+  const menuItemVariants = {
+    initial: {
+      color: theme?.colors.light,
+      backgroundColor: theme?.colors.primary,
+    },
+    whileHover: {
+      color: theme?.colors.primary,
+      backgroundColor: theme?.colors.secondary,
+    },
+  };
+
+  const iconVariants = {
+    hidden: {
+      pathLength: 0,
+      fill: theme?.colors.white,
+    },
+    visible: {
+      pathLength: 1,
+      fill: theme?.colors.black,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
 
   return (
     <MenuWrapper>
@@ -155,6 +171,7 @@ function Navigation() {
           </Fragment>
         ))}
       </MenuList>
+      <CopyRight>Designed by MOZTIQ</CopyRight>
     </MenuWrapper>
   );
 }

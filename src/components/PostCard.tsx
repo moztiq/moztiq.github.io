@@ -2,8 +2,9 @@ import Moment from 'react-moment';
 import { extractText } from '../utils/string.utils';
 import { Link } from 'gatsby';
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 import { motion } from 'framer-motion';
+import { useContext } from 'react';
 
 const PostWrapper = styled(motion.div)`
   border-radius: 10px;
@@ -38,8 +39,8 @@ const PublishDate = styled.div`
   font-weight: bold;
   width: 150px;
   height: 30px;
-  color: tomato;
-  background-color: antiquewhite;
+  color: ${(props) => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.light};
   position: absolute;
   display: flex;
   justify-content: center;
@@ -92,16 +93,18 @@ export interface IPostProps {
   };
 }
 
-const postVariants = {
-  initial: {
-    backgroundColor: 'rgba(250, 235, 215, 1)',
-  },
-  whileHover: {
-    backgroundColor: 'rgba(255, 99, 71, 0.2)',
-  },
-};
-
 export default function PostCard({ post }: { post: IPostProps }) {
+  const theme = useContext(ThemeContext);
+
+  const postVariants = {
+    initial: {
+      backgroundColor: theme?.colors.background,
+    },
+    whileHover: {
+      backgroundColor: theme?.colors.hover,
+    },
+  };
+
   return (
     <PostWrapper
       variants={postVariants}
