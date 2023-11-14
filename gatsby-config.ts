@@ -19,6 +19,22 @@ const config: GatsbyConfig = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-styled-components',
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'language-',
+              showLineNumbers: false,
+              // noInlineHighlight: false,
+              escapeEntities: {},
+            },
+          },
+        ],
+      },
+    },
   ],
 };
 

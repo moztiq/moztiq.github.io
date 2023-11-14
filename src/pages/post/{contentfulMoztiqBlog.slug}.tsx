@@ -29,11 +29,13 @@ export const query = graphql`
       slug
       category
       releaseDate
-      content {
-        raw
-      }
       headerImage {
         url
+      }
+      contents {
+        childMarkdownRemark {
+          html
+        }
       }
     }
   }

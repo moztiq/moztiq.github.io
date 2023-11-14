@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer';
 import Moment from 'react-moment';
 import { Link } from 'gatsby';
+import { extractText } from '../utils/string.utils';
 
 const BlogWrapper = styled.ul`
   width: 90%;
@@ -85,11 +85,13 @@ interface IPostProps {
   slug: string;
   category: string;
   releaseDate: string;
-  content: {
-    raw: string;
-  };
   headerImage: {
     url: string;
+  };
+  contents: {
+    childMarkdownRemark: {
+      html: string;
+    };
   };
 }
 
@@ -109,7 +111,7 @@ export default function PostList({ posts }: { posts: [] }) {
               <ContentWrapper>
                 <HeaderImage url={post.headerImage.url}></HeaderImage>
                 <ContentText>
-                  {documentToPlainTextString(JSON.parse(post.content.raw))}
+                  {extractText(post.contents.childMarkdownRemark.html)}
                 </ContentText>
               </ContentWrapper>
             </Post>

@@ -1,9 +1,8 @@
 import * as React from 'react';
-import type { HeadFC, PageProps } from 'gatsby';
+import type { PageProps } from 'gatsby';
 import { graphql, useStaticQuery } from 'gatsby';
 import Layout from '../../components/Layout';
 import PostList from '../../components/PostList';
-import PostListTopTitle from '../../components/PostListTopTitle';
 import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';
 
@@ -16,11 +15,13 @@ const query = graphql`
         slug
         category
         releaseDate
-        content {
-          raw
-        }
         headerImage {
           url
+        }
+        contents {
+          childMarkdownRemark {
+            html
+          }
         }
       }
     }

@@ -1,6 +1,5 @@
 import React from 'react';
-import { graphql, PageProps } from 'gatsby';
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Moment from 'react-moment';
 
@@ -51,17 +50,48 @@ const HeaderImage = styled.div<{ url: string }>`
   border-radius: 10px;
 `;
 
-const RichContent = styled.div`
+const LongContent = styled.div`
   font-size: 18px;
   line-height: 1.5;
   text-align: justify;
+
   blockquote {
+    color: rgb(82, 44, 34);
     margin: 30px 0;
+    padding: 1px 20px;
+    border-left: 10px solid rgba(255, 99, 71, 0.5);
+    background-color: rgba(255, 99, 71, 0.1);
+  }
+
+  p {
+    margin: 30px 0;
+  }
+
+  b,
+  strong {
+    font-weight: 600;
+  }
+
+  ul,
+  ol {
+    color: rgb(1, 117, 134);
+    background-color: rgb(3, 164, 187, 0.1);
+    border: 1px solid rgb(3, 164, 187);
+    padding: 20px 40px;
+  }
+
+  li {
+    list-style-type: disc;
+
+    p {
+      margin: 10px 0;
+    }
   }
 `;
 
 export default function PostDetail({ data }: any) {
   const post = data;
+
   return (
     <DetailWrapper>
       <Title>{post?.title}</Title>
@@ -73,29 +103,11 @@ export default function PostDetail({ data }: any) {
         </PublishDate>
       </PublishDateLine>
       <HeaderImage url={post?.headerImage?.url || ''}></HeaderImage>
-      <RichContent
+      <LongContent
         dangerouslySetInnerHTML={{
-          __html: documentToHtmlString(JSON.parse(post?.content?.raw || '')),
+          __html: post?.contents?.childMarkdownRemark.html,
         }}
-      ></RichContent>
+      />
     </DetailWrapper>
   );
 }
-
-export const query = graphql`
-  query PostDetail($slug: String!) {
-    contentfulMoztiqBlog(slug: { eq: $slug }) {
-      id
-      title
-      slug
-      category
-      releaseDate
-      content {
-        raw
-      }
-      headerImage {
-        url
-      }
-    }
-  }
-`;
