@@ -1,7 +1,6 @@
 import * as React from 'react';
-import type { HeadFC, PageProps } from 'gatsby';
+import type { PageProps } from 'gatsby';
 import styled from 'styled-components';
-import '../assets/css/reset.css';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 import { motion } from 'framer-motion';
