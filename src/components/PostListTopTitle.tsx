@@ -9,6 +9,7 @@ const Title = styled.div`
   background-color: tomato;
   font-size: 30px;
   font-weight: bold;
+  letter-spacing: 5px;
   display: flex;
   justify-content: flex-end;
   align-items: center;

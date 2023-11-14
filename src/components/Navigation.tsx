@@ -25,7 +25,7 @@ const IntroTitle = styled(motion.div)`
   font-size: 25px;
   letter-spacing: 5px;
   color: rgba(250, 235, 215, 1);
-  margin-top: 150px;
+  margin-top: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +38,7 @@ const IntroDescription = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 0 50px 0;
+  margin: 10px 0 70px 0;
 `;
 
 const MenuList = styled.ul`
@@ -50,9 +50,10 @@ const MenuList = styled.ul`
 const MenuItem = styled(motion.li)<{ active?: boolean }>`
   color: ${(props) =>
     props.active ? 'rgba(250, 235, 215, 1)' : 'rgba(255, 99, 71, 1)'};
-  height: 100px;
+  height: 80px;
   font-size: 35px;
   font-weight: 800;
+  letter-spacing: 5px;
   border-bottom: 1px dashed antiquewhite;
   padding: 10px 0;
   display: flex;

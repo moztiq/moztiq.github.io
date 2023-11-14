@@ -54,6 +54,10 @@ const LongContent = styled.div`
   line-height: 1.5;
   text-align: justify;
 
+  a {
+    color: tomato;
+    text-decoration: underline;
+  }
   blockquote {
     color: rgb(82, 44, 34);
     margin: 30px 0;
@@ -63,7 +67,7 @@ const LongContent = styled.div`
   }
 
   p {
-    margin: 30px 0;
+    margin: 15px 0;
   }
 
   b,
@@ -74,14 +78,23 @@ const LongContent = styled.div`
   ul,
   ol {
     color: rgb(1, 117, 134);
-    background-color: rgb(3, 164, 187, 0.1);
+    background-color: rgb(3, 164, 187, 0.05);
     border: 1px solid rgb(3, 164, 187);
     padding: 20px 40px;
+    margin: 5px;
+    border-radius: 5px;
   }
 
   li {
     list-style-type: disc;
-    margin: 10px 0;
+    margin: 10px 0 5px 0;
+  }
+
+  h3 {
+    color: #484848;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
   }
 `;
 
@@ -98,7 +111,7 @@ export default function PostDetail({ data }: any) {
           </Moment>
         </PublishDate>
       </PublishDateLine>
-      <HeaderImage url={post?.headerImage?.url || ''}></HeaderImage>
+      {post?.headerImage?.url && <HeaderImage url={post?.headerImage?.url} />}
       <LongContent
         dangerouslySetInnerHTML={{
           __html: post?.contents?.childMarkdownRemark.html,
