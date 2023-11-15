@@ -2,9 +2,10 @@ import Moment from 'react-moment';
 import { extractText } from '../utils/string.utils';
 import { Link } from 'gatsby';
 import * as React from 'react';
+import { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { motion } from 'framer-motion';
-import { useContext } from 'react';
+import { IPostProps } from '../interface/interfaces';
 
 const PostWrapper = styled(motion.div)`
   border-radius: 10px;
@@ -63,6 +64,11 @@ const HeaderImage = styled.div<{ url: string }>`
   border-radius: 10px;
 `;
 
+const ContentTextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const ContentText = styled.p`
   font-size: 17px;
   color: #484848;
@@ -77,21 +83,20 @@ const ContentText = styled.p`
   text-align: justify;
 `;
 
-export interface IPostProps {
-  id: number;
-  title: string;
-  slug: string;
-  category: string;
-  releaseDate: string;
-  headerImage: {
-    url: string;
-  };
-  contents: {
-    childMarkdownRemark: {
-      html: string;
-    };
-  };
-}
+const TagList = styled.ul`
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+`;
+
+const Tag = styled.li`
+  padding: 5px 10px;
+  margin-right: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  color: ${(props) => props.theme.colors.textGrayLightDark};
+  background-color: ${(props) => props.theme.colors.bgGrayLight};
+`;
 
 export default function PostCard({ post }: { post: IPostProps }) {
   const theme = useContext(ThemeContext);
@@ -122,9 +127,16 @@ export default function PostCard({ post }: { post: IPostProps }) {
             {post.headerImage?.url && (
               <HeaderImage url={post.headerImage?.url || ''} />
             )}
-            <ContentText>
-              {extractText(post.contents.childMarkdownRemark.html)}
-            </ContentText>
+            <ContentTextWrapper>
+              <ContentText>
+                {extractText(post.contents.childMarkdownRemark.html)}
+              </ContentText>
+              <TagList>
+                {post.tag.map((item, idx) => (
+                  <Tag key={idx}>#{item}</Tag>
+                ))}
+              </TagList>
+            </ContentTextWrapper>
           </ContentWrapper>
         </Post>
       </Link>

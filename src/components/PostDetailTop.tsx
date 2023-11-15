@@ -16,7 +16,7 @@ const Title = styled.div`
   padding-right: 35px;
 `;
 
-export default function PostListTopTitle({
+export default function PostDetailTop({
   children,
 }: {
   children: React.ReactNode;

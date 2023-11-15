@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Moment from 'react-moment';
+import { IPostProps } from '../interface/interfaces';
 
 const DetailWrapper = styled.div`
   width: 90%;
-  overflow-y: scroll;
 `;
 
 const Title = styled.h1`
@@ -49,6 +49,21 @@ const HeaderImage = styled.div<{ url: string }>`
   border-radius: 10px;
 `;
 
+const TagList = styled.ul`
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+`;
+
+const Tag = styled.li`
+  padding: 5px 10px;
+  margin-right: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  color: ${(props) => props.theme.colors.textGrayLightDark};
+  background-color: ${(props) => props.theme.colors.bgGrayLight};
+`;
+
 const LongContent = styled.div`
   font-size: 18px;
   line-height: 1.5;
@@ -91,7 +106,7 @@ const LongContent = styled.div`
   }
 
   h3 {
-    color: #484848;
+    color: ${(props) => props.theme.colors.textBlack};
     font-size: 24px;
     font-weight: 600;
     margin: 20px 0 10px 0;
@@ -102,8 +117,8 @@ const LongContent = styled.div`
   }
 `;
 
-export default function PostDetail({ data }: any) {
-  const post = data;
+export default function PostDetail(props: { data: IPostProps }) {
+  const { data: post } = props;
 
   return (
     <DetailWrapper>
@@ -118,9 +133,12 @@ export default function PostDetail({ data }: any) {
       {post?.headerImage?.url && <HeaderImage url={post?.headerImage?.url} />}
       <LongContent
         dangerouslySetInnerHTML={{
-          __html: post?.contents?.childMarkdownRemark.html,
+          __html: post?.contents?.childMarkdownRemark.html || '',
         }}
       />
+      <TagList>
+        {post?.tag.map((item, idx) => <Tag key={idx}>#{item}</Tag>)}
+      </TagList>
     </DetailWrapper>
   );
 }

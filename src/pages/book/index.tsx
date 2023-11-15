@@ -17,7 +17,7 @@ export default function BookPage({ data }: PageProps<Queries.BookListQuery>) {
   );
 }
 
-export const BOOKLIST_QUERY = graphql`
+export const query = graphql`
   query BookList {
     allContentfulMoztiqBlog(filter: { category: { eq: "book" } }) {
       nodes {
@@ -34,6 +34,7 @@ export const BOOKLIST_QUERY = graphql`
             html
           }
         }
+        tag
       }
     }
   }

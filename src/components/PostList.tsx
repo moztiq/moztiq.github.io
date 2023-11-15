@@ -1,10 +1,10 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import PostCard, { IPostProps } from './PostCard';
+import PostCard from './PostCard';
+import { IPostProps } from '../interface/interfaces';
 
 const BlogWrapper = styled.ul`
   width: 90%;
-  overflow-y: auto;
   a {
     text-decoration: none;
   }

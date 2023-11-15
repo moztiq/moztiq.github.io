@@ -15,13 +15,13 @@ export default function PostDetailPage({
       <ContentContainer
         title={post?.category ? post?.category?.toUpperCase() : ''}
       >
-        <PostDetail data={post} />
+        {post && <PostDetail data={post as any} />}
       </ContentContainer>
     </Layout>
   );
 }
 
-export const POSTDETAIL_QUERY = graphql`
+export const query = graphql`
   query PostDetail($slug: String!) {
     contentfulMoztiqBlog(slug: { eq: $slug }) {
       id
@@ -37,6 +37,7 @@ export const POSTDETAIL_QUERY = graphql`
           html
         }
       }
+      tag
     }
   }
 `;

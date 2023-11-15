@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, PageProps, useStaticQuery } from 'gatsby';
 import Layout from '../../components/Layout';
 import PostList from '../../components/PostList';
 import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';
 
-export default function TechPage() {
-  const data = useStaticQuery(TECHLIST_QUERY);
+export default function TechPage({ data }: PageProps<Queries.TechListQuery>) {
   const posts = data.allContentfulMoztiqBlog.nodes;
   return (
     <Layout>
@@ -17,7 +16,7 @@ export default function TechPage() {
   );
 }
 
-export const TECHLIST_QUERY = graphql`
+export const query = graphql`
   query TechList {
     allContentfulMoztiqBlog(filter: { category: { eq: "tech" } }) {
       nodes {
@@ -34,6 +33,7 @@ export const TECHLIST_QUERY = graphql`
             html
           }
         }
+        tag
       }
     }
   }
