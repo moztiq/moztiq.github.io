@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
 
 const MenuWrapper = styled.nav`
-  width: 300px;
-  min-width: 300px;
+  width: 275px;
+  min-width: 275px;
   height: 100vh;
   background-color: ${(props) => props.theme.colors.primary};
   padding: 30px 0 0 0;
@@ -23,7 +23,8 @@ const Icons = styled.div`
 `;
 
 const IntroTitle = styled(motion.div)`
-  font-size: 25px;
+  font-size: 1.7rem;
+  font-weight: 600;
   letter-spacing: 5px;
   color: ${(props) => props.theme.colors.light};
   margin-top: 120px;
@@ -33,7 +34,7 @@ const IntroTitle = styled(motion.div)`
 `;
 
 const IntroDescription = styled(motion.div)`
-  font-size: 14px;
+  font-size: 0.8rem;
   letter-spacing: 3px;
   color: ${(props) => props.theme.colors.light};
   display: flex;
@@ -51,7 +52,7 @@ const MenuList = styled.ul`
 const MenuItem = styled(motion.li)`
   color: ${(props) => props.theme.colors.primary};
   height: 80px;
-  font-size: 35px;
+  font-size: 2rem;
   font-weight: 800;
   letter-spacing: 5px;
   border-bottom: 1px dashed ${(props) => props.theme.colors.light};
@@ -63,11 +64,11 @@ const MenuItem = styled(motion.li)`
 `;
 
 const HomeIcon = styled(motion.svg)`
-  font-size: 20px;
+  font-size: 1.2rem;
 `;
 
 const GithubIcon = styled(motion.svg)`
-  font-size: 25px;
+  font-size: 1.4rem;
 `;
 
 const CopyRight = styled.div`
@@ -79,7 +80,7 @@ const CopyRight = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 12px;
+  font-size: 0.7rem;
   letter-spacing: 3px;
 `;
 

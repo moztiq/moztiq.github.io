@@ -10,7 +10,7 @@ export default function TechPage({ data }: PageProps<Queries.TechListQuery>) {
   return (
     <Layout>
       <ContentContainer title="TECH">
-        <PostList posts={posts} />
+        <PostList posts={posts as any} />
       </ContentContainer>
     </Layout>
   );

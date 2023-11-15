@@ -9,6 +9,7 @@ const Content = styled.div`
   width: 100%;
   background-color: ${(props) => props.theme.colors.background};
   overflow-y: scroll;
+  overflow-x: hidden;
 `;
 
 const PostDetailBottom = styled.div`

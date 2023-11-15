@@ -4,7 +4,7 @@ import PostCard from './PostCard';
 import { IPostProps } from '../interface/interfaces';
 
 const BlogWrapper = styled.ul`
-  width: 90%;
+  width: 75%;
   a {
     text-decoration: none;
   }

@@ -4,13 +4,13 @@ import Moment from 'react-moment';
 import { IPostProps } from '../interface/interfaces';
 
 const DetailWrapper = styled.div`
-  width: 90%;
+  width: 70%;
 `;
 
 const Title = styled.h1`
-  margin-top: 50px;
-  padding: 25px 0;
-  font-size: 36px;
+  margin: 50px 0 30px 0;
+  padding: 50px 0;
+  font-size: 1.8rem;
   font-weight: 600;
   color: #484848;
   display: flex;
@@ -27,8 +27,9 @@ const PublishDateLine = styled.div`
 `;
 
 const PublishDate = styled.div`
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: bold;
+  letter-spacing: 1px;
   width: 150px;
   height: 30px;
   color: ${(props) => props.theme.colors.primary};
@@ -58,15 +59,15 @@ const TagList = styled.ul`
 const Tag = styled.li`
   padding: 5px 10px;
   margin-right: 10px;
-  font-size: 14px;
+  font-size: 0.9rem;
   border-radius: 5px;
   color: ${(props) => props.theme.colors.textGrayLightDark};
   background-color: ${(props) => props.theme.colors.bgGrayLight};
 `;
 
 const LongContent = styled.div`
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.3;
   text-align: justify;
 
   a {
@@ -76,6 +77,7 @@ const LongContent = styled.div`
   blockquote {
     color: ${(props) => props.theme.colors.textBlack};
     margin: 30px 0;
+    line-height: 1.6;
     padding: 1px 20px;
     border-left: 10px solid ${(props) => props.theme.colors.blockquoteLine};
     background-color: ${(props) => props.theme.colors.blockquoteBackground};
@@ -107,9 +109,9 @@ const LongContent = styled.div`
 
   h3 {
     color: ${(props) => props.theme.colors.textBlack};
-    font-size: 24px;
+    font-size: 1.4rem;
     font-weight: 600;
-    margin: 20px 0 10px 0;
+    margin: 50px 0 10px 0;
   }
 
   pre {

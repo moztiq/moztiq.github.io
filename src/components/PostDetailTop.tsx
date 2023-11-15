@@ -7,7 +7,7 @@ const Title = styled.div`
   min-height: 70px;
   color: ${(props) => props.theme.colors.light};
   background-color: ${(props) => props.theme.colors.primary};
-  font-size: 30px;
+  font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 5px;
   display: flex;

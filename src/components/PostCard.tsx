@@ -18,7 +18,7 @@ const Post = styled.li`
 
 const Title = styled.h1`
   padding: 25px 0;
-  font-size: 30px;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #484848;
   text-align: center;
@@ -36,8 +36,9 @@ const PublishDateLine = styled.div`
 `;
 
 const PublishDate = styled.div`
-  font-size: 14px;
+  font-size: 0.8rem;
   font-weight: bold;
+  letter-spacing: 1.5px;
   width: 150px;
   height: 30px;
   color: ${(props) => props.theme.colors.primary};
@@ -55,10 +56,10 @@ const ContentWrapper = styled.div`
 `;
 
 const HeaderImage = styled.div<{ url: string }>`
-  width: 200px;
-  min-width: 200px;
+  width: 175px;
+  min-width: 175px;
   margin-right: 20px;
-  height: 200px;
+  height: 180px;
   background-image: url(${(props) => props.url});
   background-size: cover;
   border-radius: 10px;
@@ -70,15 +71,15 @@ const ContentTextWrapper = styled.div`
 `;
 
 const ContentText = styled.p`
-  font-size: 17px;
+  font-size: 0.95rem;
   color: #484848;
-  line-height: 1.5;
+  line-height: 1.7;
   text-decoration: none;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
   display: -webkit-box;
-  -webkit-line-clamp: 6;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   text-align: justify;
 `;
@@ -92,7 +93,7 @@ const TagList = styled.ul`
 const Tag = styled.li`
   padding: 5px 10px;
   margin-right: 10px;
-  font-size: 14px;
+  font-size: 0.9rem;
   border-radius: 5px;
   color: ${(props) => props.theme.colors.textGrayLightDark};
   background-color: ${(props) => props.theme.colors.bgGrayLight};
