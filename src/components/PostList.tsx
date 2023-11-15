@@ -10,7 +10,7 @@ const BlogWrapper = styled.ul`
   }
 `;
 
-export default function PostList({ posts }: any) {
+export default function PostList({ posts }: { posts: IPostProps[] }) {
   return (
     <BlogWrapper>
       {posts &&

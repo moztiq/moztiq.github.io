@@ -11,7 +11,7 @@ export default function BookPage({ data }: PageProps<Queries.BookListQuery>) {
   return (
     <Layout>
       <ContentContainer title="BOOK">
-        <PostList posts={posts} />
+        <PostList posts={posts as any} />
       </ContentContainer>
     </Layout>
   );
