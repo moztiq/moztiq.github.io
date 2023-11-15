@@ -30,7 +30,7 @@ const blue = {
     blockquoteLine: 'rgb(0,108,159)',
     blockquoteBackground: 'rgba(24,115,168, 0.05)',
     textGrayLightDark: 'rgb(107,107,107)',
-    bgGrayLight: 'rgb(245,245,245)',
+    bgGrayLight: 'rgb(214,218,225)',
   },
 };
 
