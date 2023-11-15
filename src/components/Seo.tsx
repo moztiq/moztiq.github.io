@@ -5,16 +5,18 @@ interface ISeoProps {
   title: string;
 }
 
-export default function Seo({ title }: ISeoProps) {
-  const data = useStaticQuery<Queries.SeoDataQuery>(graphql`
-    query SeoData {
-      site {
-        siteMetadata {
-          title
-        }
+const SEO_QUERY = graphql`
+  query SeoData {
+    site {
+      siteMetadata {
+        title
       }
     }
-  `);
+  }
+`;
+
+export default function Seo({ title }: ISeoProps) {
+  const data = useStaticQuery(SEO_QUERY);
 
   return (
     <title>

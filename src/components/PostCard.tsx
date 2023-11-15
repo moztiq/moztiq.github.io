@@ -40,7 +40,7 @@ const PublishDate = styled.div`
   width: 150px;
   height: 30px;
   color: ${(props) => props.theme.colors.primary};
-  background-color: ${(props) => props.theme.colors.light};
+  background-color: ${(props) => props.theme.colors.background};
   position: absolute;
   display: flex;
   justify-content: center;
@@ -95,13 +95,12 @@ export interface IPostProps {
 
 export default function PostCard({ post }: { post: IPostProps }) {
   const theme = useContext(ThemeContext);
-
   const postVariants = {
     initial: {
       backgroundColor: theme?.colors.background,
     },
     whileHover: {
-      backgroundColor: theme?.colors.hover,
+      backgroundColor: theme?.colors.light,
     },
   };
 
@@ -112,7 +111,7 @@ export default function PostCard({ post }: { post: IPostProps }) {
       whileHover="whileHover"
     >
       <Link to={`/post/${post.slug}`}>
-        <Post key={post.slug}>
+        <Post>
           <Title>{post.title}</Title>
           <PublishDateLine>
             <PublishDate>
@@ -121,7 +120,7 @@ export default function PostCard({ post }: { post: IPostProps }) {
           </PublishDateLine>
           <ContentWrapper>
             {post.headerImage?.url && (
-              <HeaderImage url={post.headerImage?.url} />
+              <HeaderImage url={post.headerImage?.url || ''} />
             )}
             <ContentText>
               {extractText(post.contents.childMarkdownRemark.html)}

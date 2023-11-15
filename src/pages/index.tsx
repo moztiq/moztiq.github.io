@@ -1,10 +1,10 @@
 import * as React from 'react';
+import { useContext } from 'react';
 import type { PageProps } from 'gatsby';
 import styled, { ThemeContext } from 'styled-components';
 import Layout from '../components/Layout';
-import Seo from '../components/Seo';
 import { motion } from 'framer-motion';
-import { useContext } from 'react';
+import Seo from '../components/Seo';
 
 const Content = styled.div`
   width: 100%;
@@ -22,7 +22,6 @@ const SmileyIcon = styled(motion.svg)`
 
 const IndexPage: React.FC<PageProps> = () => {
   const theme = useContext(ThemeContext);
-
   const iconVariants = {
     hidden: {
       pathLength: 0,

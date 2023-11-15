@@ -1,13 +1,24 @@
 import * as React from 'react';
 import type { PageProps } from 'gatsby';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../../components/Layout';
 import PostList from '../../components/PostList';
 import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';
 
-const query = graphql`
-  {
+export default function BookPage({ data }: PageProps<Queries.BookListQuery>) {
+  const posts = data.allContentfulMoztiqBlog.nodes;
+  return (
+    <Layout>
+      <ContentContainer title="BOOK">
+        <PostList posts={posts} />
+      </ContentContainer>
+    </Layout>
+  );
+}
+
+export const BOOKLIST_QUERY = graphql`
+  query BookList {
     allContentfulMoztiqBlog(filter: { category: { eq: "book" } }) {
       nodes {
         id
@@ -27,19 +38,5 @@ const query = graphql`
     }
   }
 `;
-
-const BookPage: React.FC<PageProps> = () => {
-  const data = useStaticQuery(query);
-  const posts = data.allContentfulMoztiqBlog.nodes;
-  return (
-    <Layout>
-      <ContentContainer title="BOOK">
-        <PostList posts={posts} />
-      </ContentContainer>
-    </Layout>
-  );
-};
-
-export default BookPage;
 
 export const Head = () => <Seo title="Book" />;

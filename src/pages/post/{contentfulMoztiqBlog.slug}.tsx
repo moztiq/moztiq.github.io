@@ -21,7 +21,7 @@ export default function PostDetailPage({
   );
 }
 
-export const query = graphql`
+export const POSTDETAIL_QUERY = graphql`
   query PostDetail($slug: String!) {
     contentfulMoztiqBlog(slug: { eq: $slug }) {
       id

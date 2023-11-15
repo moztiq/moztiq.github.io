@@ -32,7 +32,7 @@ const PublishDate = styled.div`
   width: 150px;
   height: 30px;
   color: ${(props) => props.theme.colors.primary};
-  background-color: ${(props) => props.theme.colors.light};
+  background-color: ${(props) => props.theme.colors.background};
   position: absolute;
   display: flex;
   justify-content: center;
@@ -81,7 +81,7 @@ const LongContent = styled.div`
     background-color: ${(props) => props.theme.colors.boxBackground};
     border: 1px solid ${(props) => props.theme.colors.boxBorder};
     padding: 20px 40px;
-    margin: 5px;
+    margin: 5px 0;
     border-radius: 5px;
   }
 
@@ -95,6 +95,10 @@ const LongContent = styled.div`
     font-size: 24px;
     font-weight: 600;
     margin: 20px 0 10px 0;
+  }
+
+  pre {
+    border-radius: 5px;
   }
 `;
 

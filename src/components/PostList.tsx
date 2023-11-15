@@ -10,10 +10,13 @@ const BlogWrapper = styled.ul`
   }
 `;
 
-export default function PostList({ posts }: { posts: [] }) {
+export default function PostList({ posts }: any) {
   return (
     <BlogWrapper>
-      {posts && posts.map((post: IPostProps) => <PostCard post={post} />)}
+      {posts &&
+        posts.map((post: IPostProps) => (
+          <PostCard key={post.slug} post={post} />
+        ))}
     </BlogWrapper>
   );
 }
