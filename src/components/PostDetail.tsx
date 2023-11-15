@@ -77,7 +77,7 @@ const LongContent = styled.div`
   blockquote {
     color: ${(props) => props.theme.colors.textBlack};
     margin: 30px 0;
-    line-height: 1.6;
+    line-height: 1.8;
     padding: 1px 20px;
     border-left: 10px solid ${(props) => props.theme.colors.blockquoteLine};
     background-color: ${(props) => props.theme.colors.blockquoteBackground};
