@@ -38,13 +38,13 @@ const IntroTitle = styled(motion.div)`
 `;
 
 const IntroDescription = styled(motion.div)`
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   letter-spacing: 3px;
   color: ${(props) => props.theme.colors.black};
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 0 100px 0;
+  margin: 15px 0 100px 0;
 `;
 
 const MenuList = styled.ul`
@@ -55,10 +55,10 @@ const MenuList = styled.ul`
 
 const MenuItem = styled(motion.li)`
   color: ${(props) => props.theme.colors.textPrimary};
-  height: 80px;
-  font-size: 2rem;
+  height: 65px;
+  font-size: 1.7rem;
   font-weight: 800;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   border-bottom: 1px dashed ${(props) => props.theme.colors.light};
   padding: 10px 0;
   display: flex;
