@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkmoztiq_github_io=self.webpackChunkmoztiq_github_io||[]).push([[110],{6743:function(t,e,n){n.r(e),n.d(e,{Head:function(){return a},default:function(){return r}});var o=n(7294),l=n(3897),u=n(2481),i=n(8502),c=n(3904);function r(t){let{data:e}=t;const n=e.allContentfulMoztiqBlog.nodes;return o.createElement(l.Z,null,o.createElement(i.Z,{title:"BOOK"},o.createElement(u.Z,{posts:n})))}const a=()=>o.createElement(c.Z,{title:"Book"})}}]);
-//# sourceMappingURL=component---src-pages-book-index-tsx-beae68eb9af1c1bdffc6.js.map
