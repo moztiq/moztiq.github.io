@@ -24,14 +24,34 @@ const blue = {
     white: 'rgba(255, 255, 255, 1)',
     black: 'rgba(0, 0, 0, 1)',
     textBlack: 'rgb(1,80,117)',
-    boxBorder: 'rgb(234,218,217)',
-    boxText: 'rgb(96,19,5)',
-    boxBackground: 'rgb(243,236,236)',
+    boxBorder: 'rgb(224,196,160)',
+    boxText: 'rgb(197,112,1)',
+    boxBackground: 'rgb(255,253,253)',
     blockquoteLine: 'rgb(0,108,159)',
-    blockquoteBackground: 'rgba(24,115,168, 0.05)',
+    blockquoteBackground: 'rgb(255,255,255)',
     textGrayLightDark: 'rgb(107,107,107)',
     bgGrayLight: 'rgb(214,218,225)',
   },
 };
 
-export default blue;
+const white = {
+  colors: {
+    textPrimary: 'rgba(0,90,133,0.7)',
+    textLight: 'rgba(255, 255, 255,0.7)',
+    primary: 'rgba(0,90,133, 0.6)',
+    light: 'rgba(227,230,236, 0.6)',
+    background: 'rgb(246,246,248)',
+    white: 'rgba(255, 255, 255)',
+    black: 'rgba(0, 0, 0, 1)',
+    textBlack: 'rgb(1,80,117)',
+    boxBorder: 'rgb(224,196,160)',
+    boxText: 'rgb(197,112,1)',
+    boxBackground: 'rgb(255,253,253)',
+    blockquoteLine: 'rgb(0,108,159)',
+    blockquoteBackground: 'rgb(255,255,255)',
+    textGrayLightDark: 'rgb(107,107,107)',
+    bgGrayLight: 'rgb(214,218,225)',
+  },
+};
+
+export default white;

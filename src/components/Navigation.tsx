@@ -2,12 +2,16 @@ import React, { Fragment, useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
+import backgroundImage from '../assets/images/bg.jpg';
 
 const MenuWrapper = styled.nav`
-  width: 275px;
-  min-width: 275px;
+  width: 350px;
+  min-width: 350px;
   height: 100vh;
-  background-color: ${(props) => props.theme.colors.primary};
+  // background-color: ${(props) => props.theme.colors.primary};
+  background-image: url(${backgroundImage});
+  background-size: cover;
+  background-position: center;
   padding: 30px 0 0 0;
   position: relative;
 `;
@@ -26,7 +30,7 @@ const IntroTitle = styled(motion.div)`
   font-size: 1.7rem;
   font-weight: 600;
   letter-spacing: 5px;
-  color: ${(props) => props.theme.colors.light};
+  color: ${(props) => props.theme.colors.black};
   margin-top: 120px;
   display: flex;
   justify-content: center;
@@ -36,11 +40,11 @@ const IntroTitle = styled(motion.div)`
 const IntroDescription = styled(motion.div)`
   font-size: 0.8rem;
   letter-spacing: 3px;
-  color: ${(props) => props.theme.colors.light};
+  color: ${(props) => props.theme.colors.black};
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 0 70px 0;
+  margin: 10px 0 100px 0;
 `;
 
 const MenuList = styled.ul`
@@ -50,7 +54,7 @@ const MenuList = styled.ul`
 `;
 
 const MenuItem = styled(motion.li)`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.textPrimary};
   height: 80px;
   font-size: 2rem;
   font-weight: 800;
@@ -91,12 +95,12 @@ function Navigation() {
 
   const menuItemVariants = {
     initial: {
-      color: theme?.colors.light,
-      backgroundColor: theme?.colors.primary,
+      color: theme?.colors.textLight,
+      backgroundColor: theme?.colors.textPrimary,
     },
     whileHover: {
-      color: theme?.colors.primary,
-      backgroundColor: theme?.colors.light,
+      color: theme?.colors.textPrimary,
+      backgroundColor: theme?.colors.textLight,
     },
   };
 

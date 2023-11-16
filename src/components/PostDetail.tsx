@@ -78,9 +78,11 @@ const LongContent = styled.div`
     color: ${(props) => props.theme.colors.textBlack};
     margin: 30px 0;
     line-height: 1.8;
-    padding: 1px 20px;
-    border-left: 10px solid ${(props) => props.theme.colors.blockquoteLine};
+    padding: 5px 25px;
     background-color: ${(props) => props.theme.colors.blockquoteBackground};
+    border-radius: 10px;
+    border-top: 2px solid ${(props) => props.theme.colors.primary};
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15);
   }
 
   p {
@@ -97,14 +99,14 @@ const LongContent = styled.div`
     color: ${(props) => props.theme.colors.boxText};
     background-color: ${(props) => props.theme.colors.boxBackground};
     border: 1px solid ${(props) => props.theme.colors.boxBorder};
-    padding: 20px 40px;
+    padding: 10px 40px;
     margin: 5px 0;
     border-radius: 5px;
   }
 
   li {
     list-style-type: disc;
-    margin: 10px 0 5px 0;
+    margin: 15px 0 5px 0;
   }
 
   h3 {

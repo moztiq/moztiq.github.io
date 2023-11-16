@@ -5,8 +5,8 @@ const Title = styled.div`
   width: 100%;
   height: 70px;
   min-height: 70px;
-  color: ${(props) => props.theme.colors.light};
-  background-color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.textPrimary};
+  background-color: ${(props) => props.theme.colors.light};
   font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 5px;

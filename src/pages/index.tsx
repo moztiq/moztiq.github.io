@@ -30,29 +30,29 @@ const QuoteBox = styled.div`
   background-color: ${(props) => props.theme.colors.background};
   border-top: 7px solid ${(props) => props.theme.colors.primary};
   border-radius: 25px;
-  box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
 `;
 
 const Quote = styled.div`
-  font-size: 1.5rem;
-  line-height: 1.7;
+  font-size: 1.4rem;
+  line-height: 1.8;
   text-align: justify;
 `;
 
 const Author = styled.div`
-  margin-top: 30px;
+  margin-top: 40px;
   text-align: right;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 `;
 
 const QuoteLeft = styled.svg`
   font-size: 1.2em;
-  margin-right: 10px;
+  margin-right: 20px;
 `;
 
 const QuoteRight = styled.svg`
   font-size: 1.2em;
-  margin-left: 10px;
+  margin-left: 20px;
 `;
 
 const IndexPage: React.FC<PageProps> = () => {
