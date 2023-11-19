@@ -95,8 +95,8 @@ const Tag = styled.li`
   margin-right: 10px;
   font-size: 0.9rem;
   border-radius: 5px;
-  color: ${(props) => props.theme.colors.textGrayLightDark};
-  background-color: ${(props) => props.theme.colors.bgGrayLight};
+  color: ${(props) => props.theme.colors.grayLightDark};
+  background-color: ${(props) => props.theme.colors.grayLight};
 `;
 
 export default function PostCard({ post }: { post: IPostProps }) {

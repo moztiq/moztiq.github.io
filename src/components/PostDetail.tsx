@@ -30,7 +30,7 @@ const TableOfContents = styled.div`
   min-height: 150px;
   margin-top: 50px;
   background-color: ${(props) => props.theme.colors.light};
-  border: 1px solid ${(props) => props.theme.colors.bgGrayLight};
+  border: 1px solid ${(props) => props.theme.colors.grayLight};
   border-radius: 10px;
   padding: 25px 25px 5px 25px;
   position: sticky;
@@ -40,7 +40,7 @@ const TableOfContents = styled.div`
 `;
 
 const TocTitle = styled.h2`
-  color: ${(props) => props.theme.colors.textGrayLightDark};
+  color: ${(props) => props.theme.colors.grayDark};
   font-size: 15px;
   font-weight: 500;
   margin-bottom: 30px;
@@ -48,7 +48,7 @@ const TocTitle = styled.h2`
 
 const TocList = styled.div`
   ul {
-    color: ${(props) => props.theme.colors.boxText};
+    color: ${(props) => props.theme.colors.grayDark};
     margin: 5px 0;
     height: 50vh;
     overflow-y: scroll;
@@ -65,8 +65,8 @@ const TocList = styled.div`
 
   a {
     text-decoration: none;
-    color: ${(props) => props.theme.colors.textGrayLightDark};
-    border-bottom: 1px dashed ${(props) => props.theme.colors.bgGrayLight};
+    color: ${(props) => props.theme.colors.grayLightDark};
+    border-bottom: 1px dashed ${(props) => props.theme.colors.grayLight};
   }
 `;
 
@@ -124,8 +124,8 @@ const Tag = styled.li`
   margin-right: 10px;
   font-size: 0.9rem;
   border-radius: 5px;
-  color: ${(props) => props.theme.colors.textGrayLightDark};
-  background-color: ${(props) => props.theme.colors.bgGrayLight};
+  color: ${(props) => props.theme.colors.grayLightDark};
+  background-color: ${(props) => props.theme.colors.grayLight};
 `;
 
 const LongContent = styled.div`
@@ -138,11 +138,11 @@ const LongContent = styled.div`
     text-decoration: underline;
   }
   blockquote {
-    color: ${(props) => props.theme.colors.textBlack};
+    color: ${(props) => props.theme.colors.grayDark};
     margin: 30px 0;
     line-height: 1.8;
     padding: 5px 25px;
-    background-color: ${(props) => props.theme.colors.blockquoteBackground};
+    background-color: ${(props) => props.theme.colors.white};
     border-radius: 10px;
     border-top: 2px solid ${(props) => props.theme.colors.primary};
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15);
@@ -159,9 +159,9 @@ const LongContent = styled.div`
 
   ul,
   ol {
-    color: ${(props) => props.theme.colors.boxText};
-    background-color: ${(props) => props.theme.colors.boxBackground};
-    border: 1px solid ${(props) => props.theme.colors.boxBorder};
+    color: ${(props) => props.theme.colors.grayDark};
+    background-color: ${(props) => props.theme.colors.grayWhite};
+    border: 1px solid ${(props) => props.theme.colors.grayLightMedium};
     padding: 10px 40px;
     margin: 5px 0;
     border-radius: 5px;
@@ -173,7 +173,7 @@ const LongContent = styled.div`
   }
 
   h3 {
-    color: ${(props) => props.theme.colors.textBlack};
+    color: ${(props) => props.theme.colors.grayDark};
     font-size: 1.4rem;
     font-weight: 600;
     margin: 40px 0 10px 0;
