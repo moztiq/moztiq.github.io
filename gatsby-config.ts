@@ -44,6 +44,13 @@ const config: GatsbyConfig = {
         icon: `src/assets/images/favicon.svg`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-M2KQ4VFL',
+        includeInDevelopment: false,
+      },
+    },
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
