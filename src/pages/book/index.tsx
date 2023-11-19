@@ -19,7 +19,10 @@ export default function BookPage({ data }: PageProps<Queries.BookListQuery>) {
 
 export const query = graphql`
   query BookList {
-    allContentfulMoztiqBlog(filter: { category: { eq: "book" } }) {
+    allContentfulMoztiqBlog(
+      filter: { category: { eq: "book" } }
+      sort: { createdAt: DESC }
+    ) {
       nodes {
         id
         title

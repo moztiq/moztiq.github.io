@@ -18,7 +18,10 @@ export default function TechPage({ data }: PageProps<Queries.TechListQuery>) {
 
 export const query = graphql`
   query TechList {
-    allContentfulMoztiqBlog(filter: { category: { eq: "tech" } }) {
+    allContentfulMoztiqBlog(
+      filter: { category: { eq: "tech" } }
+      sort: { createdAt: DESC }
+    ) {
       nodes {
         id
         title
