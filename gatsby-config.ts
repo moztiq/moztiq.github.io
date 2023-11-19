@@ -4,7 +4,7 @@ require('dotenv').config();
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `MOZTIQ`,
-    siteUrl: `https://moztiq.github.io`,
+    siteUrl: `https://www.moztiq.com`,
   },
   graphqlTypegen: true,
   plugins: [

@@ -50,12 +50,17 @@ const TocList = styled.div`
   ul {
     color: ${(props) => props.theme.colors.boxText};
     margin: 5px 0;
+    height: 50vh;
+    overflow-y: scroll;
   }
 
   li {
     font-size: 14px;
     padding-left: 3px;
     margin-bottom: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   a {

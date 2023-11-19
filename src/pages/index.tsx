@@ -139,4 +139,14 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head = () => <Seo title="Home" />;
+export const Head = ({ data }: PageProps<Queries.PostDetailQuery>) => {
+  const post = data.contentfulMoztiqBlog;
+
+  return (
+    <Seo
+      title={'MOZTIQ HOME'}
+      description={'MOZTIQ'}
+      url={`/post/${post?.slug}`}
+    />
+  );
+};

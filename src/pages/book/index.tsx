@@ -35,6 +35,7 @@ export const query = graphql`
         contents {
           childMarkdownRemark {
             html
+            excerpt
           }
         }
         tag
@@ -43,4 +44,8 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <Seo title="Book" />;
+export const Head = () => {
+  return (
+    <Seo title={'BOOK SECTION'} description={'BOOK SECTION'} url={`/book`} />
+  );
+};

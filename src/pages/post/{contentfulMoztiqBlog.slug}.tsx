@@ -4,6 +4,7 @@ import { graphql, PageProps } from 'gatsby';
 import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';
 import PostDetail from '../../components/PostDetail';
+import { IPostProps } from '../../interface/interfaces';
 
 export default function PostDetailPage({
   data,
@@ -36,6 +37,7 @@ export const query = graphql`
         childMarkdownRemark {
           html
           tableOfContents
+          excerpt
         }
       }
       tag
@@ -43,4 +45,15 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <Seo title="Post" />;
+export const Head = ({ data }: PageProps<Queries.PostDetailQuery>) => {
+  const post = data.contentfulMoztiqBlog;
+
+  return (
+    <Seo
+      title={post?.title || ''}
+      description={post?.contents?.childMarkdownRemark?.excerpt || ''}
+      imageUrl={post?.headerImage?.url || ''}
+      url={`/post/${post?.slug}`}
+    />
+  );
+};
