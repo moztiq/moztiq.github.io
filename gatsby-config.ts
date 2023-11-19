@@ -51,6 +51,12 @@ const config: GatsbyConfig = {
         includeInDevelopment: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'G-N7HF6P8HNP',
+      },
+    },
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
