@@ -35,6 +35,7 @@ export const query = graphql`
       contents {
         childMarkdownRemark {
           html
+          tableOfContents
         }
       }
       tag

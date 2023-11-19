@@ -1,10 +1,68 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Moment from 'react-moment';
 import { IPostProps } from '../interface/interfaces';
+import white from '../theme/theme';
 
 const DetailWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+const PostDetailWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+const PostDetailContentWrapper = styled.div`
+  width: 80%;
+`;
+
+const TocWrapper = styled.div`
+  width: 300px;
+  min-width: 300px;
+`;
+
+const TableOfContents = styled.div`
   width: 70%;
+  min-height: 150px;
+  margin-top: 50px;
+  background-color: ${(props) => props.theme.colors.light};
+  border: 1px solid ${(props) => props.theme.colors.bgGrayLight};
+  border-radius: 10px;
+  padding: 25px 25px 5px 25px;
+  position: sticky;
+  top: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+`;
+
+const TocTitle = styled.h2`
+  color: ${(props) => props.theme.colors.textGrayLightDark};
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 30px;
+`;
+
+const TocList = styled.div`
+  ul {
+    color: ${(props) => props.theme.colors.boxText};
+    margin: 5px 0;
+  }
+
+  li {
+    font-size: 14px;
+    padding-left: 3px;
+    margin-bottom: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: ${(props) => props.theme.colors.textGrayLightDark};
+    border-bottom: 1px dashed ${(props) => props.theme.colors.bgGrayLight};
+  }
 `;
 
 const Title = styled.h1`
@@ -106,14 +164,15 @@ const LongContent = styled.div`
 
   li {
     list-style-type: disc;
-    margin: 15px 0 5px 0;
+    margin: 10px 0;
   }
 
   h3 {
     color: ${(props) => props.theme.colors.textBlack};
     font-size: 1.4rem;
     font-weight: 600;
-    margin: 50px 0 10px 0;
+    margin: 40px 0 10px 0;
+    padding: 10px 0;
   }
 
   pre {
@@ -126,23 +185,43 @@ export default function PostDetail(props: { data: IPostProps }) {
 
   return (
     <DetailWrapper>
-      <Title>{post?.title}</Title>
-      <PublishDateLine>
-        <PublishDate>
-          <Moment format="MMM D, YYYY">
-            {post?.releaseDate || new Date()}
-          </Moment>
-        </PublishDate>
-      </PublishDateLine>
-      {post?.headerImage?.url && <HeaderImage url={post?.headerImage?.url} />}
-      <LongContent
-        dangerouslySetInnerHTML={{
-          __html: post?.contents?.childMarkdownRemark.html || '',
-        }}
-      />
-      <TagList>
-        {post?.tag.map((item, idx) => <Tag key={idx}>#{item}</Tag>)}
-      </TagList>
+      <PostDetailWrapper>
+        <PostDetailContentWrapper>
+          <Title>{post?.title}</Title>
+          <PublishDateLine>
+            <PublishDate>
+              <Moment format="MMM D, YYYY">
+                {post?.releaseDate || new Date()}
+              </Moment>
+            </PublishDate>
+          </PublishDateLine>
+          {post?.headerImage?.url && (
+            <HeaderImage url={post?.headerImage?.url} />
+          )}
+          <LongContent
+            dangerouslySetInnerHTML={{
+              __html: post?.contents?.childMarkdownRemark.html || '',
+            }}
+          />
+          <TagList>
+            {post?.tag.map((item, idx) => <Tag key={idx}>#{item}</Tag>)}
+          </TagList>
+        </PostDetailContentWrapper>
+      </PostDetailWrapper>
+
+      {post?.contents?.childMarkdownRemark.tableOfContents && (
+        <TocWrapper>
+          <TableOfContents>
+            <TocTitle>Table of Contents</TocTitle>
+            <TocList
+              dangerouslySetInnerHTML={{
+                __html:
+                  post?.contents?.childMarkdownRemark.tableOfContents || '',
+              }}
+            />
+          </TableOfContents>
+        </TocWrapper>
+      )}
     </DetailWrapper>
   );
 }

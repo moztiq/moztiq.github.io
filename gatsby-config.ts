@@ -28,6 +28,7 @@ const config: GatsbyConfig = {
               escapeEntities: {},
             },
           },
+          `gatsby-remark-autolink-headers`,
         ],
       },
     },

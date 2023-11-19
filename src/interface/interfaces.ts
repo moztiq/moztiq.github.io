@@ -10,7 +10,9 @@ export interface IPostProps {
   contents: {
     childMarkdownRemark: {
       html: string;
+      tableOfContents: string;
     };
   };
+
   tag: string[];
 }
