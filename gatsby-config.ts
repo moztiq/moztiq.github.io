@@ -23,7 +23,7 @@ const config: GatsbyConfig = {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: 'language-',
-              showLineNumbers: false,
+              showLineNumbers: true,
               // noInlineHighlight: false,
               escapeEntities: {},
             },

@@ -8,7 +8,7 @@ const PostDetailContentWrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  margin: 50px 0;
+  margin: 70px 0 50px 0;
   font-size: 1.8rem;
   font-weight: 600;
   color: #484848;
@@ -112,7 +112,7 @@ const LongContent = styled.div`
     color: ${(props) => props.theme.colors.gray800};
     font-size: 1.4rem;
     font-weight: 600;
-    margin: 40px 0 10px 0;
+    margin: 50px 0 10px 0;
     padding: 10px 0;
   }
 

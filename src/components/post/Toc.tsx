@@ -35,7 +35,7 @@ const TocList = styled.div`
   }
 
   li {
-    font-size: 14px;
+    font-size: 13px;
     padding: 0 0 10px 0;
     margin-bottom: 10px;
     overflow: hidden;
@@ -49,11 +49,14 @@ const TocList = styled.div`
     padding-bottom: 2px;
     border-bottom: 1px dashed ${(props) => props.theme.colors.gray200};
   }
+  a.highlight {
+    color: ${(props) => props.theme.colors.black};
+  }
 `;
 
 export default function Toc({ toc }: { toc: string }) {
   return (
-    <TocWrapper>
+    <TocWrapper className="toc">
       <TableOfContents>
         <TocTitle>Table of Contents</TocTitle>
         <TocList

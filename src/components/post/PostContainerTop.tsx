@@ -7,7 +7,7 @@ const TopWrapper = styled.div`
   min-height: 70px;
   color: ${(props) => props.theme.colors.textPrimary};
   background-color: ${(props) => props.theme.colors.gray100};
-  position: fixed;
+  //position: fixed;
   top: 0;
   right: 0;
   display: flex;
