@@ -1,16 +1,24 @@
 import * as React from 'react';
-import { graphql, PageProps, useStaticQuery } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import Layout from '../../components/Layout';
 import PostList from '../../components/PostList';
 import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';
+import styled from 'styled-components';
+
+const PostListContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 export default function TechPage({ data }: PageProps<Queries.TechListQuery>) {
   const posts = data.allContentfulMoztiqBlog.nodes;
   return (
     <Layout>
       <ContentContainer title="TECH">
-        <PostList posts={posts as any} />
+        <PostListContainer>
+          <PostList posts={posts as any} />
+        </PostListContainer>
       </ContentContainer>
     </Layout>
   );

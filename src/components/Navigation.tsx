@@ -8,12 +8,12 @@ const MenuWrapper = styled.nav`
   width: 350px;
   min-width: 350px;
   height: 100vh;
-  // background-color: ${(props) => props.theme.colors.primary};
   background-image: url(${backgroundImage});
   background-size: cover;
   background-position: center;
   padding: 30px 0 0 0;
   position: relative;
+  z-index: 10;
 `;
 
 const Icons = styled.div`
@@ -64,7 +64,7 @@ const MenuItem = styled(motion.li)`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.theme.colors.background};
+  background-color: ${(props) => props.theme.colors.gray100};
 `;
 
 const HomeIcon = styled(motion.svg)`

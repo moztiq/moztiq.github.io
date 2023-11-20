@@ -5,8 +5,6 @@ const tomato = {
     background: 'rgb(255,235,229)',
     white: 'rgba(255, 255, 255, 1)',
     black: 'rgba(0, 0, 0, 1)',
-    grayLightDark: 'rgb(107,107,107)',
-    grayLight: 'rgb(225,225,225,0.6)',
   },
 };
 
@@ -17,26 +15,34 @@ const blue = {
     background: 'rgb(240,242,246)',
     white: 'rgba(255, 255, 255, 1)',
     black: 'rgba(0, 0, 0, 1)',
-    grayLightDark: 'rgb(107,107,107)',
-    grayLight: 'rgb(214,218,225)',
   },
 };
 
-const white = {
+const graySeries = {
+  gray50: 'rgb(250, 250, 250)',
+  gray100: 'rgb(245, 245, 245)',
+  gray200: 'rgb(229, 229, 229)',
+  gray300: 'rgb(212, 212, 212)',
+  gray400: 'rgb(163, 163, 163)',
+  gray500: 'rgb(115, 115, 115)',
+  gray600: 'rgb(82, 82, 82)',
+  gray700: 'rgb(64, 64, 64)',
+  gray800: 'rgb(38, 38, 38)',
+  gray900: 'rgb(23, 23, 23)',
+};
+
+const whiteTheme = {
   colors: {
     textPrimary: 'rgba(0,90,133,0.7)',
     textLight: 'rgba(255, 255, 255,0.7)',
     primary: 'rgba(0,90,133, 0.6)',
     light: 'rgba(236,239,243,0.6)',
-    background: 'rgb(251,251,252)',
+    accentColor: 'rgb(50,164,7)',
     white: 'rgba(255, 255, 255)',
     black: 'rgba(0, 0, 0, 1)',
-    grayDark: 'rgb(44,44,44)',
-    grayLightDark: 'rgb(107,107,107)',
-    grayLight: 'rgb(223,225,232)',
-    grayLightMedium: 'rgb(178,178,178)',
-    grayWhite: 'rgb(245,245,245)',
+    background: graySeries.gray100,
+    ...graySeries,
   },
 };
 
-export default white;
+export default whiteTheme;

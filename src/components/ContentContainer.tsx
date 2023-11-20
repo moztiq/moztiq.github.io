@@ -1,22 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import PostDetailTop from './PostDetailTop';
+import PostContainerTop from './PostContainerTop';
 
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const ContentContainerWrapper = styled.div`
   width: 100%;
   background-color: ${(props) => props.theme.colors.background};
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-behavior: smooth;
-`;
-
-const PostDetailBottom = styled.div`
-  width: 100%;
-  height: 50px;
-  min-height: 50px;
 `;
 
 interface IContentContainerProps {
@@ -29,10 +20,9 @@ export default function ContentContainer({
   children,
 }: IContentContainerProps) {
   return (
-    <Content>
-      <PostDetailTop>{title}</PostDetailTop>
+    <ContentContainerWrapper>
+      <PostContainerTop>{title}</PostContainerTop>
       {children}
-      <PostDetailBottom></PostDetailBottom>
-    </Content>
+    </ContentContainerWrapper>
   );
 }

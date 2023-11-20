@@ -11,6 +11,7 @@ export interface IPostProps {
     childMarkdownRemark: {
       html: string;
       tableOfContents: string;
+      excerpt: string;
     };
   };
 

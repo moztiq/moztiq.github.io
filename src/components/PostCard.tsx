@@ -2,22 +2,19 @@ import Moment from 'react-moment';
 import { extractText } from '../utils/string.utils';
 import { Link } from 'gatsby';
 import * as React from 'react';
-import { useContext } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { motion } from 'framer-motion';
+import styled from 'styled-components';
 import { IPostProps } from '../interface/interfaces';
 
-const PostWrapper = styled(motion.div)`
-  border-radius: 10px;
-`;
-
 const Post = styled.li`
-  padding: 30px;
+  padding: 3rem;
   margin-top: 40px;
+  background-color: ${(props) => props.theme.colors.white};
+  box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.05);
+  border-radius: 0.5rem;
 `;
 
 const Title = styled.h1`
-  padding: 25px 0;
+  margin-bottom: 20px;
   font-size: 1.5rem;
   font-weight: 600;
   color: #484848;
@@ -41,8 +38,8 @@ const PublishDate = styled.div`
   letter-spacing: 1.5px;
   width: 150px;
   height: 30px;
-  color: ${(props) => props.theme.colors.primary};
-  background-color: ${(props) => props.theme.colors.background};
+  color: ${(props) => props.theme.colors.accentColor};
+  background-color: ${(props) => props.theme.colors.white};
   position: absolute;
   display: flex;
   justify-content: center;
@@ -56,8 +53,8 @@ const ContentWrapper = styled.div`
 `;
 
 const HeaderImage = styled.div<{ url: string }>`
-  width: 175px;
-  min-width: 175px;
+  width: 225px;
+  min-width: 225px;
   margin-right: 20px;
   height: 180px;
   background-image: url(${(props) => props.url});
@@ -95,52 +92,37 @@ const Tag = styled.li`
   margin-right: 10px;
   font-size: 0.9rem;
   border-radius: 5px;
-  color: ${(props) => props.theme.colors.grayLightDark};
-  background-color: ${(props) => props.theme.colors.grayLight};
+  color: ${(props) => props.theme.colors.gray600};
+  background-color: ${(props) => props.theme.colors.gray100};
 `;
 
 export default function PostCard({ post }: { post: IPostProps }) {
-  const theme = useContext(ThemeContext);
-  const postVariants = {
-    initial: {
-      backgroundColor: theme?.colors.background,
-    },
-    whileHover: {
-      backgroundColor: theme?.colors.light,
-    },
-  };
-
   return (
-    <PostWrapper
-      variants={postVariants}
-      initial="initial"
-      whileHover="whileHover"
-    >
-      <Link to={`/post/${post.slug}`}>
-        <Post>
-          <Title>{post.title}</Title>
-          <PublishDateLine>
-            <PublishDate>
-              <Moment format="MMM D, YYYY">{post.releaseDate}</Moment>
-            </PublishDate>
-          </PublishDateLine>
-          <ContentWrapper>
-            {post.headerImage?.url && (
-              <HeaderImage url={post.headerImage?.url || ''} />
-            )}
-            <ContentTextWrapper>
-              <ContentText>
-                {extractText(post.contents.childMarkdownRemark.html)}
-              </ContentText>
-              <TagList>
-                {post.tag.map((item, idx) => (
-                  <Tag key={idx}>#{item}</Tag>
-                ))}
-              </TagList>
-            </ContentTextWrapper>
-          </ContentWrapper>
-        </Post>
-      </Link>
-    </PostWrapper>
+    <Link to={`/post/${post.slug}`}>
+      <Post>
+        <Title>{post.title}</Title>
+        <PublishDateLine>
+          <PublishDate>
+            <Moment format="MMM D, YYYY">{post.releaseDate}</Moment>
+          </PublishDate>
+        </PublishDateLine>
+        <ContentWrapper>
+          {post.headerImage?.url && (
+            <HeaderImage url={post.headerImage?.url || ''} />
+          )}
+          <ContentTextWrapper>
+            <ContentText>
+              {/*{post.contents.childMarkdownRemark.excerpt}*/}
+              {extractText(post.contents.childMarkdownRemark.html)}
+            </ContentText>
+            <TagList>
+              {post.tag.map((item, idx) => (
+                <Tag key={idx}>#{item}</Tag>
+              ))}
+            </TagList>
+          </ContentTextWrapper>
+        </ContentWrapper>
+      </Post>
+    </Link>
   );
 }

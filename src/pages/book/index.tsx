@@ -5,13 +5,21 @@ import Layout from '../../components/Layout';
 import PostList from '../../components/PostList';
 import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';
+import styled from 'styled-components';
+
+const PostListContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 export default function BookPage({ data }: PageProps<Queries.BookListQuery>) {
   const posts = data.allContentfulMoztiqBlog.nodes;
   return (
     <Layout>
       <ContentContainer title="BOOK">
-        <PostList posts={posts as any} />
+        <PostListContainer>
+          <PostList posts={posts as any} />
+        </PostListContainer>
       </ContentContainer>
     </Layout>
   );

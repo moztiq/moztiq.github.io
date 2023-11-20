@@ -1,19 +1,22 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Moment from 'react-moment';
 import { IPostProps } from '../interface/interfaces';
-import white from '../theme/theme';
 
 const DetailWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: 70px;
+  background-color: ${(props) => props.theme.colors.white};
 `;
 
 const PostDetailWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  padding-bottom: 50px;
+  border-right: 1px solid ${(props) => props.theme.colors.gray200};
 `;
 
 const PostDetailContentWrapper = styled.div`
@@ -23,24 +26,28 @@ const PostDetailContentWrapper = styled.div`
 const TocWrapper = styled.div`
   width: 300px;
   min-width: 300px;
+  display: flex;
+  justify-content: center;
+  background-color: ${(props) => props.theme.colors.background};
 `;
 
 const TableOfContents = styled.div`
   width: 70%;
   min-height: 150px;
-  margin-top: 50px;
-  background-color: ${(props) => props.theme.colors.light};
-  border: 1px solid ${(props) => props.theme.colors.grayLight};
+  height: 50vh;
+  margin-top: 20px;
+  background-color: ${(props) => props.theme.colors.white};
+  border: 1px solid ${(props) => props.theme.colors.gray200};
   border-radius: 10px;
   padding: 25px 25px 5px 25px;
   position: sticky;
-  top: 30px;
+  top: 90px;
   text-transform: uppercase;
   letter-spacing: 1px;
 `;
 
 const TocTitle = styled.h2`
-  color: ${(props) => props.theme.colors.grayDark};
+  color: ${(props) => props.theme.colors.gray800};
   font-size: 15px;
   font-weight: 500;
   margin-bottom: 30px;
@@ -48,9 +55,8 @@ const TocTitle = styled.h2`
 
 const TocList = styled.div`
   ul {
-    color: ${(props) => props.theme.colors.grayDark};
+    color: ${(props) => props.theme.colors.gray800};
     margin: 5px 0;
-    height: 50vh;
     overflow-y: scroll;
   }
 
@@ -65,14 +71,13 @@ const TocList = styled.div`
 
   a {
     text-decoration: none;
-    color: ${(props) => props.theme.colors.grayLightDark};
-    border-bottom: 1px dashed ${(props) => props.theme.colors.grayLight};
+    color: ${(props) => props.theme.colors.gray500};
+    border-bottom: 1px dashed ${(props) => props.theme.colors.gray200};
   }
 `;
 
 const Title = styled.h1`
-  margin: 50px 0 30px 0;
-  padding: 50px 0;
+  margin: 50px 0;
   font-size: 1.8rem;
   font-weight: 600;
   color: #484848;
@@ -90,13 +95,13 @@ const PublishDateLine = styled.div`
 `;
 
 const PublishDate = styled.div`
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: bold;
   letter-spacing: 1px;
   width: 150px;
   height: 30px;
-  color: ${(props) => props.theme.colors.primary};
-  background-color: ${(props) => props.theme.colors.background};
+  color: ${(props) => props.theme.colors.accentColor};
+  background-color: ${(props) => props.theme.colors.white};
   position: absolute;
   display: flex;
   justify-content: center;
@@ -124,8 +129,8 @@ const Tag = styled.li`
   margin-right: 10px;
   font-size: 0.9rem;
   border-radius: 5px;
-  color: ${(props) => props.theme.colors.grayLightDark};
-  background-color: ${(props) => props.theme.colors.grayLight};
+  color: ${(props) => props.theme.colors.gray600};
+  background-color: ${(props) => props.theme.colors.gray100};
 `;
 
 const LongContent = styled.div`
@@ -138,11 +143,11 @@ const LongContent = styled.div`
     text-decoration: underline;
   }
   blockquote {
-    color: ${(props) => props.theme.colors.grayDark};
+    color: ${(props) => props.theme.colors.gray800};
     margin: 30px 0;
     line-height: 1.8;
     padding: 5px 25px;
-    background-color: ${(props) => props.theme.colors.white};
+    background-color: ${(props) => props.theme.colors.gray50};
     border-radius: 10px;
     border-top: 2px solid ${(props) => props.theme.colors.primary};
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15);
@@ -159,9 +164,9 @@ const LongContent = styled.div`
 
   ul,
   ol {
-    color: ${(props) => props.theme.colors.grayDark};
-    background-color: ${(props) => props.theme.colors.grayWhite};
-    border: 1px solid ${(props) => props.theme.colors.grayLightMedium};
+    color: ${(props) => props.theme.colors.gray800};
+    background-color: ${(props) => props.theme.colors.gray50};
+    border: 1px solid ${(props) => props.theme.colors.gray300};
     padding: 10px 40px;
     margin: 5px 0;
     border-radius: 5px;
@@ -173,7 +178,7 @@ const LongContent = styled.div`
   }
 
   h3 {
-    color: ${(props) => props.theme.colors.grayDark};
+    color: ${(props) => props.theme.colors.gray800};
     font-size: 1.4rem;
     font-weight: 600;
     margin: 40px 0 10px 0;
