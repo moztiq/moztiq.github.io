@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import PostContainerTop from './PostContainerTop';
 
@@ -11,7 +11,7 @@ const ContentContainerWrapper = styled.div`
 `;
 
 interface IContentContainerProps {
-  children: React.ReactNode;
+  children: ReactNode;
   title: string;
 }
 

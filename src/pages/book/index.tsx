@@ -2,8 +2,8 @@ import * as React from 'react';
 import type { PageProps } from 'gatsby';
 import { graphql } from 'gatsby';
 import Layout from '../../components/Layout';
-import PostList from '../../components/PostList';
-import ContentContainer from '../../components/ContentContainer';
+import PostList from '../../components/post/PostList';
+import ContentContainer from '../../components/post/ContentContainer';
 import Seo from '../../components/Seo';
 import styled from 'styled-components';
 

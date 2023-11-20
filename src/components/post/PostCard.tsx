@@ -1,9 +1,9 @@
 import Moment from 'react-moment';
-import { extractText } from '../utils/string.utils';
+import { extractText } from '../../utils/string.utils';
 import { Link } from 'gatsby';
 import * as React from 'react';
 import styled from 'styled-components';
-import { IPostProps } from '../interface/interfaces';
+import { IPostProps } from '../../interface/interfaces';
 
 const Post = styled.li`
   padding: 3rem;
@@ -60,6 +60,7 @@ const HeaderImage = styled.div<{ url: string }>`
   background-image: url(${(props) => props.url});
   background-size: cover;
   border-radius: 10px;
+  border: 1px solid ${(props) => props.theme.colors.gray200};
 `;
 
 const ContentTextWrapper = styled.div`

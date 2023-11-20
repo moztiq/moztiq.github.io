@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import PostCard from './PostCard';
-import { IPostProps } from '../interface/interfaces';
+import { IPostProps } from '../../interface/interfaces';
 
 const PostListWrapper = styled.ul`
   width: 75%;

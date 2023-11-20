@@ -1,9 +1,9 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import { graphql, PageProps } from 'gatsby';
-import ContentContainer from '../../components/ContentContainer';
+import ContentContainer from '../../components/post/ContentContainer';
 import Seo from '../../components/Seo';
-import PostDetail from '../../components/PostDetail';
+import PostDetail from '../../components/post/PostDetail';
 import { IPostProps } from '../../interface/interfaces';
 
 export default function PostDetailPage({
