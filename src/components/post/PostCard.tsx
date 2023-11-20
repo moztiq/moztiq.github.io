@@ -49,7 +49,7 @@ const PublishDate = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 50px;
 `;
 
 const HeaderImage = styled.div<{ url: string }>`

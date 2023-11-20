@@ -112,8 +112,8 @@ const LongContent = styled.div`
     color: ${(props) => props.theme.colors.gray800};
     font-size: 1.4rem;
     font-weight: 600;
-    margin: 50px 0 10px 0;
-    padding: 10px 0;
+    margin-top: 40px;
+    padding: 5px 0;
   }
 
   pre {

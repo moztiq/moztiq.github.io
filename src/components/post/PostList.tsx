@@ -8,7 +8,7 @@ const PostListWrapper = styled.ul`
   a {
     text-decoration: none;
   }
-  padding: 80px 0 50px 0;
+  padding-bottom: 50px;
 `;
 
 export default function PostList({ posts }: { posts: IPostProps[] }) {

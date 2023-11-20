@@ -4,7 +4,9 @@ require('dotenv').config();
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `MOZTIQ`,
-    siteUrl: `https://www.moztiq.com`,
+    author: 'moztiq',
+    description: 'Life is a journey',
+    siteUrl: `https://moztiq.com`,
   },
   graphqlTypegen: true,
   plugins: [
@@ -57,10 +59,19 @@ const config: GatsbyConfig = {
         trackingId: 'G-N7HF6P8HNP',
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://moztiq.com',
+        sitemap: 'https://moztiq.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-sitemap',
   ],
 };
 
