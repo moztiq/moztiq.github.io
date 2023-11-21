@@ -63,7 +63,7 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://moztiq.com',
-        sitemap: 'https://moztiq.com/sitemap.xml',
+        sitemap: 'https://moztiq.com/sitemap-index.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
