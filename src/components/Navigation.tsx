@@ -5,12 +5,9 @@ import { Link } from 'gatsby';
 import backgroundImage from '../assets/images/bg.jpg';
 import { useRecoilState } from 'recoil';
 import { isViewMobileMenuState } from '../atoms/atoms';
+import { IMobileProps } from '../interface/interfaces';
 
-interface IMenuProps {
-  isViewMobileMenu: boolean;
-}
-
-const MenuWrapper = styled(motion.nav)<IMenuProps>`
+const MenuWrapper = styled(motion.nav)<IMobileProps>`
   //width: 350px;
   //min-width: 350px;
   width: 25%;

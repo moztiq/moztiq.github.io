@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import Navigation from './Navigation';
 import { useRecoilState } from 'recoil';
 import { isViewMobileMenuState } from '../atoms/atoms';
+import { IMobileProps } from '../interface/interfaces';
 
-const Main = styled.main`
+const Main = styled.main<IMobileProps>`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -14,15 +15,11 @@ const Main = styled.main`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    position: relative;
+    position: ${(props) => (props.isViewMobileMenu ? 'fixed' : 'relative')};
   }
 `;
 
-interface IOverLayProps {
-  isViewMobileMenu: boolean;
-}
-
-const OverLay = styled.div<IOverLayProps>`
+const OverLay = styled.div<IMobileProps>`
   @media screen and (max-width: 768px) {
     width: 100vw;
     height: 100vh;
@@ -34,7 +31,7 @@ const OverLay = styled.div<IOverLayProps>`
 `;
 
 interface ILayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function Layout({ children }: ILayoutProps) {
@@ -43,7 +40,7 @@ export default function Layout({ children }: ILayoutProps) {
   );
 
   return (
-    <Main>
+    <Main isViewMobileMenu={isViewMobileMenu}>
       <Navigation />
       <OverLay
         isViewMobileMenu={isViewMobileMenu}

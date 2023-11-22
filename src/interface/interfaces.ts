@@ -17,3 +17,7 @@ export interface IPostProps {
 
   tag: string[];
 }
+
+export interface IMobileProps {
+  isViewMobileMenu: boolean;
+}
