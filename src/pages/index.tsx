@@ -19,6 +19,7 @@ const Content = styled.div`
 
   @media screen and (max-width: 768px) {
     position: absolute;
+    padding: 10px 0;
   }
 `;
 
@@ -36,9 +37,11 @@ const QuoteBox = styled.div`
   border-top: 7px solid ${(props) => props.theme.colors.primary};
   border-radius: 25px;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+
   @media screen and (max-width: 430px) {
     padding: 30px;
     width: 70%;
+    margin-top: 30px;
   }
 `;
 
@@ -46,12 +49,20 @@ const Quote = styled.div`
   font-size: 1.4rem;
   line-height: 1.8;
   text-align: justify;
+
+  @media screen and (max-width: 430px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Author = styled.div`
   margin-top: 40px;
   text-align: right;
   font-size: 1.2rem;
+
+  @media screen and (max-width: 430px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const QuoteLeft = styled.svg`
