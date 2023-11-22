@@ -124,7 +124,10 @@ function Navigation() {
   };
 
   return (
-    <MenuWrapper isViewMobileMenu={isViewMobileMenu}>
+    <MenuWrapper
+      isViewMobileMenu={isViewMobileMenu}
+      className={isViewMobileMenu ? 'slide' : ''}
+    >
       <Icons>
         <Link to={`/`}>
           <HomeIcon
