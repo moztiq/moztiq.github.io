@@ -11,6 +11,10 @@ const Post = styled.li`
   background-color: ${(props) => props.theme.colors.white};
   box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.05);
   border-radius: 0.5rem;
+
+  @media screen and (max-width: 430px) {
+    padding: 1.5rem;
+  }
 `;
 
 const Title = styled.h1`
@@ -61,6 +65,12 @@ const HeaderImage = styled.div<{ url: string }>`
   background-size: cover;
   border-radius: 10px;
   border: 1px solid ${(props) => props.theme.colors.gray200};
+
+  @media screen and (max-width: 1024px) {
+    width: 125px;
+    min-width: 125px;
+    margin-right: 10px;
+  }
 `;
 
 const ContentTextWrapper = styled.div`
@@ -80,6 +90,7 @@ const ContentText = styled.p`
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   text-align: justify;
+  overflow-wrap: anywhere;
 `;
 
 const TagList = styled.ul`

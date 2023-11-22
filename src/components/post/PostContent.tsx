@@ -5,6 +5,10 @@ import { IPostProps } from '../../interface/interfaces';
 
 const PostDetailContentWrapper = styled.div`
   width: 80%;
+
+  @media screen and (max-width: 430px) {
+    width: 90%;
+  }
 `;
 
 const Title = styled.h1`
@@ -15,6 +19,10 @@ const Title = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 430px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const PublishDateLine = styled.div`
@@ -122,6 +130,12 @@ const LongContent = styled.div`
 
   code {
     font-size: 14px;
+  }
+
+  @media screen and (max-width: 430px) {
+    h3 {
+      font-size: 1.2rem;
+    }
   }
 `;
 

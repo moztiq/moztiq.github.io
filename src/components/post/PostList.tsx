@@ -9,6 +9,10 @@ const PostListWrapper = styled.ul`
     text-decoration: none;
   }
   padding-bottom: 50px;
+
+  @media screen and (max-width: 768px) {
+    width: 95%;
+  }
 `;
 
 export default function PostList({ posts }: { posts: IPostProps[] }) {

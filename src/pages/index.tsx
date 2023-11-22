@@ -5,6 +5,7 @@ import styled, { ThemeContext } from 'styled-components';
 import Layout from '../components/Layout';
 import { motion } from 'framer-motion';
 import Seo from '../components/Seo';
+import Hamburger from '../components/Hamburger';
 
 const Content = styled.div`
   width: 100%;
@@ -15,6 +16,10 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    position: absolute;
+  }
 `;
 
 const SmileyIcon = styled(motion.svg)`
@@ -31,6 +36,10 @@ const QuoteBox = styled.div`
   border-top: 7px solid ${(props) => props.theme.colors.primary};
   border-radius: 25px;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+  @media screen and (max-width: 430px) {
+    padding: 30px;
+    width: 70%;
+  }
 `;
 
 const Quote = styled.div`
@@ -53,6 +62,16 @@ const QuoteLeft = styled.svg`
 const QuoteRight = styled.svg`
   font-size: 1.2em;
   margin-left: 20px;
+`;
+
+const TopWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  height: 70px;
+  background-color: ${(props) => props.theme.colors.background};
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -87,6 +106,9 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <Layout>
+      <TopWrapper>
+        <Hamburger />
+      </TopWrapper>
       <Content>
         <SmileyIcon
           xmlns="http://www.w3.org/2000/svg"

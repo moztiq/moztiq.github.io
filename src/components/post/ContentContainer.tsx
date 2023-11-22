@@ -8,6 +8,10 @@ const ContentContainerWrapper = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-behavior: smooth;
+
+  @media screen and (max-width: 768px) {
+    position: absolute;
+  }
 `;
 
 interface IContentContainerProps {

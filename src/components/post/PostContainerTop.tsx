@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
+import Hamburger from '../Hamburger';
 
 const TopWrapper = styled.div`
   width: 100%;
@@ -15,6 +16,10 @@ const TopWrapper = styled.div`
   align-items: center;
   z-index: 5;
   border-bottom: 1px solid ${(props) => props.theme.colors.gray200};
+
+  @media screen and (max-width: 768px) {
+    justify-content: space-between;
+  }
 `;
 
 const Title = styled.h1`
@@ -27,10 +32,11 @@ const Title = styled.h1`
 export default function PostContainerTop({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <TopWrapper>
+      <Hamburger />
       <Title>{children}</Title>
     </TopWrapper>
   );
