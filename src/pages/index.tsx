@@ -5,7 +5,6 @@ import styled, { ThemeContext } from 'styled-components';
 import Layout from '../components/Layout';
 import { motion } from 'framer-motion';
 import Seo from '../components/Seo';
-import Hamburger from '../components/Hamburger';
 
 const Content = styled.div`
   width: 100%;
@@ -75,16 +74,6 @@ const QuoteRight = styled.svg`
   margin-left: 20px;
 `;
 
-const TopWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  height: 70px;
-  background-color: ${(props) => props.theme.colors.background};
-  position: absolute;
-  top: 0;
-  left: 0;
-`;
-
 const IndexPage: React.FC<PageProps> = () => {
   const theme = useContext(ThemeContext);
   const iconVariants = {
@@ -117,9 +106,6 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <Layout>
-      <TopWrapper>
-        <Hamburger />
-      </TopWrapper>
       <Content>
         <SmileyIcon
           xmlns="http://www.w3.org/2000/svg"

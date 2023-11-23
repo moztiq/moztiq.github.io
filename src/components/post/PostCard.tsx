@@ -26,6 +26,7 @@ const Title = styled.h1`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  padding: 5px 0;
 `;
 
 const PublishDateLine = styled.div`

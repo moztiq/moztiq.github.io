@@ -1,8 +1,8 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 import styled from 'styled-components';
 import Navigation from './Navigation';
-import { useRecoilState } from 'recoil';
-import { isViewMobileMenuState } from '../atoms/atoms';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { IMobileProps } from '../interface/interfaces';
 
 const Main = styled.main<IMobileProps>`
@@ -15,18 +15,38 @@ const Main = styled.main<IMobileProps>`
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    position: ${(props) => (props.isViewMobileMenu ? 'fixed' : 'relative')};
+    position: ${(props) =>
+      props.isViewMobileNavigation ? 'fixed' : 'relative'};
   }
 `;
 
-const OverLay = styled.div<IMobileProps>`
+const HamburgerWrapper = styled.div`
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: ${(props) => props.theme.colors.primary};
+    background-color: ${(props) => props.theme.colors.background};
+    z-index: 8;
+    position: absolute;
+    top: 24px;
+    left: 35px;
+  }
+`;
+
+interface IOverlayProps {
+  isViewMobileNavigation: boolean;
+}
+
+const OverLay = styled.div<IOverlayProps>`
   @media screen and (max-width: 768px) {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     z-index: 9;
-    display: ${(props) => (props.isViewMobileMenu ? 'block' : 'none')};
+    display: ${(props) => (props.isViewMobileNavigation ? 'block' : 'none')};
   }
 `;
 
@@ -35,19 +55,24 @@ interface ILayoutProps {
 }
 
 export default function Layout({ children }: ILayoutProps) {
-  const [isViewMobileMenu, seTisViewMobileMenu] = useRecoilState(
-    isViewMobileMenuState,
-  );
+  const [isViewMobileNavigation, setIsViewMobileNavigation] = useState(false);
+
+  const handleToggle = () => {
+    setIsViewMobileNavigation((prev) => !prev);
+  };
 
   return (
-    <Main isViewMobileMenu={isViewMobileMenu}>
-      <Navigation />
+    <Main isViewMobileNavigation={isViewMobileNavigation}>
+      <HamburgerWrapper>
+        <FontAwesomeIcon icon={faBars} onClick={handleToggle} />
+      </HamburgerWrapper>
       <OverLay
-        isViewMobileMenu={isViewMobileMenu}
+        isViewMobileNavigation={isViewMobileNavigation}
         onClick={() => {
-          seTisViewMobileMenu(false);
+          setIsViewMobileNavigation(false);
         }}
       />
+      <Navigation isViewMobileNavigation={isViewMobileNavigation} />
       {children}
     </Main>
   );

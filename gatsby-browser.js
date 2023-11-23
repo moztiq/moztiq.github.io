@@ -1,5 +1,4 @@
 import './src/assets/css/reset.css';
-import './src/assets/css/custom.css';
 // import 'prism-themes/themes/prism-cb.css';
 // import 'prism-themes/themes/prism-atom-dark.css';
 // import 'prism-themes/themes/prism-base16-ateliersulphurpool.light.min.css';

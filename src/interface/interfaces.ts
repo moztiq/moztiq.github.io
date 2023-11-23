@@ -19,5 +19,5 @@ export interface IPostProps {
 }
 
 export interface IMobileProps {
-  isViewMobileMenu: boolean;
+  isViewMobileNavigation: boolean;
 }
