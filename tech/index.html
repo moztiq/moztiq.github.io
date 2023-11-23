@@ -146,6 +146,35 @@ Row, Column 또는 Flex 의 하위 위젯의 사용가능한 공간을 확장한
 하위 위젯의 할당된 공간을 채우기 위한 목적
 
 main.dart
+import &#x27;package:flutter/material.dart&#x27;;
+import &#x27;package:nc_flutter_pomodoro/screens/home_screen.dart&#x27;;
+
+void main() {
+  runApp(const App());
+}
+
+class App extends StatelessWidget {
+  const App({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(
+          backgroundColor: const Color(0xFFE7626C),
+        ),
+        textTheme: const TextTheme(
+          displayLarge: TextStyle(
+            color: Color(0xFF232B55),
+          ),
+        ),
+        cardColor: const Color(0xFFF4EDDB),
+      ),
+      home: const HomeScreen(),
+    );
+  }
+}
+home_screen.dart
 import &#x27;dart:async&#x27;;
 import &#x27;package:flutter/material.dart&#x27;;
 
