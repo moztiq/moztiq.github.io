@@ -132,6 +132,10 @@ const LongContent = styled.div`
     font-size: 14px;
   }
 
+  img {
+    max-width: 100%;
+  }
+
   @media screen and (max-width: 430px) {
     h3 {
       font-size: 1.2rem;
