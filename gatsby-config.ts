@@ -51,12 +51,17 @@ const config: GatsbyConfig = {
       options: {
         id: 'GTM-M2KQ4VFL',
         includeInDevelopment: false,
+        defaultDataLayer: { platform: 'gatsby' },
+        routeChangeEventName: 'gatsby-moztiq-route-change',
       },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'G-N7HF6P8HNP',
+        head: false,
+        defer: false,
+        cookieDomain: 'moztiq.com',
       },
     },
     {
