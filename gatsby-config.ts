@@ -56,12 +56,11 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-gtag`,
       options: {
         trackingId: 'G-N7HF6P8HNP',
         head: false,
-        defer: false,
-        cookieDomain: 'moztiq.com',
+        anonymize: true,
       },
     },
     {
