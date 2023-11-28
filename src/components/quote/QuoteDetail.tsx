@@ -12,7 +12,7 @@ const DetailWrapper = styled.div`
   margin: 100px 0;
 `;
 
-const QuoteDetailWrapper = styled.div`
+const QuoteDetailWrapper = styled.div<ICategoryProps>`
   padding: 50px;
   width: 60%;
   min-height: 20%;
@@ -20,6 +20,19 @@ const QuoteDetailWrapper = styled.div`
   border-radius: 1rem;
   position: relative;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+  border-top: 5px solid
+    ${(props) => {
+      switch (props.category) {
+        case 'poem':
+          return 'tomato';
+        case 'quote':
+          return '#1c98e7';
+        case 'essay':
+          return '#54b71c';
+        default:
+          return 'gray';
+      }
+    }};
 `;
 
 const ContentWrapper = styled.div`
@@ -38,7 +51,6 @@ const Category = styled.div<ICategoryProps>`
   border-radius: 5px;
   top: -10px;
   left: 10px;
-
   background-color: ${(props) => {
     switch (props.category) {
       case 'poem':
@@ -60,9 +72,13 @@ const Title = styled.div`
   color: ${(props) => props.theme.colors.gray800};
 `;
 
-const LongContent = styled.div`
+interface ILongContentProps {
+  title: string | null;
+}
+
+const LongContent = styled.div<ILongContentProps>`
   display: inline-block;
-  margin-top: 50px;
+  margin-top: ${(props) => (props.title ? '50px' : '20px')};
   font-size: 1.2rem;
   line-height: 2;
 `;
@@ -130,13 +146,13 @@ export default function QuoteDetail(props: { data: IQuoteProps }) {
 
   return (
     <DetailWrapper>
-      <QuoteDetailWrapper>
-        <Category category={quote.category}>
-          {quote.category.toUpperCase()}
-        </Category>
+      <QuoteDetailWrapper category={quote.category}>
+        {/*<Category category={quote.category}>*/}
+        {/*  {quote.category.toUpperCase()}*/}
+        {/*</Category>*/}
         <ContentWrapper>
           {quote.title && <Title>{quote.title}</Title>}
-          <LongContent>
+          <LongContent title={quote.title}>
             <AnimatePresence>
               <motion.span
                 initial={{ opacity: 0, y: -10 }}

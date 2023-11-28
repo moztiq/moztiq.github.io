@@ -14,7 +14,7 @@ const Quote = styled.li`
   transition: all 0.2s;
 
   @media screen and (max-width: 430px) {
-    padding: 1.5rem;
+    padding: 2.5rem 1rem 1rem 1rem;
   }
 
   &:hover {
