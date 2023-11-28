@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { ICategoryProps, IQuoteProps } from '../../interface/interfaces';
+import { IQuoteDetailProps, IQuoteProps } from '../../interface/interfaces';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const DetailWrapper = styled.div`
@@ -12,7 +12,7 @@ const DetailWrapper = styled.div`
   margin: 100px 0;
 `;
 
-const QuoteDetailWrapper = styled.div<ICategoryProps>`
+const QuoteDetailWrapper = styled.div<IQuoteDetailProps>`
   padding: 50px;
   width: 60%;
   min-height: 20%;
@@ -33,6 +33,11 @@ const QuoteDetailWrapper = styled.div<ICategoryProps>`
           return 'gray';
       }
     }};
+
+  @media screen and (max-width: 768px) {
+    width: 75%;
+    padding: 25px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -41,7 +46,7 @@ const ContentWrapper = styled.div`
   font-family: 'Nanum Myeongjo', serif;
 `;
 
-const Category = styled.div<ICategoryProps>`
+const Category = styled.div<IQuoteDetailProps>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,7 +151,7 @@ export default function QuoteDetail(props: { data: IQuoteProps }) {
 
   return (
     <DetailWrapper>
-      <QuoteDetailWrapper category={quote.category}>
+      <QuoteDetailWrapper category={quote.category} title={quote.title}>
         {/*<Category category={quote.category}>*/}
         {/*  {quote.category.toUpperCase()}*/}
         {/*</Category>*/}

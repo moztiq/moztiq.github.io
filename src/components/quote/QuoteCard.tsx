@@ -2,7 +2,7 @@ import { extractText } from '../../utils/string.utils';
 import { Link } from 'gatsby';
 import * as React from 'react';
 import styled from 'styled-components';
-import { ICategoryProps, IQuoteProps } from '../../interface/interfaces';
+import { IQuoteDetailProps, IQuoteProps } from '../../interface/interfaces';
 
 const Quote = styled.li`
   padding: 3rem 2rem 2rem 2rem;
@@ -32,7 +32,7 @@ const ContentTextWrapper = styled.div`
   flex-direction: column;
 `;
 
-const Category = styled.div<ICategoryProps>`
+const Category = styled.div<IQuoteDetailProps>`
   display: flex;
   justify-content: center;
   align-items: center;

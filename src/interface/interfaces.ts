@@ -35,6 +35,7 @@ export interface IMobileProps {
   isViewMobileNavigation: boolean;
 }
 
-export interface ICategoryProps {
+export interface IQuoteDetailProps {
   category: string;
+  title: string | null;
 }
