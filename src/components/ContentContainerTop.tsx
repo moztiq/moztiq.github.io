@@ -21,7 +21,7 @@ const Title = styled.h1`
   padding-right: 35px;
 `;
 
-export default function PostContainerTop({
+export default function ContentContainerTop({
   children,
 }: {
   children: ReactNode;

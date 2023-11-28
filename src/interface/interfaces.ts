@@ -14,10 +14,27 @@ export interface IPostProps {
       excerpt: string;
     };
   };
-
   tag: string[];
+}
+
+export interface IQuoteProps {
+  id: string;
+  title: string;
+  slug: string;
+  author: string;
+  category: string;
+  content: {
+    childMarkdownRemark: {
+      html: string;
+      excerpt: string;
+    };
+  };
 }
 
 export interface IMobileProps {
   isViewMobileNavigation: boolean;
+}
+
+export interface ICategoryProps {
+  category: string;
 }

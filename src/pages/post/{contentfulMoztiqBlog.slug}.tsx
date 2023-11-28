@@ -1,10 +1,9 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import { graphql, PageProps } from 'gatsby';
-import ContentContainer from '../../components/post/ContentContainer';
+import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';
 import PostDetail from '../../components/post/PostDetail';
-import { IPostProps } from '../../interface/interfaces';
 
 export default function PostDetailPage({
   data,
@@ -13,9 +12,7 @@ export default function PostDetailPage({
 
   return (
     <Layout>
-      <ContentContainer
-        title={post?.category ? post?.category?.toUpperCase() : ''}
-      >
+      <ContentContainer title="QUOTE">
         {post && <PostDetail data={post as any} />}
       </ContentContainer>
     </Layout>

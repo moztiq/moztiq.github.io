@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect } from 'react';
 import styled from 'styled-components';
-import PostContainerTop from './PostContainerTop';
+import ContentContainerTop from './ContentContainerTop';
 
 const ContentContainerWrapper = styled.div`
   width: 100%;
@@ -25,7 +25,7 @@ export default function ContentContainer({
 }: IContentContainerProps) {
   return (
     <ContentContainerWrapper>
-      <PostContainerTop>{title}</PostContainerTop>
+      <ContentContainerTop>{title}</ContentContainerTop>
       {children}
     </ContentContainerWrapper>
   );

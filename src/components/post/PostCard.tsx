@@ -11,9 +11,14 @@ const Post = styled.li`
   background-color: ${(props) => props.theme.colors.white};
   box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.05);
   border-radius: 0.5rem;
+  transition: all 0.2s;
 
   @media screen and (max-width: 430px) {
     padding: 1.5rem;
+  }
+
+  &:hover {
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
   }
 `;
 

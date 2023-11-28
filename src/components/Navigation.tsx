@@ -68,7 +68,7 @@ const MenuList = styled.ul`
 const MenuItem = styled(motion.li)`
   color: ${(props) => props.theme.colors.textPrimary};
   height: 65px;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: 3px;
   border-bottom: 1px dashed ${(props) => props.theme.colors.light};
@@ -106,7 +106,7 @@ const CopyRight = styled.div`
 
 function Navigation({ isViewMobileNavigation }: IMobileProps) {
   const theme = useContext(ThemeContext);
-  const menuList = ['tech', 'book'];
+  const menuList = ['book', 'tech', 'quote'];
   const location = typeof window !== 'undefined' ? window.location.href : '';
 
   const menuItemVariants = {

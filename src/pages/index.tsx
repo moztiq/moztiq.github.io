@@ -31,7 +31,7 @@ const QuoteBox = styled.div`
   margin-top: 100px;
   padding: 70px;
   width: 40%;
-  color: ${(props) => props.theme.colors.textBlack};
+  color: ${(props) => props.theme.colors.black};
   background-color: ${(props) => props.theme.colors.background};
   border-top: 7px solid ${(props) => props.theme.colors.primary};
   border-radius: 25px;
