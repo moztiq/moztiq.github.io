@@ -163,8 +163,8 @@ export const Head = ({ data }: PageProps<Queries.PostDetailQuery>) => {
 
   return (
     <Seo
-      title={'MOZTIQ HOME'}
-      description={'MOZTIQ'}
+      title={'HOME'}
+      description={'MOZTIQ, Experimental Personal Logs'}
       url={`/post/${post?.slug}`}
     />
   );

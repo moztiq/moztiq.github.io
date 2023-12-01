@@ -1,13 +1,13 @@
-import React, { Fragment, useContext, useState } from 'react';
+import React, { Fragment, useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
 import backgroundImage from '../assets/images/bg.jpg';
 import { IMobileProps } from '../interface/interfaces';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
 const MenuWrapper = styled.nav`
-  //width: 350px;
-  //min-width: 350px;
   width: 25%;
   min-width: 25%;
   height: 100vh;
@@ -151,7 +151,16 @@ function Navigation({ isViewMobileNavigation }: IMobileProps) {
           </YoutubeIcon>
         </a>
       </Icons>
-      <IntroTitle>MOZTIQ</IntroTitle>
+      <IntroTitle>
+        MOZTIQ{' '}
+        <Link to={`/about`} style={{ marginLeft: '10px' }}>
+          <FontAwesomeIcon
+            icon={faQuestionCircle}
+            size="xs"
+            color={'#325eb6bb'}
+          />
+        </Link>
+      </IntroTitle>
       <IntroDescription drag>Life is a journey ..</IntroDescription>
       <MenuList>
         {menuList.map((menu, idx) => (

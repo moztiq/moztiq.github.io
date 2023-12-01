@@ -5,6 +5,7 @@ import PostList from '../../components/post/PostList';
 import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';
 import styled from 'styled-components';
+import { Category, SectionTitle } from '../../constants/common.constant';
 
 const PostListContainer = styled.div`
   display: flex;
@@ -15,7 +16,7 @@ export default function TechPage({ data }: PageProps<Queries.TechListQuery>) {
   const posts = data.allContentfulMoztiqBlog.nodes;
   return (
     <Layout>
-      <ContentContainer title="TECH">
+      <ContentContainer title={SectionTitle(Category.TECH)}>
         <PostListContainer>
           <PostList posts={posts as any} />
         </PostListContainer>

@@ -4,6 +4,7 @@ import { graphql, PageProps } from 'gatsby';
 import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';
 import PostDetail from '../../components/post/PostDetail';
+import { SectionTitle } from '../../constants/common.constant';
 
 export default function PostDetailPage({
   data,
@@ -12,7 +13,7 @@ export default function PostDetailPage({
 
   return (
     <Layout>
-      <ContentContainer title="QUOTE">
+      <ContentContainer title={SectionTitle(post?.category!)}>
         {post && <PostDetail data={post as any} />}
       </ContentContainer>
     </Layout>

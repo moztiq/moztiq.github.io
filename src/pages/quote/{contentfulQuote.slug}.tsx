@@ -4,14 +4,13 @@ import { graphql, PageProps } from 'gatsby';
 import Seo from '../../components/Seo';
 import QuoteDetail from '../../components/quote/QuoteDetail';
 import ContentContainer from '../../components/ContentContainer';
+import { Category, SectionTitle } from '../../constants/common.constant';
 
 export default function QuotePage({ data }: PageProps<Queries.QuoteQuery>) {
   const quote = data.contentfulQuote;
   return (
     <Layout>
-      <ContentContainer
-        title={quote?.category ? quote?.category?.toUpperCase() : ''}
-      >
+      <ContentContainer title={SectionTitle(Category.QUOTE)}>
         {quote && <QuoteDetail data={quote as any} />}
       </ContentContainer>
     </Layout>

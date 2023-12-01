@@ -5,6 +5,7 @@ import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';
 import styled from 'styled-components';
 import QuoteList from '../../components/quote/QuoteList';
+import { Category, SectionTitle } from '../../constants/common.constant';
 
 const QuoteListContainer = styled.div`
   display: flex;
@@ -15,7 +16,7 @@ export default function QuotePage({ data }: PageProps<Queries.QuoteListQuery>) {
   const quotes = data.allContentfulQuote.nodes;
   return (
     <Layout>
-      <ContentContainer title="QUOTE">
+      <ContentContainer title={SectionTitle(Category.QUOTE)}>
         <QuoteListContainer>
           <QuoteList quotes={quotes as any} />
         </QuoteListContainer>

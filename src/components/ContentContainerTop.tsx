@@ -15,9 +15,8 @@ const TopWrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 1.4rem;
-  font-weight: bold;
-  letter-spacing: 3px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
   padding-right: 35px;
 `;
 
