@@ -118,7 +118,7 @@ const AboutPage: React.FC<PageProps> = () => {
               행복합니다. 모차르트가 없는 삶은 상상할 수조차 없어요.
               아인슈타인이 죽음을 그렇게 정의했다죠. 죽는다는 것은 곧 모차르트를
               듣지 못하는 것이라고. 제가 딱 그렇습니다. 하지만 가끔 음악에서
-              느끼는 이상과 내 삶이 너무 동떨어져 있다고 느낄 때가 있는데
+              느끼는 이상과 제 삶이 너무 동떨어져 있다고 느낄 때가 있는데
               그럴때마다 음악을 멀리하곤 해요. 그래서 슬퍼요.
             </p>
             <p>
@@ -131,7 +131,7 @@ const AboutPage: React.FC<PageProps> = () => {
               <strong>사회</strong>에 도움이 되는 삶을 살고 싶어요. 하지만
               데카르트의 말처럼 세상을 바꾸려는 노력 이전에 자신의 그릇된 욕망을
               다스리는 데 주력하라고 하니 저도 사회에 도움이 되기 이전에 저
-              자신을 먼저 잘 다스려야할 것 같습니다.
+              자신부터 먼저 잘 다스려야할 것 같습니다.
             </p>
             <p>
               <strong>인생</strong>의 끝이 어디인지 몰라도 갈 길은 참 멀기만
@@ -150,7 +150,7 @@ export const Head = () => {
   return (
     <Seo
       title={'About'}
-      description={'MOZTIQ, Experimental Personal Logs'}
+      description={SectionTitle(Category.ABOUT)}
       url={`/about`}
     />
   );

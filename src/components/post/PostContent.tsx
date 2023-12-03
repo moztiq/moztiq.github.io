@@ -129,7 +129,7 @@ const LongContent = styled.div`
   }
 
   code {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   img {
