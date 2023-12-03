@@ -81,6 +81,7 @@ const LongContent = styled.div`
     color: ${(props) => props.theme.colors.primary};
     text-decoration: underline;
   }
+
   blockquote {
     color: ${(props) => props.theme.colors.gray800};
     margin: 30px 0;
@@ -94,6 +95,11 @@ const LongContent = styled.div`
 
   p {
     margin: 15px 0;
+
+    code {
+      font-size: 0.9rem;
+      background-color: #c05b4d;
+    }
   }
 
   b,
