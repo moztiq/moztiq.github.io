@@ -37,5 +37,4 @@ export interface IMobileProps {
 
 export interface IQuoteDetailProps {
   category: string;
-  title: string | null;
 }

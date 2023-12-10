@@ -33,7 +33,7 @@ const graySeries = {
 
 const whiteTheme = {
   colors: {
-    textPrimary: 'rgba(0,90,133,0.7)',
+    textPrimary: 'rgba(0,90,133,0.8)',
     textLight: 'rgba(255, 255, 255,0.7)',
     primary: 'rgba(0,90,133, 0.6)',
     light: 'rgba(236,239,243,0.6)',

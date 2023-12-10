@@ -106,7 +106,7 @@ const CopyRight = styled.div`
 
 function Navigation({ isViewMobileNavigation }: IMobileProps) {
   const theme = useContext(ThemeContext);
-  const menuList = ['book', 'tech', 'quote'];
+  const menuList = ['book', 'tech', 'quote', 'lab'];
   const location = typeof window !== 'undefined' ? window.location.href : '';
 
   const menuItemVariants = {
