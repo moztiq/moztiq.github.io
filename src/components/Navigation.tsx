@@ -20,8 +20,8 @@ const MenuWrapper = styled.nav`
   display: block;
 
   @media screen and (max-width: 768px) {
-    width: 75%;
-    min-width: 75%;
+    width: 70%;
+    min-width: 70%;
     left: -100%;
     transition: left 0.3s ease-in-out;
   }
@@ -47,6 +47,9 @@ const IntroTitle = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 430px) {
+    margin-top: 80px;
+  }
 `;
 
 const IntroDescription = styled(motion.div)`
@@ -57,6 +60,10 @@ const IntroDescription = styled(motion.div)`
   justify-content: center;
   align-items: center;
   margin: 15px 0 100px 0;
+
+  @media screen and (max-width: 430px) {
+    margin-bottom: 80px;
+  }
 `;
 
 const MenuList = styled.ul`
@@ -77,6 +84,11 @@ const MenuItem = styled(motion.li)`
   justify-content: center;
   align-items: center;
   background-color: ${(props) => props.theme.colors.gray100};
+
+  @media screen and (max-width: 430px) {
+    font-size: 1.25rem;
+    height: 40px;
+  }
 `;
 
 const HomeIcon = styled(motion.svg)`
