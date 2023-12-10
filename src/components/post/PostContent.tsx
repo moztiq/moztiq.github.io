@@ -91,6 +91,7 @@ const LongContent = styled.div`
     border-radius: 10px;
     border-top: 2px solid ${(props) => props.theme.colors.primary};
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15);
+    white-space: pre-wrap;
   }
 
   p {
