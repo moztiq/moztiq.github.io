@@ -48,13 +48,11 @@ const PublishDate = styled.div`
 `;
 
 const HeaderImage = styled.div<{ url: string }>`
-  width: 200px;
-  min-width: 200px;
   margin: 50px auto;
-  height: 200px;
+  height: 250px;
   background-image: url(${(props) => props.url});
   background-size: cover;
-  border-radius: 10px;
+  border-radius: 5px;
 `;
 
 const TagList = styled.ul`

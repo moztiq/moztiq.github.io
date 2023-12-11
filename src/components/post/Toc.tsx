@@ -6,7 +6,7 @@ const TocWrapper = styled.div`
   min-width: 300px;
   background-color: ${(props) => props.theme.colors.background};
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     display: none;
   }
 `;
