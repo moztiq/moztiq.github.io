@@ -121,7 +121,8 @@ const CopyRight = styled.div`
 function Navigation({ isViewMobileNavigation }: IMobileProps) {
   const theme = useContext(ThemeContext);
   const menuList = ['book', 'tech', 'quote', 'lab'];
-  const location = typeof window !== 'undefined' ? window.location.href : '';
+  const pathname =
+    typeof window !== 'undefined' ? window.location.pathname : '';
 
   const menuItemVariants = {
     initial: {
@@ -179,7 +180,7 @@ function Navigation({ isViewMobileNavigation }: IMobileProps) {
       <MenuList>
         {menuList.map((menu, idx) => (
           <Fragment key={idx}>
-            {location.includes(menu) ? (
+            {pathname.startsWith(`/${menu}`) ? (
               <MenuItem>{SectionTitle(menu)}</MenuItem>
             ) : (
               <Link to={`/${menu}`}>
