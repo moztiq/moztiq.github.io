@@ -86,6 +86,7 @@ const MenuItem = styled(motion.li)`
   justify-content: center;
   align-items: center;
   background-color: ${(props) => props.theme.colors.gray100};
+  box-shadow: 0 1px 15px rgba(255, 255, 255, 0.5);
 
   @media screen and (max-width: 430px) {
     font-size: 1.25rem;
