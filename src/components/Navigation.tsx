@@ -6,6 +6,7 @@ import backgroundImage from '../assets/images/bg.jpg';
 import { IMobileProps } from '../interface/interfaces';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { SectionTitle } from '../constants/common.constant';
 
 const MenuWrapper = styled.nav`
   width: 25%;
@@ -74,10 +75,10 @@ const MenuList = styled.ul`
 
 const MenuItem = styled(motion.li)`
   color: ${(props) => props.theme.colors.textPrimary};
-  height: 65px;
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: 3px;
+  height: 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
   border-bottom: 1px dashed ${(props) => props.theme.colors.light};
   padding: 10px 0;
   display: flex;
@@ -178,7 +179,7 @@ function Navigation({ isViewMobileNavigation }: IMobileProps) {
         {menuList.map((menu, idx) => (
           <Fragment key={idx}>
             {location.includes(menu) ? (
-              <MenuItem>{menu.toUpperCase()}</MenuItem>
+              <MenuItem>{SectionTitle(menu)}</MenuItem>
             ) : (
               <Link to={`/${menu}`}>
                 <MenuItem
@@ -186,7 +187,7 @@ function Navigation({ isViewMobileNavigation }: IMobileProps) {
                   initial="initial"
                   whileHover="whileHover"
                 >
-                  {menu.toUpperCase()}
+                  {SectionTitle(menu)}
                 </MenuItem>
               </Link>
             )}
