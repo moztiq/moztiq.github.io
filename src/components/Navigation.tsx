@@ -2,7 +2,7 @@ import React, { Fragment, useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
-import backgroundImage from '../assets/images/bg.jpg';
+import backgroundImage from '../assets/images/bg.png';
 import { IMobileProps } from '../interface/interfaces';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
@@ -19,6 +19,7 @@ const MenuWrapper = styled.nav`
   position: relative;
   z-index: 10;
   display: block;
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.25);
 
   @media screen and (max-width: 768px) {
     width: 70%;
