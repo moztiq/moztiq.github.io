@@ -27,7 +27,7 @@ const SmileyIcon = styled(motion.svg)`
 `;
 
 const QuoteBox = styled.div`
-  font-family: 'Nanum Myeongjo', serif;
+  font-family: 'Pretendard', serif;
   margin-top: 100px;
   padding: 70px;
   width: 40%;

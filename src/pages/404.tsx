@@ -11,7 +11,7 @@ const Main = styled.main`
   background-color: tomato;
   color: white;
   font-size: 40px;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', sans-serif;
 `;
 
 const NotFoundPage: React.FC<PageProps> = () => {

@@ -43,7 +43,7 @@ const QuoteDetailWrapper = styled.div<IQuoteDetailProps>`
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  font-family: 'Nanum Myeongjo', serif;
+  font-family: 'Pretendard', serif;
 `;
 
 const Category = styled.div<IQuoteDetailProps>`

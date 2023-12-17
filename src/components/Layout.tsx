@@ -9,7 +9,7 @@ const Main = styled.main<IMobileProps>`
   width: 100vw;
   height: 100vh;
   display: flex;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   position: fixed;
   background-color: ${(props) => props.theme.colors.background};
 
