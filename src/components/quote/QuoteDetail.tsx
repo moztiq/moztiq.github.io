@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { IQuoteDetailProps, IQuoteProps } from '../../interface/interfaces';
 import { AnimatePresence, motion } from 'framer-motion';
+import Gisqus from '../post/Gisqus';
 
 const DetailWrapper = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: ${(props) => props.theme.colors.gray100};
@@ -37,6 +39,14 @@ const QuoteDetailWrapper = styled.div<IQuoteDetailProps>`
   @media screen and (max-width: 768px) {
     width: 75%;
     padding: 25px;
+  }
+`;
+
+const GisqusWrapper = styled.div`
+  margin-top: 70px;
+  width: 60%;
+  @media screen and (max-width: 768px) {
+    width: 75%;
   }
 `;
 
@@ -150,29 +160,34 @@ export default function QuoteDetail(props: { data: IQuoteProps }) {
   }, [displayedTextArr, contentArr]);
 
   return (
-    <DetailWrapper>
-      <QuoteDetailWrapper category={quote.category} title={quote.title}>
-        {/*<Category category={quote.category}>*/}
-        {/*  {quote.category.toUpperCase()}*/}
-        {/*</Category>*/}
-        <ContentWrapper>
-          {quote.title && <Title>{quote.title}</Title>}
-          <LongContent title={quote.title}>
-            <AnimatePresence>
-              <motion.span
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                dangerouslySetInnerHTML={{
-                  __html: displayedTextArr.join('') || '',
-                }}
-              />
-            </AnimatePresence>
-            {/*<Blink variants={cursorVariants} animate="blinking" />*/}
-          </LongContent>
-          <Author>- {quote.author}</Author>
-        </ContentWrapper>
-      </QuoteDetailWrapper>
-    </DetailWrapper>
+    <>
+      <DetailWrapper>
+        <QuoteDetailWrapper category={quote.category} title={quote.title}>
+          {/*<Category category={quote.category}>*/}
+          {/*  {quote.category.toUpperCase()}*/}
+          {/*</Category>*/}
+          <ContentWrapper>
+            {quote.title && <Title>{quote.title}</Title>}
+            <LongContent title={quote.title}>
+              <AnimatePresence>
+                <motion.span
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  dangerouslySetInnerHTML={{
+                    __html: displayedTextArr.join('') || '',
+                  }}
+                />
+              </AnimatePresence>
+              {/*<Blink variants={cursorVariants} animate="blinking" />*/}
+            </LongContent>
+            <Author>- {quote.author}</Author>
+          </ContentWrapper>
+        </QuoteDetailWrapper>
+        <GisqusWrapper>
+          <Gisqus />
+        </GisqusWrapper>
+      </DetailWrapper>
+    </>
   );
 }

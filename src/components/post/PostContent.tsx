@@ -2,6 +2,7 @@ import Moment from 'react-moment';
 import React from 'react';
 import styled from 'styled-components';
 import { IPostProps } from '../../interface/interfaces';
+import Gisqus from './Gisqus';
 
 const PostDetailContentWrapper = styled.div`
   width: 80%;
@@ -148,6 +149,10 @@ const LongContent = styled.div`
   }
 `;
 
+const GisqusWrapper = styled.div`
+  margin-top: 70px;
+`;
+
 export default function PostContent({ post }: { post: IPostProps }) {
   return (
     <PostDetailContentWrapper>
@@ -168,6 +173,9 @@ export default function PostContent({ post }: { post: IPostProps }) {
       <TagList>
         {post?.tag.map((item, idx) => <Tag key={idx}>#{item}</Tag>)}
       </TagList>
+      <GisqusWrapper>
+        <Gisqus />
+      </GisqusWrapper>
     </PostDetailContentWrapper>
   );
 }
