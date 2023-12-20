@@ -95,6 +95,8 @@ const LongContent = styled.div`
 
   p {
     margin: 15px 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
 
     code {
       font-size: 0.9rem;
@@ -140,6 +142,7 @@ const LongContent = styled.div`
 
   img {
     max-width: 100%;
+    border-radius: 5px;
   }
 
   @media screen and (max-width: 430px) {
