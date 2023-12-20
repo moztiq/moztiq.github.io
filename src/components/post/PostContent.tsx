@@ -97,6 +97,7 @@ const LongContent = styled.div`
     margin: 15px 0;
     font-size: 1.05rem;
     line-height: 1.7;
+    white-space: pre-wrap;
 
     code {
       font-size: 0.9rem;
