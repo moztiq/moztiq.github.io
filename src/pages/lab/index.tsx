@@ -62,7 +62,7 @@ export default function LabPage() {
       <ContentContainer title={SectionTitle(Category.LAB)}>
         <LabListContainer>
           <LabListWrapper>
-            <Link to={`/gpt`}>
+            <Link to={`/ai`}>
               <Lab>
                 <svg
                   width="30"
@@ -81,7 +81,7 @@ export default function LabPage() {
                     fill="currentColor"
                   ></path>
                 </svg>
-                <span>{SectionTitle(Category.GPT)}</span>
+                <span>{SectionTitle(Category.AI)}</span>
               </Lab>
             </Link>
           </LabListWrapper>

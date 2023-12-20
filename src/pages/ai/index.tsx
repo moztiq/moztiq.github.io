@@ -17,7 +17,7 @@ export default function GptPage({ data }: PageProps<Queries.BookListQuery>) {
   const posts = data.allContentfulMoztiqBlog.nodes;
   return (
     <Layout>
-      <ContentContainer title={SectionTitle(Category.GPT)}>
+      <ContentContainer title={SectionTitle(Category.AI)}>
         <PostListContainer>
           <PostList posts={posts as any} />
         </PostListContainer>
@@ -29,7 +29,7 @@ export default function GptPage({ data }: PageProps<Queries.BookListQuery>) {
 export const query = graphql`
   query BookList {
     allContentfulMoztiqBlog(
-      filter: { category: { eq: "gpt" } }
+      filter: { category: { eq: "ai" } }
       sort: { createdAt: DESC }
     ) {
       nodes {
@@ -54,5 +54,5 @@ export const query = graphql`
 `;
 
 export const Head = () => {
-  return <Seo title={'GPT SECTION'} description={'GPT SECTION'} url={`/gpt`} />;
+  return <Seo title={'AI SECTION'} description={'AI SECTION'} url={`/ai`} />;
 };

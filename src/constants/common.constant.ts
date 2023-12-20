@@ -4,7 +4,7 @@ export enum Category {
   TECH = 'tech',
   QUOTE = 'quote',
   MUSIC = 'music',
-  GPT = 'gpt',
+  AI = 'ai',
   LAB = 'lab',
 }
 
@@ -19,8 +19,8 @@ export const SectionTitle = (category: string) => {
     return '기술은 나의 도구';
   } else if (category == Category.QUOTE) {
     return '짧은 글, 긴 여운';
-  } else if (category == Category.GPT) {
-    return 'GPT와 춤을';
+  } else if (category == Category.AI) {
+    return 'AI 와 춤을';
   } else if (category == Category.LAB) {
     return '실험실';
   }
