@@ -160,6 +160,11 @@ const LongContent = styled.div`
     }
   }
 
+  em {
+    color: ${(props) => props.theme.colors.textPrimary};
+    font-style: italic;
+  }
+
   @media screen and (max-width: 430px) {
     h3 {
       font-size: 1.2rem;
