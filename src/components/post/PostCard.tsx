@@ -69,7 +69,7 @@ const HeaderImage = styled.div<{ url: string }>`
   height: 180px;
   background-image: url(${(props) => props.url});
   background-size: cover;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid ${(props) => props.theme.colors.gray200};
 
   @media screen and (max-width: 1024px) {

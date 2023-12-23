@@ -53,7 +53,7 @@ const HeaderImage = styled.div<{ url: string }>`
   height: 250px;
   background-image: url(${(props) => props.url});
   background-size: cover;
-  border-radius: 5px;
+  border-radius: 10px;
 `;
 
 const TagList = styled.ul`
@@ -79,18 +79,6 @@ const LongContent = styled.div`
   a {
     color: ${(props) => props.theme.colors.primary};
     text-decoration: underline;
-  }
-
-  blockquote {
-    color: ${(props) => props.theme.colors.gray800};
-    margin: 30px 0;
-    line-height: 1.8;
-    padding: 5px 25px;
-    background-color: ${(props) => props.theme.colors.gray50};
-    border-radius: 10px;
-    border-top: 2px solid ${(props) => props.theme.colors.primary};
-    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15);
-    white-space: pre-wrap;
   }
 
   p {
@@ -144,6 +132,32 @@ const LongContent = styled.div`
   img {
     max-width: 100%;
     border-radius: 5px;
+  }
+
+  blockquote {
+    color: ${(props) => props.theme.colors.gray800};
+    margin: 30px 0;
+    line-height: 1.8;
+    padding: 5px 25px;
+    background-color: ${(props) => props.theme.colors.gray50};
+    border-radius: 10px;
+    border-top: 2px solid ${(props) => props.theme.colors.primary};
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15);
+    white-space: pre-wrap;
+
+    p {
+      margin: 5px 0;
+    }
+
+    ul {
+      padding: 0 40px;
+      margin: 0;
+      line-height: 1.1;
+    }
+
+    li {
+      margin: 0;
+    }
   }
 
   @media screen and (max-width: 430px) {
