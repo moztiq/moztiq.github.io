@@ -43,6 +43,13 @@ const MoztiqTitle = styled.div`
     color: ${(props) => props.theme.colors.accentColor};
     font-size: 28px;
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+    span {
+      font-size: 28px;
+    }
+  }
 `;
 
 const MoztiqDescription = styled.div`
@@ -98,7 +105,7 @@ const AboutPage: React.FC<PageProps> = () => {
               </MoztiqTitle>
               <MoztiqDescription>
                 MOZTIQ 은 Mozart 가 비창 (Pathetique) 이라는 제목의 곡을
-                작곡했다면 어땠을까 하고 생각하며 만든 닉네임입니다.
+                작곡했다면 어땠을까 라고 생각하며 만든 닉네임입니다.
               </MoztiqDescription>
               <ProfileImage />
             </MoztiqWrapper>
