@@ -3,6 +3,11 @@ import styled from 'styled-components';
 import PostCard from './PostCard';
 import { IPostProps } from '../../interface/interfaces';
 
+const PostListContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const PostListWrapper = styled.ul`
   width: 75%;
   a {
@@ -17,11 +22,13 @@ const PostListWrapper = styled.ul`
 
 export default function PostList({ posts }: { posts: IPostProps[] }) {
   return (
-    <PostListWrapper>
-      {posts &&
-        posts.map((post: IPostProps) => (
-          <PostCard key={post.slug} post={post} />
-        ))}
-    </PostListWrapper>
+    <PostListContainer>
+      <PostListWrapper>
+        {posts &&
+          posts.map((post: IPostProps) => (
+            <PostCard key={post.slug} post={post} />
+          ))}
+      </PostListWrapper>
+    </PostListContainer>
   );
 }

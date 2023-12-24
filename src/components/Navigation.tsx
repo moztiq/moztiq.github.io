@@ -6,7 +6,7 @@ import backgroundImage from '../assets/images/bg.png';
 import { IMobileProps } from '../interface/interfaces';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
-import { SectionTitle } from '../constants/common.constant';
+import { SectionIcon, SectionTitle } from '../constants/common.constant';
 
 const MenuWrapper = styled.nav`
   width: 25%;
@@ -119,6 +119,10 @@ const CopyRight = styled.div`
   letter-spacing: 3px;
 `;
 
+const IconWrapper = styled.span`
+  margin-right: 10px;
+`;
+
 function Navigation({ isViewMobileNavigation }: IMobileProps) {
   const theme = useContext(ThemeContext);
   const menuList = ['book', 'tech', 'quote', 'lab'];
@@ -190,6 +194,9 @@ function Navigation({ isViewMobileNavigation }: IMobileProps) {
                   initial="initial"
                   whileHover="whileHover"
                 >
+                  <IconWrapper>
+                    <FontAwesomeIcon icon={SectionIcon(menu)} size="xs" />
+                  </IconWrapper>{' '}
                   {SectionTitle(menu)}
                 </MenuItem>
               </Link>

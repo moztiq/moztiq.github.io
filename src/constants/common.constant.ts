@@ -1,3 +1,12 @@
+import {
+  faBookOpen,
+  faFlask,
+  faHammer,
+  faMusic,
+  faQuoteLeft,
+  faSmile,
+} from '@fortawesome/free-solid-svg-icons';
+
 export enum Category {
   ABOUT = 'about',
   BOOK = 'book',
@@ -25,4 +34,18 @@ export const SectionTitle = (category: string) => {
     return '실험실';
   }
   return '';
+};
+export const SectionIcon = (category: string) => {
+  if (category == Category.MUSIC) {
+    return faMusic;
+  } else if (category == Category.BOOK) {
+    return faBookOpen;
+  } else if (category == Category.TECH) {
+    return faHammer;
+  } else if (category == Category.QUOTE) {
+    return faQuoteLeft;
+  } else if (category == Category.LAB) {
+    return faFlask;
+  }
+  return faSmile;
 };
