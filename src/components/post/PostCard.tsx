@@ -32,6 +32,10 @@ const Title = styled.h1`
   white-space: nowrap;
   text-overflow: ellipsis;
   padding: 5px 0;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const PublishDateLine = styled.div`
