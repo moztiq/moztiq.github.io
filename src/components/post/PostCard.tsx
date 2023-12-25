@@ -106,7 +106,8 @@ const ContentText = styled.p`
 const TagList = styled.ul`
   margin-top: 10px;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 3px;
 `;
 
 const Tag = styled.li`
@@ -116,6 +117,11 @@ const Tag = styled.li`
   border-radius: 5px;
   color: ${(props) => props.theme.colors.gray600};
   background-color: ${(props) => props.theme.colors.gray100};
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.7rem;
+    margin-right: 5px;
+  }
 `;
 
 export default function PostCard({ post }: { post: IPostProps }) {
