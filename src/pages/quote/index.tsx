@@ -5,7 +5,13 @@ import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';
 import styled from 'styled-components';
 import QuoteList from '../../components/quote/QuoteList';
-import { Category, SectionTitle } from '../../constants/common.constant';
+import {
+  Category,
+  SectionIcon,
+  SectionTitle,
+} from '../../constants/common.constant';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ContentExplain from '../../components/ContentExplain';
 
 const QuoteListContainer = styled.div`
   display: flex;
@@ -17,6 +23,11 @@ export default function QuotePage({ data }: PageProps<Queries.QuoteListQuery>) {
   return (
     <Layout>
       <ContentContainer title={SectionTitle(Category.QUOTE)}>
+        <ContentExplain
+          icon={<FontAwesomeIcon icon={SectionIcon(Category.QUOTE)} />}
+          title={`<span>QUOTE</span> ${SectionTitle(Category.QUOTE)}`}
+          description={`때론 짧은 시 한편, 누군가의 한마디, 책 속의 짧은 글귀만으로 가슴이 벅찰 때가 있습니다. 그런 글을 찾아 모아두고 싶었어요.`}
+        />
         <QuoteListContainer>
           <QuoteList quotes={quotes as any} />
         </QuoteListContainer>

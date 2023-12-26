@@ -5,12 +5,18 @@ import Layout from '../../components/Layout';
 import PostList from '../../components/post/PostList';
 import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';
-import { Category, SectionTitle } from '../../constants/common.constant';
+import {
+  Category,
+  SectionIcon,
+  SectionTitle,
+} from '../../constants/common.constant';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesRight, faAnglesLeft } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import Tippy from '@tippyjs/react';
+import ContentExplain from '../../components/ContentExplain';
+import chatGptSvg from '../../assets/images/chat-gpt.svg';
 
 const GptsButton = styled.div`
   display: flex;
@@ -62,6 +68,12 @@ const GptIcon = styled.div<{ source: string }>`
   background-size: cover;
   border-radius: 50%;
   border: 1px solid ${(props) => props.theme.colors.gray400};
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15);
+  &:hover {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+  }
 `;
 
 export default function AiPage({ data }: PageProps<Queries.AiListQuery>) {
@@ -72,6 +84,11 @@ export default function AiPage({ data }: PageProps<Queries.AiListQuery>) {
   return (
     <Layout>
       <ContentContainer title={SectionTitle(Category.AI)}>
+        <ContentExplain
+          icon={<img src={chatGptSvg} alt={`chat-gpt`} width={25} />}
+          title={`<span>AI</span> ${SectionTitle(Category.AI)}`}
+          description={`AI 때문에 요즘 정신 못차리고 있습니다. 급변하는 세상에 동참하려면 AI 와 좀 친해져야 할 것 같아요.`}
+        />
         <PostList posts={posts as any} />
         <GptsButton onClick={() => setIsViewGpts((prev) => !prev)}>
           <FontAwesomeIcon

@@ -4,11 +4,17 @@ import Layout from '../../components/Layout';
 import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';
 import styled from 'styled-components';
-import { Category, SectionTitle } from '../../constants/common.constant';
+import {
+  Category,
+  SectionIcon,
+  SectionTitle,
+} from '../../constants/common.constant';
 import bubbleImage from '../../assets/images/bubbleio.png';
 import yupQuizImage from '../../assets/images/yup-quiz.png';
 import mozartPortalImage from '../../assets/images/mozart-portal.png';
 import newIdeaImage from '../../assets/images/new-idea.png';
+import ContentExplain from '../../components/ContentExplain';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const LabListContainer = styled.div`
   display: flex;
@@ -82,6 +88,11 @@ export default function LabPage() {
   return (
     <Layout>
       <ContentContainer title={SectionTitle(Category.LAB)}>
+        <ContentExplain
+          icon={<FontAwesomeIcon icon={SectionIcon(Category.LAB)} />}
+          title={`<span>LAB.</span> ${SectionTitle(Category.LAB)}`}
+          description={`해야할 것도 많고 알아야할 것도 많고 하고싶은 것도 많네요. 해야지 하고 맘 속에만 담아두었던 것들을 꺼내어 하나씩 시도해 봅니다.`}
+        />
         <LabListContainer>
           <LabList>
             <Link to={`/ai`}>
