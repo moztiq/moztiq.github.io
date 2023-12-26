@@ -6,7 +6,6 @@ import { IQuoteDetailProps, IQuoteProps } from '../../interface/interfaces';
 
 const Quote = styled.li`
   padding: 3rem 2rem 2rem 2rem;
-  margin-top: 50px;
   background-color: ${(props) => props.theme.colors.white};
   box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.05);
   border-radius: 0.5rem;

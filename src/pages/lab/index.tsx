@@ -26,11 +26,12 @@ const LabList = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 30px;
+  grid-row-gap: 30px;
   width: 85%;
   a {
     text-decoration: none;
   }
-  padding-bottom: 50px;
+  margin: 50px 0;
 
   @media screen and (max-width: 1024px) {
     width: 95%;
@@ -48,7 +49,6 @@ const Lab = styled.li<{ active?: boolean }>`
   display: flex;
   align-items: center;
   padding: 2rem;
-  margin-top: 50px;
   background-color: ${(props) =>
     props.active ? props.theme.colors.white : props.theme.colors.gray50};
   box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.05);

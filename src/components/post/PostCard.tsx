@@ -34,6 +34,10 @@ const Title = styled.h1`
   padding: 5px 0;
 
   @media screen and (max-width: 768px) {
+    font-size: 1.3rem;
+  }
+
+  @media screen and (max-width: 430px) {
     font-size: 1.1rem;
   }
 `;

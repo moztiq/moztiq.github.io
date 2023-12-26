@@ -12,7 +12,7 @@ const DetailWrapper = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${(props) => props.theme.colors.gray100};
-  margin: 100px 0;
+  margin: 50px 0;
 `;
 
 const QuoteDetailWrapper = styled.div<IQuoteDetailProps>`
@@ -54,7 +54,6 @@ const GisqusWrapper = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  font-family: 'Pretendard', serif;
 `;
 
 const Category = styled.div<IQuoteDetailProps>`
@@ -86,6 +85,14 @@ const Title = styled.div`
   text-align: center;
   font-size: 1.5rem;
   color: ${(props) => props.theme.colors.gray800};
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.3rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `;
 
 interface ILongContentProps {
@@ -97,6 +104,10 @@ const LongContent = styled.div<ILongContentProps>`
   margin-top: ${(props) => (props.title ? '50px' : '20px')};
   font-size: 1.2rem;
   line-height: 2;
+
+  @media screen and (max-width: 430px) {
+    font-size: 1rem;
+  }
 `;
 
 const Author = styled.div`
@@ -105,6 +116,14 @@ const Author = styled.div`
   margin-top: 50px;
   font-size: 1.1rem;
   color: ${(props) => props.theme.colors.gray500};
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
+
+  @media screen and (max-width: 430px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const Blink = styled(motion.div)`

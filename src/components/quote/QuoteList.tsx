@@ -7,11 +7,12 @@ const QuoteListWrapper = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 30px;
+  grid-row-gap: 50px;
   width: 85%;
   a {
     text-decoration: none;
   }
-  padding-bottom: 50px;
+  margin: 50px 0;
 
   @media screen and (max-width: 1024px) {
     width: 95%;

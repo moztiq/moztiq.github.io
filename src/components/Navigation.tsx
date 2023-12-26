@@ -24,8 +24,8 @@ const MenuWrapper = styled.nav`
   box-shadow: 0 1px 15px rgba(0, 0, 0, 0.25);
 
   @media screen and (max-width: 768px) {
-    width: 70%;
-    min-width: 70%;
+    width: 60%;
+    min-width: 60%;
     left: -100%;
     transition: left 0.3s ease-in-out;
   }
@@ -52,6 +52,7 @@ const IntroTitle = styled(motion.div)`
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 430px) {
+    font-size: 1.3rem;
     margin-top: 80px;
   }
 `;
@@ -66,6 +67,7 @@ const IntroDescription = styled(motion.div)`
   margin: 15px 0 100px 0;
 
   @media screen and (max-width: 430px) {
+    font-size: 0.7rem;
     margin-bottom: 80px;
   }
 `;

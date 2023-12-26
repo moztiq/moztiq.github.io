@@ -21,8 +21,12 @@ const Title = styled.h1`
   justify-content: center;
   align-items: center;
 
+  @media screen and (max-width: 768px) {
+    font-size: 1.3rem;
+  }
+
   @media screen and (max-width: 430px) {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 `;
 
