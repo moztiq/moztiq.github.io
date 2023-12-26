@@ -43,7 +43,7 @@ const config: GatsbyConfig = {
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `standalone`,
-        icon: `src/assets/images/moztiq-logo.png`,
+        icon: `src/assets/images/moztiq-logo.jpg`,
       },
     },
     {
