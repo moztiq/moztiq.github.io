@@ -37,9 +37,17 @@ const QuoteBox = styled.div`
 const Quote = styled.div`
   font-size: 1.8rem;
   font-weight: bold;
-  line-height: 1.8;
   text-align: justify;
   letter-spacing: 2px;
+
+  div:last-child {
+    margin: 50px 0;
+    font-size: 1.2rem;
+  }
+  div:first-child {
+    margin: 50px 0;
+    font-size: 1.6rem;
+  }
 
   @media screen and (max-width: 430px) {
     font-size: 1.6rem;
@@ -50,6 +58,7 @@ const Quote = styled.div`
 
   @media screen and (max-width: 768px) {
     div:last-child {
+      font-size: 1.2rem;
       display: none;
     }
   }
