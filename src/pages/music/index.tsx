@@ -1,17 +1,16 @@
 import * as React from 'react';
-import type { PageProps } from 'gatsby';
-import { graphql } from 'gatsby';
+import { graphql, PageProps } from 'gatsby';
 import Layout from '../../components/Layout';
 import PostList from '../../components/post/PostList';
 import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';
 import { Category, SectionTitle } from '../../constants/common.constant';
 
-export default function AiPage({ data }: PageProps<Queries.AiListQuery>) {
+export default function MusicPage({ data }: PageProps<Queries.MusicListQuery>) {
   const posts = data.allContentfulMoztiqBlog.nodes;
   return (
     <Layout>
-      <ContentContainer title={SectionTitle(Category.AI)}>
+      <ContentContainer title={SectionTitle(Category.MUSIC)}>
         <PostList posts={posts as any} />
       </ContentContainer>
     </Layout>
@@ -19,9 +18,9 @@ export default function AiPage({ data }: PageProps<Queries.AiListQuery>) {
 }
 
 export const query = graphql`
-  query AiList {
+  query MusicList {
     allContentfulMoztiqBlog(
-      filter: { category: { eq: "ai" } }
+      filter: { category: { eq: "music" } }
       sort: { createdAt: DESC }
     ) {
       nodes {
@@ -46,5 +45,7 @@ export const query = graphql`
 `;
 
 export const Head = () => {
-  return <Seo title={'AI SECTION'} description={'AI SECTION'} url={`/ai`} />;
+  return (
+    <Seo title={'MUSIC SECTION'} description={'MUSIC SECTION'} url={`/music`} />
+  );
 };

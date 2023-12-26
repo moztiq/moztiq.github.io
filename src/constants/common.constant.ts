@@ -2,10 +2,10 @@ import {
   faBookOpen,
   faFlask,
   faHammer,
-  faMusic,
   faQuoteLeft,
   faSmile,
 } from '@fortawesome/free-solid-svg-icons';
+import { faItunesNote } from '@fortawesome/free-brands-svg-icons';
 
 export enum Category {
   ABOUT = 'about',
@@ -21,7 +21,7 @@ export const SectionTitle = (category: string) => {
   if (category == Category.ABOUT) {
     return '나, MOZTIQ';
   } else if (category == Category.MUSIC) {
-    return '음악은 나의 열정';
+    return '음악은 나의 영혼';
   } else if (category == Category.BOOK) {
     return '책은 나의 힘';
   } else if (category == Category.TECH) {
@@ -37,7 +37,7 @@ export const SectionTitle = (category: string) => {
 };
 export const SectionIcon = (category: string) => {
   if (category == Category.MUSIC) {
-    return faMusic;
+    return faItunesNote;
   } else if (category == Category.BOOK) {
     return faBookOpen;
   } else if (category == Category.TECH) {

@@ -1,18 +1,18 @@
 import * as React from 'react';
-import { graphql, Link, PageProps } from 'gatsby';
+import { Link } from 'gatsby';
 import Layout from '../../components/Layout';
 import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';
 import styled from 'styled-components';
-import QuoteList from '../../components/quote/QuoteList';
 import { Category, SectionTitle } from '../../constants/common.constant';
+import bubbleImage from '../../assets/images/bubbleio.png';
 
 const LabListContainer = styled.div`
   display: flex;
   justify-content: center;
 `;
 
-const LabListWrapper = styled.ul`
+const LabList = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 30px;
@@ -34,12 +34,13 @@ const LabListWrapper = styled.ul`
   }
 `;
 
-const Lab = styled.li`
+const Lab = styled.li<{ active?: boolean }>`
   display: flex;
   align-items: center;
   padding: 2rem;
   margin-top: 50px;
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: ${(props) =>
+    props.active ? props.theme.colors.white : props.theme.colors.gray50};
   box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.05);
   border-radius: 0.5rem;
   transition: all 0.2s;
@@ -47,13 +48,30 @@ const Lab = styled.li`
   font-weight: 500;
   color: ${(props) => props.theme.colors.black};
 
-  span {
-    margin-left: 1rem;
-  }
-
   &:hover {
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: ${(props) =>
+      props.active ? '0 2px 5px 0 rgba(0, 0, 0, 0.15)' : ''};
   }
+`;
+
+const LabTitle = styled.div`
+  margin-left: 1rem;
+  span.sub {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: ${(props) => props.theme.colors.gray400};
+    display: block;
+  }
+`;
+
+const LabIcon = styled.div<{ source: string }>`
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  background-image: url(${(props) => props.source});
+  background-size: cover;
+  border-radius: 50%;
+  border: 1px solid ${(props) => props.theme.colors.gray400};
 `;
 
 export default function LabPage() {
@@ -61,9 +79,9 @@ export default function LabPage() {
     <Layout>
       <ContentContainer title={SectionTitle(Category.LAB)}>
         <LabListContainer>
-          <LabListWrapper>
+          <LabList>
             <Link to={`/ai`}>
-              <Lab>
+              <Lab active>
                 <svg
                   width="30"
                   height="30"
@@ -81,10 +99,33 @@ export default function LabPage() {
                     fill="currentColor"
                   ></path>
                 </svg>
-                <span>{SectionTitle(Category.AI)}</span>
+                <LabTitle>
+                  <span>{SectionTitle(Category.AI)}</span>
+                  <span className="sub">
+                    장난 좀 치다보면 AI 도 내 맘을 이해할 날이 오겠지
+                  </span>
+                </LabTitle>
               </Lab>
             </Link>
-          </LabListWrapper>
+            <Lab>
+              <LabIcon
+                source={
+                  'https://yt3.googleusercontent.com/wn5GB74oLNBpY2N_mNoKIBDWCN8q6dl26fQI0djNZjhdJK2w1lcAlEzZWyqWIhUs5cEtBTd8f_o=s176-c-k-c0x00ffffff-no-rj'
+                }
+              />
+              <LabTitle>
+                <span>Mozart Portal</span>
+                <span className="sub">Coming Soon</span>
+              </LabTitle>
+            </Lab>
+            <Lab>
+              <LabIcon source={bubbleImage} />
+              <LabTitle>
+                <span>No Code & Automation</span>
+                <span className="sub">Coming soon</span>
+              </LabTitle>
+            </Lab>
+          </LabList>
         </LabListContainer>
       </ContentContainer>
     </Layout>

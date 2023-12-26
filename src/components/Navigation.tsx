@@ -7,6 +7,8 @@ import { IMobileProps } from '../interface/interfaces';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { SectionIcon, SectionTitle } from '../constants/common.constant';
+import gatsbyImage from '../assets/images/gatsby.png';
+import graphqlSvg from '../assets/images/graphql.svg';
 
 const MenuWrapper = styled.nav`
   width: 25%;
@@ -89,7 +91,7 @@ const MenuItem = styled(motion.li)`
   box-shadow: 0 1px 15px rgba(255, 255, 255, 0.5);
 
   @media screen and (max-width: 430px) {
-    font-size: 1.25rem;
+    font-size: 1rem;
     height: 40px;
   }
 `;
@@ -109,7 +111,7 @@ const YoutubeIcon = styled(motion.svg)`
 const CopyRight = styled.div`
   width: 100%;
   position: absolute;
-  color: ${(props) => props.theme.colors.light};
+  color: ${(props) => props.theme.colors.black};
   bottom: 30px;
   height: 50px;
   display: flex;
@@ -204,7 +206,57 @@ function Navigation({ isViewMobileNavigation }: IMobileProps) {
           </Fragment>
         ))}
       </MenuList>
-      <CopyRight>Designed by MOZTIQ</CopyRight>
+      <CopyRight>
+        Powered by
+        <a href="https://www.gatsbyjs.com/" target="_blank">
+          <img
+            src={gatsbyImage}
+            alt={`gatsby`}
+            width="20"
+            style={{ marginLeft: '10px', marginRight: '8px' }}
+          />
+        </a>
+        <a href="https://graphql.org/" target="_blank">
+          <img
+            src={graphqlSvg}
+            alt={`graphql`}
+            width="20"
+            style={{ marginRight: '8px' }}
+          />
+        </a>
+        <a href="https://www.contentful.com/" target="_blank">
+          <svg viewBox="0 0 21 24" aria-hidden="true" role="img" width="18">
+            <g transform="translate(4 3)">
+              <path
+                fill="#fae501"
+                d="M3.3 13.7c-1.2-1.2-2-2.9-2-4.7S2 5.5 3.2 4.3c1-1 1-2.7 0-3.8-1-1-2.6-1-3.6 0-2 2.2-3.3 5.2-3.3 8.5s1.3 6.3 3.4 8.5c1 1 2.6 1 3.6 0 .9-1.1.9-2.7 0-3.8z"
+              ></path>
+              <path
+                fill="#4fb5e1"
+                d="M3.3 4.3c1.2-1.3 2.8-2 4.6-2s3.4.8 4.6 1.9c1 1.1 2.6 1.1 3.6 0 1-1 1-2.7 0-3.8C13.9-1.6 11-3 7.8-3S1.7-1.6-.4.5c-1 1-1 2.7 0 3.8 1 .9 2.6.9 3.7 0z"
+              ></path>
+              <path
+                fill="#f05751"
+                d="M12.4 13.7c-1.2 1.3-2.8 2-4.6 2-1.8 0-3.4-.8-4.6-2-1-1.1-2.6-1.1-3.6 0-1 1-1 2.7 0 3.8 2.1 2.1 5 3.5 8.2 3.5s6.1-1.4 8.2-3.5c1-1 1-2.7 0-3.8-1-1-2.6-1-3.6 0z"
+              ></path>
+              <ellipse
+                cx="1.4"
+                cy="2.4"
+                fill="#0681b6"
+                rx="2.5"
+                ry="2.6"
+              ></ellipse>
+              <ellipse
+                cx="1.4"
+                cy="15.6"
+                fill="#cd4739"
+                rx="2.5"
+                ry="2.6"
+              ></ellipse>
+            </g>
+          </svg>
+        </a>
+      </CopyRight>
     </MenuWrapper>
   );
 }
