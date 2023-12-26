@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { IQuoteDetailProps, IQuoteProps } from '../../interface/interfaces';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Gisqus from '../post/Gisqus';
+import QuoteAnimation from './QuoteAnimation';
 
 const DetailWrapper = styled.div`
   width: 100%;
@@ -129,35 +130,6 @@ const cursorVariants = {
 
 export default function QuoteDetail(props: { data: IQuoteProps }) {
   const { data: quote } = props;
-  const contentArr = quote?.content?.childMarkdownRemark.html
-    .split('\n')
-    .map((str) => {
-      return str;
-    })
-    .join('<br/>')
-    .split(/(<[^>]+>)/g)
-    .reduce((acc, curr) => {
-      if (/(<[^>]+>)/g.test(curr)) {
-        return [...acc, curr];
-      }
-      return acc.concat(curr.split(''));
-    }, [] as string[]);
-
-  const [displayedTextArr, setDisplayedTextArr] = useState<string[]>([]);
-
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      if (displayedTextArr.length == contentArr.length) return;
-      const newArr = contentArr?.slice(0, displayedTextArr.length + 1);
-      setDisplayedTextArr(newArr);
-    }, 100);
-    if (displayedTextArr.length == contentArr.length) {
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-    }
-    return () => clearTimeout(timeoutId);
-  }, [displayedTextArr, contentArr]);
 
   return (
     <>
@@ -169,16 +141,7 @@ export default function QuoteDetail(props: { data: IQuoteProps }) {
           <ContentWrapper>
             {quote.title && <Title>{quote.title}</Title>}
             <LongContent title={quote.title}>
-              <AnimatePresence>
-                <motion.span
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  dangerouslySetInnerHTML={{
-                    __html: displayedTextArr.join('') || '',
-                  }}
-                />
-              </AnimatePresence>
+              <QuoteAnimation text={quote?.content?.childMarkdownRemark.html} />
               {/*<Blink variants={cursorVariants} animate="blinking" />*/}
             </LongContent>
             <Author>- {quote.author}</Author>

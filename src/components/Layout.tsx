@@ -12,7 +12,6 @@ const Main = styled.main<IMobileProps>`
   font-family: 'Pretendard', sans-serif;
   position: fixed;
   background-color: ${(props) => props.theme.colors.background};
-
   @media screen and (max-width: 768px) {
     flex-direction: column;
     position: ${(props) =>
