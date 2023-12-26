@@ -179,7 +179,7 @@ function Navigation({ isViewMobileNavigation }: IMobileProps) {
           <FontAwesomeIcon
             icon={faQuestionCircle}
             size="xs"
-            color={'#325eb6bb'}
+            color={'#02609f'}
           />
         </Link>
       </IntroTitle>

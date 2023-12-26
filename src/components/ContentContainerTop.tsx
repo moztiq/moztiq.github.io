@@ -16,7 +16,7 @@ const TopWrapper = styled.div`
 
 const Title = styled.h1`
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 1px;
   padding-right: 35px;
 `;

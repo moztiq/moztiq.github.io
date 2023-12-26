@@ -1,19 +1,15 @@
 import * as React from 'react';
+import { useState } from 'react';
 import type { PageProps } from 'gatsby';
 import { graphql } from 'gatsby';
 import Layout from '../../components/Layout';
 import PostList from '../../components/post/PostList';
 import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';
-import {
-  Category,
-  SectionIcon,
-  SectionTitle,
-} from '../../constants/common.constant';
+import { Category, SectionTitle } from '../../constants/common.constant';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesRight, faAnglesLeft } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { faAnglesLeft, faAnglesRight } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import ContentExplain from '../../components/ContentExplain';
 import chatGptSvg from '../../assets/images/chat-gpt.svg';
@@ -71,8 +67,16 @@ const GptIcon = styled.div<{ source: string }>`
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15);
   &:hover {
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    transform: scale(1.1);
-    transition: all 0.3s ease-in-out;
+    animation: bounce 2s infinite;
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
   }
 `;
 

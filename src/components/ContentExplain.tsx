@@ -6,7 +6,6 @@ const TopBackground = styled.div`
   justify-content: center;
   height: 200px;
   background-color: ${(props) => props.theme.colors.gray200};
-  border-bottom: 1px solid ${(props) => props.theme.colors.gray300};
   background-size: cover;
 `;
 
