@@ -6,6 +6,9 @@ import Seo from '../../components/Seo';
 import styled from 'styled-components';
 import { Category, SectionTitle } from '../../constants/common.constant';
 import bubbleImage from '../../assets/images/bubbleio.png';
+import yupQuizImage from '../../assets/images/yup-quiz.png';
+import mozartPortalImage from '../../assets/images/mozart-portal.png';
+import newIdeaImage from '../../assets/images/new-idea.png';
 
 const LabListContainer = styled.div`
   display: flex;
@@ -46,7 +49,8 @@ const Lab = styled.li<{ active?: boolean }>`
   transition: all 0.2s;
   font-size: 1.35rem;
   font-weight: 500;
-  color: ${(props) => props.theme.colors.black};
+  color: ${(props) =>
+    props.active ? props.theme.colors.black : props.theme.colors.gray500};
 
   &:hover {
     box-shadow: ${(props) =>
@@ -108,11 +112,7 @@ export default function LabPage() {
               </Lab>
             </Link>
             <Lab>
-              <LabIcon
-                source={
-                  'https://yt3.googleusercontent.com/wn5GB74oLNBpY2N_mNoKIBDWCN8q6dl26fQI0djNZjhdJK2w1lcAlEzZWyqWIhUs5cEtBTd8f_o=s176-c-k-c0x00ffffff-no-rj'
-                }
-              />
+              <LabIcon source={mozartPortalImage} />
               <LabTitle>
                 <span>Mozart Portal</span>
                 <span className="sub">Coming Soon</span>
@@ -123,6 +123,20 @@ export default function LabPage() {
               <LabTitle>
                 <span>No Code & Automation</span>
                 <span className="sub">Coming soon</span>
+              </LabTitle>
+            </Lab>
+            <Lab>
+              <LabIcon source={yupQuizImage} />
+              <LabTitle>
+                <span>Yup Quiz Application</span>
+                <span className="sub">Coming soon</span>
+              </LabTitle>
+            </Lab>
+            <Lab>
+              <LabIcon source={newIdeaImage} />
+              <LabTitle>
+                <span>Unknown</span>
+                <span className="sub">Next what ?</span>
               </LabTitle>
             </Lab>
           </LabList>
