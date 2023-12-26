@@ -37,36 +37,17 @@ const QuoteBox = styled.div`
 const Quote = styled.div`
   font-size: 1.8rem;
   font-weight: bold;
-  text-align: justify;
+  text-align: center;
   letter-spacing: 2px;
-
-  div:last-child {
-    margin: 50px 0;
-    font-size: 1.2rem;
-  }
-  div:first-child {
-    margin: 50px 0;
-    font-size: 1.6rem;
-  }
 
   @media screen and (max-width: 430px) {
     font-size: 1.6rem;
-    div {
-      display: none;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    div:last-child {
-      font-size: 1.2rem;
-      display: none;
-    }
   }
 `;
 
 const Author = styled.div`
-  margin-top: 40px;
-  text-align: right;
+  margin-top: 100px;
+  text-align: center;
   font-weight: bold;
   font-size: 1.2rem;
   letter-spacing: 2px;
@@ -82,11 +63,9 @@ const IndexPage: React.FC<PageProps> = () => {
       <Content>
         <QuoteBox>
           <Quote>
-            <QuoteAnimation
-              text={`모두 개안심꺼?          <div>안 개안심꺼?          </div><div>저는 개안심더.</div>`}
-            />
+            <QuoteAnimation text={`모두들 안녕하십니까?`} />
           </Quote>
-          <Author>- MOZTIQ</Author>
+          <Author>- MOZTIQ -</Author>
         </QuoteBox>
       </Content>
     </Layout>
