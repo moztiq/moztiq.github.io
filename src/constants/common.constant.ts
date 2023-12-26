@@ -29,7 +29,7 @@ export const SectionTitle = (category: string) => {
   } else if (category == Category.QUOTE) {
     return '짧은 글, 긴 여운';
   } else if (category == Category.AI) {
-    return 'AI 와 춤을';
+    return 'Dances with AI';
   } else if (category == Category.LAB) {
     return '실험실';
   }

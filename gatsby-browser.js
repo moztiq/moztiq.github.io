@@ -1,4 +1,5 @@
 import './src/assets/css/reset.css';
+import 'tippy.js/dist/tippy.css';
 // import 'prism-themes/themes/prism-cb.css';
 // import 'prism-themes/themes/prism-atom-dark.css';
 // import 'prism-themes/themes/prism-base16-ateliersulphurpool.light.min.css';
