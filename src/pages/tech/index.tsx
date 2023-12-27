@@ -6,6 +6,7 @@ import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';
 import {
   Category,
+  SectionDescription,
   SectionIcon,
   SectionTitle,
 } from '../../constants/common.constant';
@@ -20,7 +21,7 @@ export default function TechPage({ data }: PageProps<Queries.TechListQuery>) {
         <ContentExplain
           icon={<FontAwesomeIcon icon={SectionIcon(Category.TECH)} />}
           title={`<span>TECH</span> ${SectionTitle(Category.TECH)}`}
-          description={`기술에 대한 깊이가 부족해 항상 허덕입니다. 기록해두면 조금 나아지지 않을까 싶네요.`}
+          description={SectionDescription(Category.TECH)}
         />
         <PostList posts={posts as any} />
       </ContentContainer>
@@ -57,6 +58,10 @@ export const query = graphql`
 
 export const Head = () => {
   return (
-    <Seo title={'TECH SECTION'} description={'TECH SECTION'} url={`/tech`} />
+    <Seo
+      title={SectionTitle(Category.TECH)}
+      description={SectionDescription(Category.TECH)}
+      url={`/tech`}
+    />
   );
 };

@@ -3,7 +3,11 @@ import type { PageProps } from 'gatsby';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 import ContentContainer from '../components/ContentContainer';
-import { Category, SectionTitle } from '../constants/common.constant';
+import {
+  Category,
+  SectionDescription,
+  SectionTitle,
+} from '../constants/common.constant';
 import styled from 'styled-components';
 import meImage from '../assets/images/me.jpg';
 
@@ -104,8 +108,7 @@ const AboutPage: React.FC<PageProps> = () => {
                 <span>TIQ</span>ue
               </MoztiqTitle>
               <MoztiqDescription>
-                MOZTIQ 은 Mozart 가 비창 (Pathetique) 이라는 제목의 곡을
-                작곡했다면 어땠을까 라고 생각하며 만든 닉네임입니다.
+                {SectionDescription(Category.ABOUT)}
               </MoztiqDescription>
               <ProfileImage />
             </MoztiqWrapper>
@@ -156,8 +159,8 @@ export default AboutPage;
 export const Head = () => {
   return (
     <Seo
-      title={'About'}
-      description={SectionTitle(Category.ABOUT)}
+      title={SectionTitle(Category.ABOUT)}
+      description={SectionDescription(Category.ABOUT)}
       url={`/about`}
     />
   );

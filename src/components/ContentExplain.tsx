@@ -21,22 +21,25 @@ const ContentExplainWrapper = styled.div`
 const ContentExplainTitleWrapper = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
 `;
 
 const IconWrapper = styled.div`
-  margin-right: 30px;
-  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  left: -40px;
+  font-size: 1.3rem;
   color: ${(props) => props.theme.colors.accentColor};
 `;
 
 const ContentExplainTitle = styled.span`
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: ${(props) => props.theme.colors.gray500};
   letter-spacing: 1px;
   span {
     color: ${(props) => props.theme.colors.gray800};
     font-weight: bold;
-    font-size: 40px;
+    font-size: 2.5rem;
   }
   span.accent {
     margin: 0 20px;
@@ -44,10 +47,10 @@ const ContentExplainTitle = styled.span`
     font-size: 28px;
   }
 
-  @media screen and (max-width: 768px) {
-    font-size: 18px;
+  @media screen and (max-width: 430px) {
+    font-size: 1.1rem;
     span {
-      font-size: 28px;
+      font-size: 1.8rem;
     }
   }
 `;

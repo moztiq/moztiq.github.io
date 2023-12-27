@@ -23,7 +23,7 @@ export default function QuoteAnimation(props: { text: string }) {
       if (displayedTextArr.length == contentArr.length) return;
       const newArr = contentArr?.slice(0, displayedTextArr.length + 1);
       setDisplayedTextArr(newArr);
-    }, 100);
+    }, 150);
     if (displayedTextArr.length == contentArr.length) {
       if (timeoutId) {
         clearTimeout(timeoutId);

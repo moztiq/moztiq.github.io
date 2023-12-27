@@ -6,6 +6,7 @@ import Seo from '../../components/Seo';
 import styled from 'styled-components';
 import {
   Category,
+  SectionDescription,
   SectionIcon,
   SectionTitle,
 } from '../../constants/common.constant';
@@ -92,7 +93,7 @@ export default function LabPage() {
         <ContentExplain
           icon={<FontAwesomeIcon icon={SectionIcon(Category.LAB)} />}
           title={`<span>LAB.</span> ${SectionTitle(Category.LAB)}`}
-          description={`해야할 것도 많고 알아야할 것도 많고 하고싶은 것도 많네요. 해야지 하고 맘 속에만 담아두었던 것들을 꺼내어 하나씩 시도해 봅니다.`}
+          description={SectionDescription(Category.LAB)}
         />
         <LabListContainer>
           <LabList>
@@ -102,7 +103,7 @@ export default function LabPage() {
                 <LabTitle>
                   <span>{SectionTitle(Category.AI)}</span>
                   <span className="sub">
-                    장난 좀 치다보면 AI 도 내 맘을 이해할 날이 오겠지
+                    함께 춤추다보면 서로를 이해할 날이 오겠지
                   </span>
                 </LabTitle>
               </Lab>
@@ -143,5 +144,11 @@ export default function LabPage() {
 }
 
 export const Head = () => {
-  return <Seo title={'LAB SECTION'} description={'LAB SECTION'} url={`/lab`} />;
+  return (
+    <Seo
+      title={SectionTitle(Category.LAB)}
+      description={SectionDescription(Category.LAB)}
+      url={`/lab`}
+    />
+  );
 };

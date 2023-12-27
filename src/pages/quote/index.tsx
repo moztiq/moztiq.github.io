@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import QuoteList from '../../components/quote/QuoteList';
 import {
   Category,
+  SectionDescription,
   SectionIcon,
   SectionTitle,
 } from '../../constants/common.constant';
@@ -26,7 +27,7 @@ export default function QuotePage({ data }: PageProps<Queries.QuoteListQuery>) {
         <ContentExplain
           icon={<FontAwesomeIcon icon={SectionIcon(Category.QUOTE)} />}
           title={`<span>QUOTE</span> ${SectionTitle(Category.QUOTE)}`}
-          description={`때론 짧은 시 한편, 누군가의 한마디, 책 속의 짧은 글귀만으로 가슴이 벅찰 때가 있습니다. 그런 글을 찾아 모아두고 싶었어요.`}
+          description={SectionDescription(Category.QUOTE)}
         />
         <QuoteListContainer>
           <QuoteList quotes={quotes as any} />
@@ -58,6 +59,10 @@ export const query = graphql`
 
 export const Head = () => {
   return (
-    <Seo title={'QUOTE SECTION'} description={'QUOTE SECTION'} url={`/quote`} />
+    <Seo
+      title={SectionTitle(Category.QUOTE)}
+      description={SectionDescription(Category.QUOTE)}
+      url={`/quote`}
+    />
   );
 };

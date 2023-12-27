@@ -43,17 +43,14 @@ const Quote = styled.div`
   @media screen and (max-width: 430px) {
     font-size: 1.6rem;
   }
-`;
 
-const Author = styled.div`
-  margin-top: 100px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.2rem;
-  letter-spacing: 2px;
+  span .author {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
 
-  @media screen and (max-width: 430px) {
-    font-size: 1.1rem;
+    @media screen and (max-width: 430px) {
+      font-size: 1.1rem;
+    }
   }
 `;
 
@@ -63,9 +60,10 @@ const IndexPage: React.FC<PageProps> = () => {
       <Content>
         <QuoteBox>
           <Quote>
-            <QuoteAnimation text={`모두들 안녕하십니까?`} />
+            <QuoteAnimation
+              text={`모두들 안녕하십니까?\n\n\n<span class="author">- MOZTIQ -</span>`}
+            />
           </Quote>
-          <Author>- MOZTIQ -</Author>
         </QuoteBox>
       </Content>
     </Layout>
