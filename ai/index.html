@@ -187,13 +187,13 @@ data-styled.g76[id="ai__GptIcon-sc-kgstln-2"]{content:"gZpoOR,bGjmPG,jVugzI,dWAP
 Chat GPT 를 활용해 연하장(새해 인사가 들어간 이미지)을 만드는 기술블로그의 포스팅을 보고 저도 한번 똑같이 따라해봤습니다. 역시 전문가들은 시도 자체가 다르군요. 존경합니다.
 
 첫번째 프롬프트를 전달합니다.
-Prompt: use dall.e: draw korean ink painting style landscape image, sephia tone, minimalism
+Use Dall.E: draw korean ink painting style landscape image, sephia tone, minimalism
 
-두번째 프롬프트를 전달합니다. 몇 번 분석실패하더니 아래와 같은 결과를 냅니다.
-Prompt: use data analysis: add text &#x27;새해 복 많이 받으세요&#x27; on top 20% of the generated image above in black, center in horizontal alignment. use the attached font.
+조선일보에서 제공하는 조선100년체 폰트를 파일로 첨부하며 두번째 프롬프트를 전달합니다. 몇 번 분석실패하더니 아래와 같은 결과를 냅니다.
+Use Data Analysis: add text &#x27;새해 복 많이 받으세요&#x27; on top 20% of the generated image above in black, center in horizontal alignment. use the attached font.
 
 
-아래는 ChatGPT가 데이터 분석에 사용된 코드입니다.
+아래는 ChatGPT가 데이터 분석에 사용한 코드입니다.
 # Text to be added
 text = &quot;새해 복 많이 받으세요&quot;
 
@@ -215,7 +215,8 @@ draw.text((x, y), text, font=font, fill=&quot;black&quot;)
 # Save the modified image
 modified_image_path = &#x27;/mnt/data/modified_korean_ink_painting_with_text.png&#x27;
 image.save(modified_image_path)
-modified_image_path</p><ul class="PostCard__TagList-sc-15ontas-8 daaoKY"><li class="PostCard__Tag-sc-15ontas-9 kRQlcE">#<!-- -->ChatGPT</li><li class="PostCard__Tag-sc-15ontas-9 kRQlcE">#<!-- -->연하장</li></ul></div></div></li></a><a href="/post/sejong-macbook-fiction-chat-gpt/"><li class="PostCard__Post-sc-15ontas-0 kxoVQc"><h1 class="PostCard__Title-sc-15ontas-1 jWurnp">세종대왕 맥북 던짐 사건의 전말 (feat. Chat GPT)</h1><div class="PostCard__PublishDateLine-sc-15ontas-2 evKqha"><div class="PostCard__PublishDate-sc-15ontas-3 kVvEgq"><time dateTime="1703430000000">Dec 24, 2023</time></div></div><div class="PostCard__ContentWrapper-sc-15ontas-4 jOhkEK"><div url="https://images.ctfassets.net/vpyfljks33op/2T1XQz8wms5oq6qOZLkaAz/699b049ae40827f4b92411d93b0df37e/DALL_E_2023-12-25_12.12.52_-_A_lively_and_imaginative_illustration_depicting_a_young__cute_boy_representing_a_youthful_King_.png" class="PostCard__HeaderImage-sc-15ontas-5 bIRixJ"></div><div class="PostCard__ContentTextWrapper-sc-15ontas-6 dytIsl"><p class="PostCard__ContentText-sc-15ontas-7 jTwav">문득 누군가가 Chat GPT 에게 했던 질문이 생각이 나 이제는 뭐라고 하는지 저도 한번 던져 봅니다.
+modified_image_path
+Dall.E 에게 한글과 관련한 요청을 하면 제대로 표시하지 못하는 문제가 있었는데 이런 식으로 처리할 수도 있군요. 신기한 녀석입니다.</p><ul class="PostCard__TagList-sc-15ontas-8 daaoKY"><li class="PostCard__Tag-sc-15ontas-9 kRQlcE">#<!-- -->ChatGPT</li><li class="PostCard__Tag-sc-15ontas-9 kRQlcE">#<!-- -->연하장</li></ul></div></div></li></a><a href="/post/sejong-macbook-fiction-chat-gpt/"><li class="PostCard__Post-sc-15ontas-0 kxoVQc"><h1 class="PostCard__Title-sc-15ontas-1 jWurnp">세종대왕 맥북 던짐 사건의 전말 (feat. Chat GPT)</h1><div class="PostCard__PublishDateLine-sc-15ontas-2 evKqha"><div class="PostCard__PublishDate-sc-15ontas-3 kVvEgq"><time dateTime="1703430000000">Dec 24, 2023</time></div></div><div class="PostCard__ContentWrapper-sc-15ontas-4 jOhkEK"><div url="https://images.ctfassets.net/vpyfljks33op/2T1XQz8wms5oq6qOZLkaAz/699b049ae40827f4b92411d93b0df37e/DALL_E_2023-12-25_12.12.52_-_A_lively_and_imaginative_illustration_depicting_a_young__cute_boy_representing_a_youthful_King_.png" class="PostCard__HeaderImage-sc-15ontas-5 bIRixJ"></div><div class="PostCard__ContentTextWrapper-sc-15ontas-6 dytIsl"><p class="PostCard__ContentText-sc-15ontas-7 jTwav">문득 누군가가 Chat GPT 에게 했던 질문이 생각이 나 이제는 뭐라고 하는지 저도 한번 던져 봅니다.
 이제는 제대로 답하네요. 내친 김에 그 내용으로 단편소설 하나 만들어달라고 해봅니다.
 GPT 의 답변
 
