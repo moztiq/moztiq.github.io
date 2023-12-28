@@ -5,10 +5,10 @@ import { IPostProps } from '../../interface/interfaces';
 import Gisqus from './Gisqus';
 
 const PostDetailContentWrapper = styled.div`
-  width: 80%;
+  width: 75%;
 
   @media screen and (max-width: 430px) {
-    width: 90%;
+    width: 85%;
   }
 `;
 
@@ -22,11 +22,11 @@ const Title = styled.h1`
   align-items: center;
 
   @media screen and (max-width: 768px) {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   @media screen and (max-width: 430px) {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 `;
 
