@@ -1,5 +1,5 @@
 import Moment from 'react-moment';
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { IPostProps } from '../../interface/interfaces';
 import Gisqus from './Gisqus';
@@ -181,6 +181,12 @@ const GisqusWrapper = styled.div`
 `;
 
 export default function PostContent({ post }: { post: IPostProps }) {
+  useEffect(() => {
+    document.querySelectorAll('a').forEach(function (link) {
+      link.setAttribute('target', '_blank');
+    });
+  }, []);
+
   return (
     <PostDetailContentWrapper>
       <Title>{post?.title}</Title>
