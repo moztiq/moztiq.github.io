@@ -13,7 +13,9 @@ import {
 import bubbleImage from '../../assets/images/bubbleio.png';
 import yupQuizImage from '../../assets/images/yup-quiz.png';
 import mozartPortalImage from '../../assets/images/mozart-portal.png';
-import newIdeaImage from '../../assets/images/new-idea.png';
+import recapMailerImage from '../../assets/images/recap-mailer.png';
+import quoteInspirerImage from '../../assets/images/quote-inspirer.png';
+import unknownImage from '../../assets/images/unknown.png';
 import ContentExplain from '../../components/ContentExplain';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import chatGptSvg from '../../assets/images/chat-gpt.svg';
@@ -77,9 +79,9 @@ const LabTitle = styled.div`
 `;
 
 const LabIcon = styled.div<{ source: string }>`
-  width: 30px;
-  min-width: 30px;
-  height: 30px;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
   background-image: url(${(props) => props.source});
   background-size: cover;
   border-radius: 50%;
@@ -109,6 +111,13 @@ export default function LabPage() {
               </Lab>
             </Link>
             <Lab>
+              <LabIcon source={recapMailerImage} />
+              <LabTitle>
+                <span>Recap Mailer</span>
+                <span className="sub">Coming Soon</span>
+              </LabTitle>
+            </Lab>
+            <Lab>
               <LabIcon source={mozartPortalImage} />
               <LabTitle>
                 <span>Mozart Portal</span>
@@ -118,7 +127,14 @@ export default function LabPage() {
             <Lab>
               <LabIcon source={bubbleImage} />
               <LabTitle>
-                <span>No Code & Automation</span>
+                <span>No Code & Automation Archive</span>
+                <span className="sub">Coming soon</span>
+              </LabTitle>
+            </Lab>
+            <Lab>
+              <LabIcon source={quoteInspirerImage} />
+              <LabTitle>
+                <span>Quote Inspirer</span>
                 <span className="sub">Coming soon</span>
               </LabTitle>
             </Lab>
@@ -130,7 +146,7 @@ export default function LabPage() {
               </LabTitle>
             </Lab>
             <Lab>
-              <LabIcon source={newIdeaImage} />
+              <LabIcon source={unknownImage} />
               <LabTitle>
                 <span>Unknown</span>
                 <span className="sub">Next what ?</span>
