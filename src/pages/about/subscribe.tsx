@@ -26,6 +26,11 @@ const ContentWrapper = styled.div`
   }
 `;
 
+const CkWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const AboutPage: React.FC<PageProps> = () => {
   const { containerRef } = useScript({
     src: 'https://moztiq.ck.page/f9ec7f541d/index.js',
@@ -36,7 +41,7 @@ const AboutPage: React.FC<PageProps> = () => {
   return (
     <AboutLayout>
       <ContentWrapper>
-        <div id="ck" ref={containerRef} />
+        <CkWrapper id="ck" ref={containerRef} />
       </ContentWrapper>
     </AboutLayout>
   );
