@@ -129,7 +129,7 @@ const IconWrapper = styled.span`
 
 function Navigation({ isViewMobileNavigation }: IMobileProps) {
   const theme = useContext(ThemeContext);
-  const menuList = ['book', 'tech', 'quote', 'lab'];
+  const menuList = ['book', 'tech', 'music', 'quote', 'lab'];
   const pathname =
     typeof window !== 'undefined' ? window.location.pathname : '';
 
