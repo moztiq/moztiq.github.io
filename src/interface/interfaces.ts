@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface IPostProps {
   id: string;
   title: string;
@@ -37,4 +39,8 @@ export interface IMobileProps {
 
 export interface IQuoteDetailProps {
   category: string;
+}
+
+export interface ILayoutProps {
+  children: ReactNode;
 }

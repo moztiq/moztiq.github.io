@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import type { PageProps } from 'gatsby';
 import { graphql } from 'gatsby';
-import Layout from '../../components/Layout';
+import Layout from '../../components/layout/Layout';
 import PostList from '../../components/post/PostList';
 import ContentContainer from '../../components/ContentContainer';
 import Seo from '../../components/Seo';

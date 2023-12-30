@@ -1,7 +1,7 @@
 import * as React from 'react';
 import type { PageProps } from 'gatsby';
 import styled from 'styled-components';
-import Layout from '../components/Layout';
+import Layout from '../components/layout/Layout';
 import Seo from '../components/Seo';
 import QuoteAnimation from '../components/quote/QuoteAnimation';
 

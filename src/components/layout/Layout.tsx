@@ -1,9 +1,9 @@
-import React, { ReactNode, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import Navigation from './Navigation';
+import Navigation from '../Navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { IMobileProps } from '../interface/interfaces';
+import { ILayoutProps, IMobileProps } from '../../interface/interfaces';
 
 const Main = styled.main<IMobileProps>`
   width: 100vw;
@@ -48,10 +48,6 @@ const OverLay = styled.div<IOverlayProps>`
     display: ${(props) => (props.isViewMobileNavigation ? 'block' : 'none')};
   }
 `;
-
-interface ILayoutProps {
-  children: ReactNode;
-}
 
 export default function Layout({ children }: ILayoutProps) {
   const [isViewMobileNavigation, setIsViewMobileNavigation] = useState(false);
