@@ -23,7 +23,7 @@ export default function Seo({ title, description, imageUrl, url }: ISeoProps) {
   const data = useStaticQuery(SEO_QUERY);
   const customTitle = `${title} | ${data.site?.siteMetadata?.title}`;
   const banner =
-    'https://images.ctfassets.net/vpyfljks33op/5NfF8bdujnrAMcOcWdzS3T/48bc17d170bb85619f8243d220d75693/moztiq.png';
+    'https://images.ctfassets.net/vpyfljks33op/7120ZPNKnAmi4JE3lF5V4A/bbc4d0dae3509f6be6d7d51b360048ce/DALL_E_2023-12-16_11.14.08_-_An_illustration_inspired_by_the_poem_-_______________.-_The_scene_depicts_a_serene_and_nostalgi.png';
 
   return (
     <>
