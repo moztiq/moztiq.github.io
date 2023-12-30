@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { ILayoutProps } from '../../interface/interfaces';
 import ContentContainer from '../ContentContainer';
@@ -9,7 +9,6 @@ import {
 } from '../../constants/common.constant';
 import meImage from '../../assets/images/me.jpg';
 import Layout from './Layout';
-import Seo from '../Seo';
 import { Link } from 'gatsby';
 
 const AboutWrapper = styled.div`
@@ -130,13 +129,3 @@ export default function AboutLayout({ children }: ILayoutProps) {
     </Layout>
   );
 }
-
-export const Head = () => {
-  return (
-    <Seo
-      title={SectionTitle(Category.ABOUT)}
-      description={SectionDescription(Category.ABOUT)}
-      url={`/about`}
-    />
-  );
-};

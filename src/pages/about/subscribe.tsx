@@ -3,6 +3,12 @@ import type { PageProps } from 'gatsby';
 import styled from 'styled-components';
 import AboutLayout from '../../components/layout/AboutLayout';
 import useScript from '../../hooks/useScript';
+import Seo from '../../components/Seo';
+import {
+  Category,
+  SectionDescription,
+  SectionTitle,
+} from '../../constants/common.constant';
 
 const ContentWrapper = styled.div`
   padding: 50px 20%;
@@ -48,3 +54,13 @@ const AboutPage: React.FC<PageProps> = () => {
 };
 
 export default AboutPage;
+
+export const Head = () => {
+  return (
+    <Seo
+      title={`${SectionTitle(Category.ABOUT)} - Subscribe`}
+      description={SectionDescription(Category.ABOUT)}
+      url={`/about`}
+    />
+  );
+};
