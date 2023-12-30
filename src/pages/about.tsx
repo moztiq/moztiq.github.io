@@ -149,11 +149,6 @@ const AboutPage: React.FC<PageProps> = () => {
             </p>
           </ContentWrapper>
         </AboutWrapper>
-        <script
-          async
-          data-uid="f9ec7f541d"
-          src="https://moztiq.ck.page/f9ec7f541d/index.js"
-        ></script>
       </ContentContainer>
     </Layout>
   );
