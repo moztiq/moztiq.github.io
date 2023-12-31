@@ -77,21 +77,21 @@ const ProfileImage = styled.div`
 const MenuWrapper = styled.div`
   display: flex;
   justify-content: center;
-  a {
-    text-decoration: none;
-  }
 `;
 
 const Menu = styled.div<{ active: boolean }>`
   margin: 100px 10px 0 10px;
   padding: 5px 10px;
-  color: ${(props) => props.theme.colors.gray800};
   font-weight: ${(props) => (props.active ? 'bold' : '')};
   border-bottom: 2px solid
     ${(props) =>
       props.active
         ? props.theme.colors.accentColor
         : props.theme.colors.gray300};
+  a {
+    text-decoration: none;
+    color: ${(props) => props.theme.colors.gray800};
+  }
 `;
 
 export default function AboutLayout({ children }: ILayoutProps) {
@@ -115,13 +115,13 @@ export default function AboutLayout({ children }: ILayoutProps) {
             </MoztiqWrapper>
           </TopBackground>
           <MenuWrapper>
-            <Link to={`/about/`}>
-              <Menu active={pathname === `/about/`}>About</Menu>
-            </Link>
+            <Menu active={pathname === `/about/`}>
+              <Link to={`/about/`}>About</Link>
+            </Menu>
             {/*<Menu active={false}>Dev Logs</Menu>*/}
-            <Link to={`/about/subscribe/`}>
-              <Menu active={pathname === `/about/subscribe/`}>Subscribe</Menu>
-            </Link>
+            <Menu active={pathname === `/about/subscribe/`}>
+              <Link to={`/about/subscribe/`}>Subscribe</Link>
+            </Menu>
           </MenuWrapper>
           {children}
         </AboutWrapper>

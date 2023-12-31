@@ -180,7 +180,7 @@ function Navigation({ isViewMobileNavigation }: IMobileProps) {
         <Link to={`/about`} style={{ marginLeft: '10px' }}>
           <FontAwesomeIcon
             icon={faQuestionCircle}
-            size="xs"
+            size="sm"
             color={'#02609f'}
           />
         </Link>
@@ -197,6 +197,9 @@ function Navigation({ isViewMobileNavigation }: IMobileProps) {
                   variants={menuItemVariants}
                   initial="initial"
                   whileHover="whileHover"
+                  transition={{
+                    duration: 0.3,
+                  }}
                 >
                   <IconWrapper>
                     <FontAwesomeIcon icon={SectionIcon(menu)} size="xs" />
