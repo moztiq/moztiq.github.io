@@ -19,5 +19,5 @@ export default function Gisqus() {
     crossorigin: 'anonymous',
     async: 'true',
   });
-  return <div id="gisqus" ref={containerRef} />;
+  return <>{/*<div id="gisqus" ref={containerRef} />*/}</>;
 }
