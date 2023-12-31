@@ -182,7 +182,7 @@ const GisqusWrapper = styled.div`
 
 export default function PostContent({ post }: { post: IPostProps }) {
   useEffect(() => {
-    document.querySelectorAll('a').forEach(function (link) {
+    document.querySelectorAll('#content a').forEach(function (link) {
       link.setAttribute('target', '_blank');
     });
   }, []);
@@ -199,6 +199,7 @@ export default function PostContent({ post }: { post: IPostProps }) {
       </PublishDateLine>
       {post?.headerImage?.url && <HeaderImage url={post?.headerImage?.url} />}
       <LongContent
+        id="content"
         dangerouslySetInnerHTML={{
           __html: post?.contents?.childMarkdownRemark.html || '',
         }}

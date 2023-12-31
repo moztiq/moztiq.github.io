@@ -40,7 +40,9 @@ export const Head = ({ data }: PageProps<Queries.QuoteQuery>) => {
 
   return (
     <Seo
-      title={quote?.title || 'QUOTE'}
+      title={`${quote?.author ? quote?.author + ' - ' : ''}${
+        quote?.title || 'QUOTE'
+      }`}
       description={quote?.content?.childMarkdownRemark?.excerpt || ''}
       url={`/quote/${quote?.slug}`}
     />
