@@ -64,11 +64,11 @@ const IntroDescription = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 15px 0 100px 0;
+  margin: 15px 0 90px 0;
 
   @media screen and (max-width: 430px) {
     font-size: 0.7rem;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
   }
 `;
 
@@ -93,8 +93,8 @@ const MenuItem = styled(motion.li)`
   box-shadow: 0 1px 15px rgba(255, 255, 255, 0.5);
 
   @media screen and (max-width: 430px) {
-    font-size: 1rem;
-    height: 40px;
+    font-size: 0.9rem;
+    height: 30px;
   }
 `;
 
@@ -129,7 +129,7 @@ const IconWrapper = styled.span`
 
 function Navigation({ isViewMobileNavigation }: IMobileProps) {
   const theme = useContext(ThemeContext);
-  const menuList = ['book', 'tech', 'music', 'quote', 'lab'];
+  const menuList = ['about', 'book', 'tech', 'music', 'quote', 'lab'];
   const pathname =
     typeof window !== 'undefined' ? window.location.pathname : '';
 
@@ -175,16 +175,7 @@ function Navigation({ isViewMobileNavigation }: IMobileProps) {
           </YoutubeIcon>
         </a>
       </Icons>
-      <IntroTitle>
-        MOZTIQ{' '}
-        <Link to={`/about`} style={{ marginLeft: '10px' }}>
-          <FontAwesomeIcon
-            icon={faQuestionCircle}
-            size="sm"
-            color={'#02609f'}
-          />
-        </Link>
-      </IntroTitle>
+      <IntroTitle>MOZTIQ</IntroTitle>
       <IntroDescription drag>Life is a journey ..</IntroDescription>
       <MenuList>
         {menuList.map((menu, idx) => (
