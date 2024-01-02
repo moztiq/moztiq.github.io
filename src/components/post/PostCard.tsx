@@ -10,7 +10,7 @@ const Post = styled.li`
   margin-top: 40px;
   background-color: ${(props) => props.theme.colors.white};
   box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.05);
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   transition: all 0.2s;
 
   @media screen and (max-width: 430px) {
