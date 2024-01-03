@@ -33,7 +33,7 @@ export const query = graphql`
   query TechList {
     allContentfulMoztiqBlog(
       filter: { category: { eq: "tech" } }
-      sort: { createdAt: DESC }
+      sort: { releaseDate: DESC }
     ) {
       nodes {
         id

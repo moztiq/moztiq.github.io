@@ -33,7 +33,7 @@ export const query = graphql`
   query MusicList {
     allContentfulMoztiqBlog(
       filter: { category: { eq: "music" } }
-      sort: { createdAt: DESC }
+      sort: { releaseDate: DESC }
     ) {
       nodes {
         id

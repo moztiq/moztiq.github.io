@@ -172,7 +172,7 @@ export const query = graphql`
   query AiList {
     allContentfulMoztiqBlog(
       filter: { category: { eq: "ai" } }
-      sort: { createdAt: DESC }
+      sort: { releaseDate: DESC }
     ) {
       nodes {
         id

@@ -34,7 +34,7 @@ export const query = graphql`
   query BookList {
     allContentfulMoztiqBlog(
       filter: { category: { eq: "book" } }
-      sort: { createdAt: DESC }
+      sort: { releaseDate: DESC }
     ) {
       nodes {
         id
