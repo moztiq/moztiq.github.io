@@ -122,14 +122,6 @@ export default function AiPage({ data }: PageProps<Queries.AiListQuery>) {
               <GptIcon source="https://files.oaiusercontent.com/file-KnXpbEdYOahTueTGY8FMhXCe?se=2123-11-27T07%3A09%3A49Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D1209600%2C%20immutable&rscd=attachment%3B%20filename%3Dfcdab9c6-9632-4909-b94a-cb7baa21e04f.png&sig=7SqNmqb9LNdhve8imsxNODVB8pcukaeSJD6Pw4ylZ5I%3D" />
             </a>
           </Tippy>
-          <Tippy content="DevArt Creator" placement="left">
-            <a
-              href="https://chat.openai.com/g/g-oZKzgHocp-devart-creator"
-              target="_blank"
-            >
-              <GptIcon source="https://files.oaiusercontent.com/file-BgM61jkwodWFmgabNSqjZnVI?se=2123-11-27T01%3A18%3A43Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D1209600%2C%20immutable&rscd=attachment%3B%20filename%3D650ac289-3ca3-47e5-9a74-8785e8c33121.png&sig=98Vw6qthEVkcFPeFO/jeSPFCXPbMfPsR8jKSKIUnD18%3D" />
-            </a>
-          </Tippy>
           <Tippy content="Fun Image Wizard" placement="left">
             <a
               href="https://chat.openai.com/g/g-WlaahNLaC-fun-image-wizard"
@@ -154,12 +146,12 @@ export default function AiPage({ data }: PageProps<Queries.AiListQuery>) {
               <GptIcon source="https://files.oaiusercontent.com/file-UwNFVV0ULgKha5av1knb1eiB?se=2123-11-09T05%3A29%3A22Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3Db906de8d-83da-4ae6-84ae-a59988d2e1f7.png&sig=4dPO9DHtqJgCYbwEPxOgbjdcJSmlBeLhiM5ahXFsg1c%3D" />
             </a>
           </Tippy>
-          <Tippy content="Enjoy Mozart" placement="left">
+          <Tippy content="Literary Counselor" placement="left">
             <a
-              href="https://chat.openai.com/g/g-z6moW0vqE-enjoy-mozart"
+              href="https://chat.openai.com/g/g-lAg3a1wen-literary-counselor"
               target="_blank"
             >
-              <GptIcon source="https://files.oaiusercontent.com/file-gQyB0BZvuLoKA9r9n1cmfMk6?se=2123-10-30T01%3A16%3A38Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20immutable&rscd=attachment%3B%20filename%3D9a97e616-de7b-4473-9bc1-54cc5e6235c5.png&sig=IT4tFtFH%2Bu27b4VSQOmCnGzWqMWP7dJTU3Vne4Rg3xg%3D" />
+              <GptIcon source="https://files.oaiusercontent.com/file-ncikNVOXbrcVufUqcGOoNTyq?se=2123-12-10T09%3A39%3A52Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D1209600%2C%20immutable&rscd=attachment%3B%20filename%3D45d9ad72-98a5-4f93-8871-17eb08f2512f.png&sig=q6xWOv2Pda/gB5hmsBX4pw9MKUFFW5abvLGG3pSpapk%3D" />
             </a>
           </Tippy>
         </GptsWrapper>
