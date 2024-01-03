@@ -28,9 +28,9 @@ const HamburgerWrapper = styled.div`
     color: ${(props) => props.theme.colors.primary};
     background-color: ${(props) => props.theme.colors.background};
     z-index: 8;
-    position: absolute;
-    top: 24px;
-    left: 35px;
+    position: fixed;
+    top: 19px;
+    left: 25px;
   }
 `;
 
@@ -59,7 +59,7 @@ export default function Layout({ children }: ILayoutProps) {
   return (
     <Main isViewMobileNavigation={isViewMobileNavigation}>
       <HamburgerWrapper>
-        <FontAwesomeIcon icon={faBars} onClick={handleToggle} />
+        <FontAwesomeIcon icon={faBars} onClick={handleToggle} size="sm" />
       </HamburgerWrapper>
       <OverLay
         isViewMobileNavigation={isViewMobileNavigation}

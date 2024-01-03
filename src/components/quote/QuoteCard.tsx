@@ -16,6 +16,10 @@ const Quote = styled.li`
     padding: 2.5rem 1rem 1rem 1rem;
   }
 
+  @media screen and (min-width: 430px) {
+    height: 110px;
+  }
+
   &:hover {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
   }
@@ -23,12 +27,14 @@ const Quote = styled.li`
 
 const ContentWrapper = styled.div`
   display: flex;
-  align-items: center;
+  height: 100%;
 `;
 
 const ContentTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
 `;
 
 const Category = styled.div<IQuoteDetailProps>`
@@ -76,6 +82,11 @@ const Title = styled.span`
   margin-top: 20px;
   font-size: 0.85rem;
   text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
   color: ${(props) => props.theme.colors.gray500};
 `;
 

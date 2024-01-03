@@ -24,7 +24,7 @@ const GptsButton = styled.div`
   align-items: center;
   width: 73px;
   position: absolute;
-  top: 72px;
+  top: 62px;
   right: 0;
   padding: 10px 40px 10px 10px;
   color: ${(props) => props.theme.colors.white};
@@ -50,7 +50,7 @@ const GptsWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   position: absolute;
-  top: 108px;
+  top: 98px;
   padding: 20px 30px;
   background-color: ${(props) => props.theme.colors.white};
   box-shadow: 0 3px 13px 0 rgba(0, 0, 0, 0.15);

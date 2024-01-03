@@ -13,7 +13,7 @@ const PostDetailContentWrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  margin: 70px 0 50px 0;
+  margin: 120px 0 50px 0;
   font-size: 1.8rem;
   font-weight: 600;
   color: #484848;
