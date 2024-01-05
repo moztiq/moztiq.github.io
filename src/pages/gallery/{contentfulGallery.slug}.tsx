@@ -152,28 +152,26 @@ export default function GalleryPage({ data }: PageProps<Queries.GalleryQuery>) {
   }, []);
 
   return (
-    <>
-      <GalleryDetailContainer>
-        <GalleryImageWrapper>
-          <Title>{gallery?.title}</Title>
-          <GalleryImage src={gallery?.headerImage?.url || ''} />
-        </GalleryImageWrapper>
-        <DescriptionWrapper>
-          <DescriptionTitle>Prompt</DescriptionTitle>
-          <Description
-            dangerouslySetInnerHTML={{
-              __html: gallery?.contents?.childMarkdownRemark?.html || '',
-            }}
-          />
-        </DescriptionWrapper>
-      </GalleryDetailContainer>
+    <GalleryDetailContainer>
+      <GalleryImageWrapper>
+        <Title>{gallery?.title}</Title>
+        <GalleryImage src={gallery?.headerImage?.url || ''} />
+      </GalleryImageWrapper>
+      <DescriptionWrapper>
+        <DescriptionTitle>Prompt</DescriptionTitle>
+        <Description
+          dangerouslySetInnerHTML={{
+            __html: gallery?.contents?.childMarkdownRemark?.html || '',
+          }}
+        />
+      </DescriptionWrapper>
       <CloseIcon onClick={handleClose}>
         <FontAwesomeIcon icon={faClose} color="white" size="lg" />
       </CloseIcon>
       <Link to={`/`}>
         <Home>MOZTIQ.com</Home>
       </Link>
-    </>
+    </GalleryDetailContainer>
   );
 }
 
