@@ -12,7 +12,7 @@ const GalleryListWrapper = styled.ul`
   a {
     text-decoration: none;
   }
-  margin: 50px 0;
+  margin: 30px 0;
 
   @media screen and (max-width: 1024px) {
     width: 95%;
