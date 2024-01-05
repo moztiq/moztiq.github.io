@@ -12,7 +12,7 @@ const DetailWrapper = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${(props) => props.theme.colors.gray100};
-  margin: 50px 0;
+  margin: 110px 0 50px 0;
 `;
 
 const QuoteDetailWrapper = styled.div<IQuoteDetailProps>`
@@ -151,25 +151,23 @@ export default function QuoteDetail(props: { data: IQuoteProps }) {
   const { data: quote } = props;
 
   return (
-    <>
-      <DetailWrapper>
-        <QuoteDetailWrapper category={quote.category} title={quote.title}>
-          {/*<Category category={quote.category}>*/}
-          {/*  {quote.category.toUpperCase()}*/}
-          {/*</Category>*/}
-          <ContentWrapper>
-            {quote.title && <Title>{quote.title}</Title>}
-            <LongContent title={quote.title}>
-              <QuoteAnimation text={quote?.content?.childMarkdownRemark.html} />
-              {/*<Blink variants={cursorVariants} animate="blinking" />*/}
-            </LongContent>
-            <Author>- {quote.author}</Author>
-          </ContentWrapper>
-        </QuoteDetailWrapper>
-        <GisqusWrapper>
-          <Gisqus />
-        </GisqusWrapper>
-      </DetailWrapper>
-    </>
+    <DetailWrapper>
+      <QuoteDetailWrapper category={quote.category} title={quote.title}>
+        {/*<Category category={quote.category}>*/}
+        {/*  {quote.category.toUpperCase()}*/}
+        {/*</Category>*/}
+        <ContentWrapper>
+          {quote.title && <Title>{quote.title}</Title>}
+          <LongContent title={quote.title}>
+            <QuoteAnimation text={quote?.content?.childMarkdownRemark.html} />
+            {/*<Blink variants={cursorVariants} animate="blinking" />*/}
+          </LongContent>
+          <Author>- {quote.author}</Author>
+        </ContentWrapper>
+      </QuoteDetailWrapper>
+      <GisqusWrapper>
+        <Gisqus />
+      </GisqusWrapper>
+    </DetailWrapper>
   );
 }
