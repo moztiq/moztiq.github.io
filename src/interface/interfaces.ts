@@ -33,6 +33,24 @@ export interface IQuoteProps {
   };
 }
 
+export interface IGalleryProps {
+  id: string;
+  title: string;
+  slug: string;
+  author: string;
+  category: string;
+  headerImage: {
+    url: string;
+  };
+  content: {
+    childMarkdownRemark: {
+      html: string;
+      excerpt: string;
+    };
+  };
+  tag: string[];
+}
+
 export interface IMobileProps {
   isViewMobileNavigation: boolean;
 }

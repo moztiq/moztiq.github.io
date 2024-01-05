@@ -104,8 +104,8 @@ export default function QuoteCard({ quote }: { quote: IQuoteProps }) {
               {extractText(quote.content.childMarkdownRemark.html)}
             </ContentText>
             <Title>
-              - {quote.author}
-              {quote.title && ` / ${quote.title}`}
+              - {quote.title && `${quote.title} / `}
+              {quote.author}
             </Title>
           </ContentTextWrapper>
         </ContentWrapper>

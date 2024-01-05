@@ -9,28 +9,39 @@ import {
   SectionTitle,
 } from '../../constants/common.constant';
 import AiLayout from '../../components/layout/AiLayout';
+import styled from 'styled-components';
+import GalleryList from '../../components/gallery/GalleryList';
 
-export default function AiPage({ data }: PageProps<Queries.AiListQuery>) {
-  const posts = data.allContentfulMoztiqBlog.nodes;
+const GalleryListContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export default function AiGalleryPage({
+  data,
+}: PageProps<Queries.AiGalleryListQuery>) {
+  const list = data.allContentfulGallery.nodes;
   return (
     <AiLayout>
-      <PostList posts={posts as any} />
+      <GalleryListContainer>
+        <GalleryList list={list as any} />
+      </GalleryListContainer>
     </AiLayout>
   );
 }
 
 export const query = graphql`
-  query AiList {
-    allContentfulMoztiqBlog(
+  query AiGalleryList {
+    allContentfulGallery(
       filter: { category: { eq: "ai" } }
-      sort: { releaseDate: DESC }
+      sort: { createdAt: DESC }
     ) {
       nodes {
         id
         title
         slug
         category
-        releaseDate
+        author
         headerImage {
           url
         }
