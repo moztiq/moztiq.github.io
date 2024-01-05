@@ -205,6 +205,7 @@ export const Head = ({ data }: PageProps<Queries.GalleryQuery>) => {
         gallery?.title || 'Gallery'
       }`}
       description={gallery?.contents?.childMarkdownRemark?.excerpt || ''}
+      imageUrl={gallery?.headerImage?.url || ''}
       url={`/gallery/${gallery?.slug}`}
     />
   );
