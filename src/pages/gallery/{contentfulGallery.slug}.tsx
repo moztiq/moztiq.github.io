@@ -129,19 +129,22 @@ const DescriptionTitle = styled.h1`
 `;
 
 const DescriptionAuthor = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: ${(props) => props.theme.colors.accentColor};
   border: 1px solid ${(props) => props.theme.colors.accentColor};
   padding: 5px 10px;
   border-radius: 0.2rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
 
   @media screen and (max-width: 1024px) {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     align-items: center;
   }
 
   @media screen and (max-width: 430px) {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 `;
 
