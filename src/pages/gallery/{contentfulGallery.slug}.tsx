@@ -62,7 +62,7 @@ const Title = styled.h1`
   letter-spacing: 1.5px;
 
   @media screen and (max-width: 1024px) {
-    width: 80%;
+    width: 85%;
     font-size: 1rem;
   }
 
@@ -72,13 +72,13 @@ const Title = styled.h1`
 `;
 
 const GalleryImage = styled.img`
-  margin-top: 20px;
+  margin-top: 25px;
   width: 60%;
-  box-shadow: 0 0 15px 8px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.3);
   border-radius: 0.5rem;
 
   @media screen and (max-width: 1024px) {
-    width: 80%;
+    width: 85%;
   }
 `;
 
@@ -91,7 +91,7 @@ const DescriptionWrapper = styled.div`
 
   @media screen and (max-width: 1024px) {
     margin-top: 50px;
-    width: 80%;
+    width: 85%;
     justify-content: start;
     align-items: center;
   }
@@ -102,12 +102,21 @@ const DescriptionWrapper = styled.div`
   }
 `;
 
-const DescriptionTitle = styled.h1`
+const DescriptionTitleWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
   width: 80%;
-  color: ${(props) => props.theme.colors.white};
-  font-size: 1.7rem;
   font-weight: bold;
+
+  @media screen and (max-width: 1024px) {
+    align-items: center;
+  }
+`;
+
+const DescriptionTitle = styled.h1`
+  color: ${(props) => props.theme.colors.white};
   letter-spacing: 1.5px;
+  font-size: 1.7rem;
 
   @media screen and (max-width: 1024px) {
     font-size: 1.5rem;
@@ -116,6 +125,23 @@ const DescriptionTitle = styled.h1`
 
   @media screen and (max-width: 430px) {
     font-size: 1.2rem;
+  }
+`;
+
+const DescriptionAuthor = styled.div`
+  color: ${(props) => props.theme.colors.accentColor};
+  border: 1px solid ${(props) => props.theme.colors.accentColor};
+  padding: 5px 10px;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 0.9rem;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 430px) {
+    font-size: 0.8rem;
   }
 `;
 
@@ -158,7 +184,10 @@ export default function GalleryPage({ data }: PageProps<Queries.GalleryQuery>) {
         <GalleryImage src={gallery?.headerImage?.url || ''} />
       </GalleryImageWrapper>
       <DescriptionWrapper>
-        <DescriptionTitle>Prompt</DescriptionTitle>
+        <DescriptionTitleWrapper>
+          <DescriptionTitle>Prompt</DescriptionTitle>
+          <DescriptionAuthor>{gallery?.author}</DescriptionAuthor>
+        </DescriptionTitleWrapper>
         <Description
           dangerouslySetInnerHTML={{
             __html: gallery?.contents?.childMarkdownRemark?.html || '',
