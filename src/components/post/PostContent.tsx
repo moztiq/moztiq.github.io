@@ -162,6 +162,12 @@ const LongContent = styled.div`
     li {
       margin: 0;
     }
+
+    img {
+      width: 90%;
+      margin: 30px 5%;
+      box-shadow: 3px 5px 10px 0 rgba(0, 0, 0, 0.4);
+    }
   }
 
   em {
