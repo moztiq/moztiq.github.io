@@ -18,7 +18,7 @@ const TableOfContents = styled.div`
   border-radius: 10px;
   padding: 25px 25px 5px 25px;
   position: sticky;
-  top: 80px;
+  top: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 20px auto;

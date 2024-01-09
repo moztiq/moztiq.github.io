@@ -2,9 +2,6 @@ import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
 const TopWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
   width: 100%;
   height: 60px;
   min-height: 60px;
@@ -12,6 +9,12 @@ const TopWrapper = styled.div`
   background-color: ${(props) => props.theme.colors.gray100};
   z-index: 5;
   border-bottom: 1px solid ${(props) => props.theme.colors.gray200};
+
+  @media screen and (max-width: 1024px) {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
 `;
 
 const TitleWrapper = styled.div`
