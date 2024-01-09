@@ -125,6 +125,13 @@ const LongContent = styled.div`
     padding: 5px 0;
   }
 
+  h4 {
+    color: ${(props) => props.theme.colors.gray800};
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 30px;
+  }
+
   pre {
     border-radius: 5px;
   }
@@ -188,9 +195,11 @@ const GisqusWrapper = styled.div`
 
 export default function PostContent({ post }: { post: IPostProps }) {
   useEffect(() => {
-    document.querySelectorAll('#content a').forEach(function (link) {
-      link.setAttribute('target', '_blank');
-    });
+    document
+      .querySelectorAll('#content a:not([href^="#"])')
+      .forEach(function (link) {
+        link.setAttribute('target', '_blank');
+      });
   }, []);
 
   return (

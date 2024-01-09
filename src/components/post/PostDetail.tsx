@@ -50,9 +50,11 @@ export default function PostDetail(props: { data: IPostProps }) {
       { threshold: [0, 1.0] },
     );
 
-    ref.current?.querySelectorAll<HTMLElement>('h2, h3').forEach((header) => {
-      observer.observe(header);
-    });
+    ref.current
+      ?.querySelectorAll<HTMLElement>('h2, h3, h4')
+      .forEach((header) => {
+        observer.observe(header);
+      });
 
     return () => {
       observer.disconnect();

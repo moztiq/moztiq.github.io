@@ -32,19 +32,27 @@ const TocTitle = styled.h2`
 `;
 
 const TocList = styled.div`
+  li {
+    font-size: 13px;
+    padding: 5px 0;
+    margin-bottom: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
   ul {
     color: ${(props) => props.theme.colors.gray800};
     margin: 5px 0;
     overflow-y: scroll;
-  }
 
-  li {
-    font-size: 13px;
-    padding: 0 0 10px 0;
-    margin-bottom: 10px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    ul {
+      li {
+        font-size: 12px;
+        padding: 5px;
+        margin: 5px 0;
+      }
+    }
   }
 
   a {
@@ -55,6 +63,7 @@ const TocList = styled.div`
   }
   a.highlight {
     color: ${(props) => props.theme.colors.black};
+    font-weight: 500;
   }
 `;
 
