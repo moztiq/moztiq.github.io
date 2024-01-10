@@ -18,7 +18,8 @@ const Gallery = styled.li<{ image: string }>`
 
 const Title = styled.span`
   margin-top: 20px;
-  padding: 10px;
+  padding: 0 10px;
+  line-height: 2.5;
   font-size: 0.85rem;
   text-align: center;
   overflow: hidden;
