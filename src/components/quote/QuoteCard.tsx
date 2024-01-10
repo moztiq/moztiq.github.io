@@ -42,16 +42,18 @@ const Category = styled.div<IQuoteDetailProps>`
   justify-content: center;
   align-items: center;
   position: absolute;
-  width: 90px;
-  height: 40px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  width: 70px;
+  height: 30px;
   border-radius: 5px;
   top: -10px;
   left: 10px;
-
   background-color: ${(props) => {
     switch (props.category) {
       case 'poem':
-        return 'tomato';
+        return '#FF6347';
       case 'quote':
         return '#1c98e7';
       case 'essay':
@@ -60,6 +62,34 @@ const Category = styled.div<IQuoteDetailProps>`
         return 'gray';
     }
   }};
+
+  background: linear-gradient(
+    to bottom,
+    ${(props) => {
+      switch (props.category) {
+        case 'poem':
+          return '#FF6347';
+        case 'quote':
+          return '#1c98e7';
+        case 'essay':
+          return '#54b71c';
+        default:
+          return 'gray';
+      }
+    }},
+    ${(props) => {
+      switch (props.category) {
+        case 'poem':
+          return 'rgb(250,154,137)';
+        case 'quote':
+          return 'rgb(110,193,246)';
+        case 'essay':
+          return 'rgba(50, 164, 7, 1)';
+        default:
+          return 'gray';
+      }
+    }}
+  );
   color: ${(props) => props.theme.colors.white};
 `;
 
