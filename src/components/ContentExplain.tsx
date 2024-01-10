@@ -7,7 +7,10 @@ const TopBackground = styled.div`
   height: 200px;
   background-color: ${(props) => props.theme.colors.gray200};
   background-size: cover;
-  margin-top: 60px;
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 60px;
+  }
 `;
 
 const ContentExplainWrapper = styled.div`
