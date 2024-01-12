@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { ILayoutProps, IMobileProps } from '../../interface/interfaces';
 
-const Main = styled.main<IMobileProps>`
+const LayoutContainer = styled.main<IMobileProps>`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -57,7 +57,7 @@ export default function Layout({ children }: ILayoutProps) {
   };
 
   return (
-    <Main isViewMobileNavigation={isViewMobileNavigation}>
+    <LayoutContainer isViewMobileNavigation={isViewMobileNavigation}>
       <HamburgerWrapper>
         <FontAwesomeIcon icon={faBars} onClick={handleToggle} size="sm" />
       </HamburgerWrapper>
@@ -69,6 +69,6 @@ export default function Layout({ children }: ILayoutProps) {
       />
       <Navigation isViewMobileNavigation={isViewMobileNavigation} />
       {children}
-    </Main>
+    </LayoutContainer>
   );
 }

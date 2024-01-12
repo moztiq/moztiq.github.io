@@ -7,7 +7,6 @@ import PostContent from './PostContent';
 const DetailWrapper = styled.div`
   width: 100%;
   display: flex;
-  //margin-top: 70px;
   background-color: ${(props) => props.theme.colors.white};
 `;
 

@@ -97,10 +97,10 @@ const ContentText = styled.p`
   font-size: 0.95rem;
   color: ${(props) => props.theme.colors.gray800};
   line-height: 1.7;
+  width: 100%;
   text-decoration: none;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: 100%;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
