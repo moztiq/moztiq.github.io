@@ -41,7 +41,7 @@ const Logo = styled.img`
 
 const TopContentContainer = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 0 50px;
 
   @media screen and (max-width: 768px) {
@@ -61,7 +61,7 @@ const QuoteContainer = styled.ul`
 `;
 
 const QuoteTitle = styled.h1`
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 1.3px;
   margin-bottom: 20px;
@@ -78,7 +78,7 @@ const QuoteTitle = styled.h1`
 const QuoteContent = styled.h2`
   font-family: 'Nanum Myeongjo', serif;
   font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.5;
   letter-spacing: 1px;
   overflow: hidden;
@@ -89,7 +89,7 @@ const QuoteContent = styled.h2`
   text-align: justify;
 
   a {
-    color: ${(props) => props.theme.colors.black};
+    color: ${(props) => props.theme.colors.gray700};
     text-decoration: none;
   }
 
@@ -120,7 +120,7 @@ const GalleryContainer = styled.ul`
 `;
 
 const GalleryTitle = styled.h1`
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 1.3px;
   text-decoration: underline;
@@ -170,6 +170,8 @@ export default function IndexPage({ data }: PageProps<Queries.MainDataQuery>) {
                     icon={SectionIcon(Category.QUOTE)}
                     size="xs"
                     style={{ marginRight: '5px' }}
+                    color="blue"
+                    beatFade
                   />{' '}
                   <Link to={`/quote`}>Quote</Link>
                 </QuoteTitle>
@@ -196,6 +198,8 @@ export default function IndexPage({ data }: PageProps<Queries.MainDataQuery>) {
                     icon={faPalette}
                     size="xs"
                     style={{ marginRight: '5px' }}
+                    color="orange"
+                    spin
                   />{' '}
                   <Link to={`/ai/gallery`}>Prompt Gallery</Link>
                 </GalleryTitle>
@@ -213,12 +217,14 @@ export default function IndexPage({ data }: PageProps<Queries.MainDataQuery>) {
           </TopBackground>
 
           <PostTitle>
+            지금 글쓰러 갑니다 ...{' '}
             <FontAwesomeIcon
               icon={faPersonRunning}
               size="xs"
-              style={{ marginRight: '10px' }}
+              style={{ marginLeft: '10px' }}
+              color="darkred"
+              bounce
             />
-            지금 글쓰러 갑니다 ...
           </PostTitle>
           <PostContainer>
             {posts &&
