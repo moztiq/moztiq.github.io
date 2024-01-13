@@ -6,10 +6,9 @@ const TopWrapper = styled.div`
   height: 60px;
   min-height: 60px;
   color: ${(props) => props.theme.colors.textPrimary};
-  background-color: ${(props) => props.theme.colors.gray100};
   z-index: 5;
   border-bottom: 1px solid ${(props) => props.theme.colors.gray200};
-
+  backdrop-filter: blur(5px);
   @media screen and (max-width: 1024px) {
     position: fixed;
     top: 0;

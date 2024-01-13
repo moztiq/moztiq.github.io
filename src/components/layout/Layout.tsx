@@ -26,7 +26,6 @@ const HamburgerWrapper = styled.div`
     font-size: 1.4rem;
     font-weight: bold;
     color: ${(props) => props.theme.colors.primary};
-    background-color: ${(props) => props.theme.colors.background};
     z-index: 8;
     position: fixed;
     top: 19px;
