@@ -14,6 +14,7 @@ const Post = styled.li`
 `;
 
 const Title = styled.h2`
+  display: inline-block;
   font-size: 1.2rem;
   color: ${(props) => props.theme.colors.textPrimary};
   text-decoration: underline;

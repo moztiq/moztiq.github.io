@@ -217,7 +217,7 @@ export default function IndexPage({ data }: PageProps<Queries.MainDataQuery>) {
           </TopBackground>
 
           <PostTitle>
-            지금 글쓰러 갑니다 ...{' '}
+            지금 쓰러 갑니다 ...{' '}
             <FontAwesomeIcon
               icon={faPersonRunning}
               size="xs"
