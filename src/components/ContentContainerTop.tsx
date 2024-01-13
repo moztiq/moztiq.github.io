@@ -9,6 +9,7 @@ const TopWrapper = styled.div`
   z-index: 5;
   border-bottom: 1px solid ${(props) => props.theme.colors.gray200};
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   @media screen and (max-width: 1024px) {
     position: fixed;
     top: 0;
