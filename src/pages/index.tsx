@@ -172,6 +172,7 @@ export default function IndexPage({ data }: PageProps<Queries.MainDataQuery>) {
                     style={{ marginRight: '5px', fontSize: '1.2rem' }}
                     color="blue"
                     beatFade
+                    fixedWidth
                   />{' '}
                   <Link to={`/quote`}>Quote</Link>
                 </QuoteTitle>
@@ -200,6 +201,7 @@ export default function IndexPage({ data }: PageProps<Queries.MainDataQuery>) {
                     style={{ marginRight: '5px', fontSize: '1.2rem' }}
                     color="orange"
                     spin
+                    fixedWidth
                   />{' '}
                   <Link to={`/ai/gallery`}>Prompt Gallery</Link>
                 </GalleryTitle>
@@ -223,6 +225,7 @@ export default function IndexPage({ data }: PageProps<Queries.MainDataQuery>) {
               style={{ marginLeft: '10px', fontSize: '1.2rem' }}
               color="darkred"
               bounce
+              fixedWidth
             />
           </PostTitle>
           <PostContainer>
