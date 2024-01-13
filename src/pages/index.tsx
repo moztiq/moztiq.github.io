@@ -61,6 +61,7 @@ const QuoteContainer = styled.ul`
 `;
 
 const QuoteTitle = styled.h1`
+  max-height: 30px;
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 1.3px;
@@ -120,6 +121,7 @@ const GalleryContainer = styled.ul`
 `;
 
 const GalleryTitle = styled.h1`
+  max-height: 30px;
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 1.3px;
@@ -139,6 +141,7 @@ const GalleryContent = styled.div`
 `;
 
 const PostTitle = styled.h1`
+  max-height: 30px;
   font-size: 1.5rem;
   margin: 40px 10% 0 10%;
 
@@ -172,7 +175,6 @@ export default function IndexPage({ data }: PageProps<Queries.MainDataQuery>) {
                     style={{ marginRight: '5px', fontSize: '1.2rem' }}
                     color="blue"
                     beatFade
-                    fixedWidth
                   />{' '}
                   <Link to={`/quote`}>Quote</Link>
                 </QuoteTitle>
@@ -201,7 +203,6 @@ export default function IndexPage({ data }: PageProps<Queries.MainDataQuery>) {
                     style={{ marginRight: '5px', fontSize: '1.2rem' }}
                     color="orange"
                     spin
-                    fixedWidth
                   />{' '}
                   <Link to={`/ai/gallery`}>Prompt Gallery</Link>
                 </GalleryTitle>
@@ -225,7 +226,6 @@ export default function IndexPage({ data }: PageProps<Queries.MainDataQuery>) {
               style={{ marginLeft: '10px', fontSize: '1.2rem' }}
               color="darkred"
               bounce
-              fixedWidth
             />
           </PostTitle>
           <PostContainer>
