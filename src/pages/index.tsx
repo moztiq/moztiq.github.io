@@ -169,7 +169,7 @@ export default function IndexPage({ data }: PageProps<Queries.MainDataQuery>) {
                   <FontAwesomeIcon
                     icon={SectionIcon(Category.QUOTE)}
                     size="xs"
-                    style={{ marginRight: '5px' }}
+                    style={{ marginRight: '5px', fontSize: '1.2rem' }}
                     color="blue"
                     beatFade
                   />{' '}
@@ -197,7 +197,7 @@ export default function IndexPage({ data }: PageProps<Queries.MainDataQuery>) {
                   <FontAwesomeIcon
                     icon={faPalette}
                     size="xs"
-                    style={{ marginRight: '5px' }}
+                    style={{ marginRight: '5px', fontSize: '1.2rem' }}
                     color="orange"
                     spin
                   />{' '}
@@ -220,8 +220,7 @@ export default function IndexPage({ data }: PageProps<Queries.MainDataQuery>) {
             지금 쓰러 갑니다 ...{' '}
             <FontAwesomeIcon
               icon={faPersonRunning}
-              size="xs"
-              style={{ marginLeft: '10px' }}
+              style={{ marginLeft: '10px', fontSize: '1.2rem' }}
               color="darkred"
               bounce
             />
