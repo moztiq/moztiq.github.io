@@ -12,6 +12,7 @@ import {
 } from '../../constants/common.constant';
 import bubbleImage from '../../assets/images/bubbleio.png';
 import yupQuizImage from '../../assets/images/yup-quiz.png';
+import readersLibraImage from '../../assets/images/readers-libra.png';
 import mozartPortalImage from '../../assets/images/mozart-portal.png';
 import recapMailerImage from '../../assets/images/recap-mailer.png';
 import quoteInspirerImage from '../../assets/images/quote-inspirer.png';
@@ -111,16 +112,30 @@ export default function LabPage() {
               </Lab>
             </Link>
             <Lab>
-              <LabIcon source={recapMailerImage} />
+              <LabIcon source={mozartPortalImage} />
               <LabTitle>
-                <span>Recap Mailer</span>
+                <span>Mozart Portal</span>
                 <span className="sub">Coming Soon</span>
               </LabTitle>
             </Lab>
             <Lab>
-              <LabIcon source={mozartPortalImage} />
+              <LabIcon source={yupQuizImage} />
               <LabTitle>
-                <span>Mozart Portal</span>
+                <span>Yup Quiz</span>
+                <span className="sub">Coming soon</span>
+              </LabTitle>
+            </Lab>
+            <Lab>
+              <LabIcon source={readersLibraImage} />
+              <LabTitle>
+                <span>Readers Libra</span>
+                <span className="sub">Coming soon</span>
+              </LabTitle>
+            </Lab>
+            <Lab>
+              <LabIcon source={recapMailerImage} />
+              <LabTitle>
+                <span>Recap Mailer</span>
                 <span className="sub">Coming Soon</span>
               </LabTitle>
             </Lab>
@@ -135,13 +150,6 @@ export default function LabPage() {
               <LabIcon source={quoteInspirerImage} />
               <LabTitle>
                 <span>Quote Inspirer</span>
-                <span className="sub">Coming soon</span>
-              </LabTitle>
-            </Lab>
-            <Lab>
-              <LabIcon source={yupQuizImage} />
-              <LabTitle>
-                <span>Yup Quiz Application</span>
                 <span className="sub">Coming soon</span>
               </LabTitle>
             </Lab>
