@@ -114,15 +114,15 @@ export default function AboutLayout({ children }: ILayoutProps) {
               <ProfileImage />
             </MoztiqWrapper>
           </TopBackground>
-          <MenuWrapper>
-            <Menu active={pathname === `/about/`}>
-              <Link to={`/about/`}>About</Link>
-            </Menu>
-            {/*<Menu active={false}>Dev Logs</Menu>*/}
-            <Menu active={pathname === `/about/subscribe/`}>
-              <Link to={`/about/subscribe/`}>Subscribe</Link>
-            </Menu>
-          </MenuWrapper>
+          {/*<MenuWrapper>*/}
+          {/*  <Menu active={pathname === `/about/`}>*/}
+          {/*    <Link to={`/about/`}>About</Link>*/}
+          {/*  </Menu>*/}
+          {/*  /!*<Menu active={false}>Dev Logs</Menu>*!/*/}
+          {/*  <Menu active={pathname === `/about/subscribe/`}>*/}
+          {/*    <Link to={`/about/subscribe/`}>Subscribe</Link>*/}
+          {/*  </Menu>*/}
+          {/*</MenuWrapper>*/}
           {children}
         </AboutWrapper>
       </ContentContainer>

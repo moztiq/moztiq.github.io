@@ -2,7 +2,6 @@ import * as React from 'react';
 import type { PageProps } from 'gatsby';
 import styled from 'styled-components';
 import AboutLayout from '../../components/layout/AboutLayout';
-import useScript from '../../hooks/useScript';
 import Seo from '../../components/Seo';
 import {
   Category,
@@ -32,22 +31,26 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const CkWrapper = styled.div`
+const SubstackWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
 
-const AboutPage: React.FC<PageProps> = () => {
-  const { containerRef } = useScript({
-    src: 'https://moztiq.ck.page/f9ec7f541d/index.js',
-    async: 'true',
-    'data-uid': 'f9ec7f541d',
-  });
+const SubstackFrame = styled.iframe`
+  width: 480px;
+  height: 250px;
+  border: 1px solid #eee;
+  background-color: #f5f5f5;
+  border-radius: 1.5rem;
+`;
 
+const AboutPage: React.FC<PageProps> = () => {
   return (
     <AboutLayout>
       <ContentWrapper>
-        <CkWrapper id="ck" ref={containerRef} />
+        <SubstackWrapper>
+          <SubstackFrame src="https://moztiq.substack.com/embed"></SubstackFrame>
+        </SubstackWrapper>
       </ContentWrapper>
     </AboutLayout>
   );
