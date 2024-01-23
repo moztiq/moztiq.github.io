@@ -4,8 +4,10 @@ import { Link } from 'gatsby';
 import * as React from 'react';
 import styled from 'styled-components';
 import { IPostProps } from '../../interface/interfaces';
+import { fadeInSlideToLeft } from '../../constants/animation.constant';
+import { motion } from 'framer-motion';
 
-const Post = styled.li`
+const Post = styled(motion.li)`
   padding: 3rem;
   margin-top: 40px;
   background-color: ${(props) => props.theme.colors.white};
@@ -128,10 +130,27 @@ const Tag = styled.li`
   }
 `;
 
+const variants = {
+  //   initial={{ scale: 0 }}
+  // animate={{ rotate: 180, scale: 1 }}
+  // transition={{
+  //   type: 'spring',
+  //     stiffness: 260,
+  //     damping: 20,
+  // }}
+
+  initial: { scale: 0 },
+  animate: { rotate: 180, scale: 1 },
+  transition: {
+    type: 'spring',
+    stiffness: 260,
+    damping: 20,
+  },
+};
 export default function PostCard({ post }: { post: IPostProps }) {
   return (
     <Link to={`/post/${post.slug}`}>
-      <Post>
+      <Post {...fadeInSlideToLeft}>
         <Title>{post.title}</Title>
         <PublishDateLine>
           <PublishDate>

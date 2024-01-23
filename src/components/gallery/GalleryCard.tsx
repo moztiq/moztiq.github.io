@@ -2,8 +2,10 @@ import { Link } from 'gatsby';
 import * as React from 'react';
 import styled from 'styled-components';
 import { IGalleryProps } from '../../interface/interfaces';
+import { shakeVariant } from '../../constants/animation.constant';
+import { motion } from 'framer-motion';
 
-const Gallery = styled.li<{ image: string }>`
+const Gallery = styled(motion.li)<{ image: string }>`
   background-image: url(${(props) => props.image});
   background-size: cover;
   box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.15);
@@ -35,7 +37,7 @@ const Title = styled.span`
 export default function GalleryCard({ gallery }: { gallery: IGalleryProps }) {
   return (
     <Link to={`/gallery/${gallery.slug}`}>
-      <Gallery image={gallery.headerImage.url}>
+      <Gallery {...shakeVariant} image={gallery.headerImage.url}>
         <Title>{gallery.title}</Title>
       </Gallery>
     </Link>

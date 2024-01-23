@@ -170,8 +170,6 @@ export default function IndexPage({ data }: PageProps<Queries.MainDataQuery>) {
                     icon={SectionIcon(Category.QUOTE)}
                     size="xs"
                     style={{ marginRight: '5px', fontSize: '1.2rem' }}
-                    color="blue"
-                    beatFade
                   />{' '}
                   <Link to={`/quote`}>Quote</Link>
                 </QuoteTitle>
@@ -198,8 +196,6 @@ export default function IndexPage({ data }: PageProps<Queries.MainDataQuery>) {
                     icon={faPalette}
                     size="xs"
                     style={{ marginRight: '5px', fontSize: '1.2rem' }}
-                    color="orange"
-                    spin
                   />{' '}
                   <Link to={`/ai/gallery`}>Prompt Gallery</Link>
                 </GalleryTitle>

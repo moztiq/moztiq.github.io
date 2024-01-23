@@ -22,6 +22,11 @@ import unknownImage from '../../assets/images/unknown.png';
 import ContentExplain from '../../components/ContentExplain';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import chatGptSvg from '../../assets/images/chat-gpt.svg';
+import {
+  fadeInSlideToLeft,
+  flipVariant,
+} from '../../constants/animation.constant';
+import { motion } from 'framer-motion';
 
 const LabListContainer = styled.div`
   display: flex;
@@ -51,7 +56,7 @@ const LabList = styled.ul`
   }
 `;
 
-const Lab = styled.li<{ active?: boolean }>`
+const Lab = styled(motion.li)<{ active?: boolean }>`
   display: flex;
   align-items: center;
   padding: 2rem;
@@ -103,7 +108,7 @@ export default function LabPage() {
         <LabListContainer>
           <LabList>
             <Link to={`/ai`}>
-              <Lab active>
+              <Lab active {...flipVariant}>
                 <img src={chatGptSvg} width={40} height={40} alt={'chat-gpt'} />
                 <LabTitle>
                   <span>{SectionTitle(Category.AI)}</span>
