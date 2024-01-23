@@ -40,7 +40,7 @@ const SubstackFrame = styled.iframe`
   width: 480px;
   height: 250px;
   border: 1px solid #eee;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   border-radius: 1.5rem;
 `;
 

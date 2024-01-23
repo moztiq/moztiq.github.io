@@ -16,6 +16,8 @@ import readersLibraImage from '../../assets/images/readers-libra.png';
 import mozartPortalImage from '../../assets/images/mozart-portal.png';
 import recapMailerImage from '../../assets/images/recap-mailer.png';
 import quoteInspirerImage from '../../assets/images/quote-inspirer.png';
+import lifeRelayImage from '../../assets/images/life-relay.png';
+import tenseMovementImage from '../../assets/images/tense-movement.png';
 import unknownImage from '../../assets/images/unknown.png';
 import ContentExplain from '../../components/ContentExplain';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -54,7 +56,7 @@ const Lab = styled.li<{ active?: boolean }>`
   align-items: center;
   padding: 2rem;
   background-color: ${(props) =>
-    props.active ? props.theme.colors.white : props.theme.colors.gray50};
+    props.active ? props.theme.colors.white : props.theme.colors.gray200};
   box-shadow: 0 0 0 1px rgba(23, 23, 23, 0.05);
   border-radius: 0.5rem;
   transition: all 0.2s;
@@ -102,55 +104,67 @@ export default function LabPage() {
           <LabList>
             <Link to={`/ai`}>
               <Lab active>
-                <img src={chatGptSvg} width={30} height={30} alt={'chat-gpt'} />
+                <img src={chatGptSvg} width={40} height={40} alt={'chat-gpt'} />
                 <LabTitle>
                   <span>{SectionTitle(Category.AI)}</span>
-                  <span className="sub">
-                    함께 춤추다보면 서로를 이해할 날이 오겠지
-                  </span>
+                  <span className="sub">AI Playground</span>
                 </LabTitle>
               </Lab>
             </Link>
             <Lab>
+              <LabIcon source={tenseMovementImage} />
+              <LabTitle>
+                <span>Tense Movement</span>
+                <span className="sub">Innovative Business</span>
+              </LabTitle>
+            </Lab>
+            <Lab>
+              <LabIcon source={lifeRelayImage} />
+              <LabTitle>
+                <span>Life Relay</span>
+                <span className="sub">Ordinary People Story</span>
+              </LabTitle>
+            </Lab>
+            <Lab>
               <LabIcon source={mozartPortalImage} />
               <LabTitle>
-                <span>Mozart Portal</span>
-                <span className="sub">Coming Soon</span>
+                <span>Enjoy Mozart</span>
+                <span className="sub">Mozart Portal</span>
               </LabTitle>
             </Lab>
             <Lab>
               <LabIcon source={yupQuizImage} />
               <LabTitle>
                 <span>Yup Quiz</span>
-                <span className="sub">Coming soon</span>
+                <span className="sub">Custom Quiz Generation</span>
               </LabTitle>
             </Lab>
             <Lab>
               <LabIcon source={readersLibraImage} />
               <LabTitle>
                 <span>Readers Libra</span>
-                <span className="sub">Coming soon</span>
+                <span className="sub">Personal Library</span>
               </LabTitle>
             </Lab>
             <Lab>
               <LabIcon source={recapMailerImage} />
               <LabTitle>
                 <span>Recap Mailer</span>
-                <span className="sub">Coming Soon</span>
+                <span className="sub">Simple Mail Alarm</span>
               </LabTitle>
             </Lab>
             <Lab>
               <LabIcon source={bubbleImage} />
               <LabTitle>
                 <span>No Code & Automation Archive</span>
-                <span className="sub">Coming soon</span>
+                <span className="sub">No Code & Automation Posts</span>
               </LabTitle>
             </Lab>
             <Lab>
               <LabIcon source={quoteInspirerImage} />
               <LabTitle>
                 <span>Quote Inspirer</span>
-                <span className="sub">Coming soon</span>
+                <span className="sub">Quotes Collection to inspire people</span>
               </LabTitle>
             </Lab>
             <Lab>
