@@ -4,7 +4,10 @@ import { Link } from 'gatsby';
 import * as React from 'react';
 import styled from 'styled-components';
 import { IPostProps } from '../../interface/interfaces';
-import { fadeInSlideToLeft } from '../../constants/animation.constant';
+import {
+  fadeInSlideToLeft,
+  hoverSlideToTop,
+} from '../../constants/animation.constant';
 import { motion } from 'framer-motion';
 
 const Post = styled(motion.li)`
@@ -150,7 +153,7 @@ const variants = {
 export default function PostCard({ post }: { post: IPostProps }) {
   return (
     <Link to={`/post/${post.slug}`}>
-      <Post {...fadeInSlideToLeft}>
+      <Post {...fadeInSlideToLeft} {...hoverSlideToTop}>
         <Title>{post.title}</Title>
         <PublishDateLine>
           <PublishDate>

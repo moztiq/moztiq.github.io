@@ -23,7 +23,11 @@ export const fadeInSlideToLeft: Variants = {
   },
 };
 
-export const shakeVariant: Variants = {
+export const hoverSlideToTop: Variants = {
+  whileHover: { y: -5, willChange: 'transform' },
+};
+
+export const rotateVariant: Variants = {
   initial: {
     rotate: -5,
     willChange: 'transform',
@@ -32,6 +36,9 @@ export const shakeVariant: Variants = {
     rotate: 0,
     willChange: 'transform',
   },
+};
+
+export const hoverScaleRotateRight: Variants = {
   whileHover: { scale: 1.05, rotate: 5, willChange: 'transform' },
 };
 

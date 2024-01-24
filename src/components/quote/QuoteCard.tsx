@@ -3,7 +3,10 @@ import { Link } from 'gatsby';
 import * as React from 'react';
 import styled from 'styled-components';
 import { IQuoteDetailProps, IQuoteProps } from '../../interface/interfaces';
-import { shakeVariant } from '../../constants/animation.constant';
+import {
+  hoverScaleRotateRight,
+  rotateVariant,
+} from '../../constants/animation.constant';
 import { motion } from 'framer-motion';
 
 const Quote = styled(motion.li)`
@@ -125,7 +128,7 @@ const Title = styled.span`
 export default function QuoteCard({ quote }: { quote: IQuoteProps }) {
   return (
     <Link to={`/quote/${quote.slug}`}>
-      <Quote {...shakeVariant}>
+      <Quote {...rotateVariant} {...hoverScaleRotateRight}>
         <Category category={quote.category}>
           {quote.category.toUpperCase()}
         </Category>
