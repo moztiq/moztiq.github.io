@@ -162,6 +162,7 @@ data-styled.g34[id="PostDetail__PostDetailWrapper-sc-5jwpop-1"]{content:"GdZtq,"
 <h3 id="실행방법" style="position:relative;"><a href="#%EC%8B%A4%ED%96%89%EB%B0%A9%EB%B2%95" aria-label="실행방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>실행방법</h3>
 <p>아래는 python 이 설치되어 있다는 가정하에 작성된 명령들입니다.</p>
 <div class="gatsby-highlight" data-language="shell"><pre style="counter-reset: linenumber NaN" class="language-shell line-numbers"><code class="language-shell"><span class="token comment">## 소스 다운로드</span>
+$ <span class="token builtin class-name">cd</span> ~/Documents/Project/
 $ <span class="token function">git</span> clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
 
 <span class="token comment">## virtual 환경 실행</span>
@@ -169,7 +170,7 @@ $ python3 <span class="token parameter variable">-m</span> venv ./env
 $ <span class="token builtin class-name">source</span> env/bin/activate
 
 <span class="token comment">## 패키지 설치</span>
-$ pip <span class="token function">install</span> <span class="token parameter variable">-r</span> requirements.txt</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+$ pip <span class="token function">install</span> <span class="token parameter variable">-r</span> requirements.txt</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
 <p>상단 레퍼런스의 <a href="https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt">v1-5-pruned-emaonly.ckpt 링크</a> 혹은 <a href="https://huggingface.co/runwayml/stable-diffusion-v1-5">허깅페이스</a>에서 ckpt 파일을 다운로드한 다음 models/Stable-diffusion 디렉토리에 옮겨주고 루트경로에서 아래 명령을 실행합니다.</p>
 <div class="gatsby-highlight" data-language="shell"><pre style="counter-reset: linenumber NaN" class="language-shell line-numbers"><code class="language-shell">$ <span class="token function">mv</span> ~/Downloads/v1-5-pruned-emaonly.ckpt ./models/Stable-diffusion
 $ ./webui.sh</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span></span></pre></div>
