@@ -6,11 +6,7 @@ import Layout from '../components/layout/Layout';
 import Seo from '../components/Seo';
 import MainPostCard from '../components/post/MainPostCard';
 import GalleryCard from '../components/gallery/GalleryCard';
-import logoImage from '../assets/images/moztiq-logo.png';
 import { extractText } from '../utils/string.utils';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPersonRunning, faPalette } from '@fortawesome/free-solid-svg-icons';
-import { Category, SectionIcon } from '../constants/common.constant';
 import ContentContainer from '../components/ContentContainer';
 
 const MainContainer = styled.div`
@@ -25,24 +21,10 @@ const MainContainer = styled.div`
 
 const TopBackground = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  background-color: rgb(255, 246, 243);
-`;
-
-const LogoContainer = styled.div`
-  margin-top: 15px;
-`;
-
-const Logo = styled.img`
-  width: 40px;
-  margin-bottom: 40px;
-`;
-
-const TopContentContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 0 50px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 4rem 0 3rem 0;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -52,21 +34,20 @@ const TopContentContainer = styled.div`
 
 const QuoteContainer = styled.ul`
   max-width: 50%;
-  margin-bottom: 40px;
 
   @media screen and (max-width: 768px) {
     max-width: 70%;
-    margin-bottom: 70px;
+    margin-bottom: 5rem;
   }
 `;
 
 const QuoteTitle = styled.h1`
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 500;
-  letter-spacing: 1.3px;
+  letter-spacing: 0.3rem;
   margin-bottom: 20px;
   a {
-    color: ${(props) => props.theme.colors.black};
+    color: ${(props) => props.theme.colors.white};
     text-decoration: underline;
   }
 
@@ -89,7 +70,7 @@ const QuoteContent = styled.h2`
   text-align: justify;
 
   a {
-    color: ${(props) => props.theme.colors.gray700};
+    color: ${(props) => props.theme.colors.gray100};
     text-decoration: none;
   }
 
@@ -99,9 +80,9 @@ const QuoteContent = styled.h2`
 `;
 
 const AuthorContainer = styled.div`
-  margin-top: 10px;
+  margin-top: 1rem;
   font-size: 1rem;
-  color: ${(props) => props.theme.colors.gray400};
+  color: ${(props) => props.theme.colors.gray300};
   text-align: right;
 
   @media screen and (max-width: 430px) {
@@ -116,7 +97,6 @@ const GalleryContainer = styled.ul`
   a {
     text-decoration: none;
   }
-  margin-bottom: 40px;
 `;
 
 const GalleryTitle = styled.h1`
@@ -125,7 +105,7 @@ const GalleryTitle = styled.h1`
   letter-spacing: 1.3px;
   text-decoration: underline;
   a {
-    color: ${(props) => props.theme.colors.black};
+    color: ${(props) => props.theme.colors.white};
     text-decoration: underline;
   }
 
@@ -145,6 +125,28 @@ const PostTitle = styled.h1`
   @media screen and (max-width: 430px) {
     font-size: 1.2rem;
   }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+  }
+
+  span {
+    font-size: 1.5rem;
+    color: blue;
+    display: inline-block;
+    animation: bounce 0.5s ease-in-out infinite;
+
+    &:nth-child(2) {
+      color: red;
+      animation-delay: 0.25s;
+    }
+  }
 `;
 
 const PostContainer = styled.ul`
@@ -160,66 +162,43 @@ export default function IndexPage({ data }: PageProps<Queries.MainDataQuery>) {
       <ContentContainer title={'Home'}>
         <MainContainer>
           <TopBackground>
-            <LogoContainer>
-              <Logo src={logoImage} />
-            </LogoContainer>
-            <TopContentContainer>
-              <QuoteContainer>
-                <QuoteTitle>
-                  <FontAwesomeIcon
-                    icon={SectionIcon(Category.QUOTE)}
-                    size="xs"
-                    style={{ marginRight: '5px', fontSize: '1.2rem' }}
-                  />{' '}
-                  <Link to={`/quote`}>Quote</Link>
-                </QuoteTitle>
-                {quotes &&
-                  quotes.map((quote) => (
-                    <>
-                      <QuoteContent>
-                        <Link to={`/quote/${quote.slug}`}>
-                          {extractText(
-                            quote!.content!.childMarkdownRemark!.html ?? '',
-                          )}
-                        </Link>
-                      </QuoteContent>
-                      <AuthorContainer>
-                        - {quote.title && `${quote.title} / `}
-                        {quote.author}
-                      </AuthorContainer>
-                    </>
+            <QuoteContainer>
+              <QuoteTitle>
+                <Link to={`/quote`}>Quote</Link>
+              </QuoteTitle>
+              {quotes &&
+                quotes.map((quote) => (
+                  <>
+                    <QuoteContent>
+                      <Link to={`/quote/${quote.slug}`}>
+                        {extractText(
+                          quote!.content!.childMarkdownRemark!.html ?? '',
+                        )}
+                      </Link>
+                    </QuoteContent>
+                    <AuthorContainer>
+                      - {quote.title && `${quote.title} / `}
+                      {quote.author}
+                    </AuthorContainer>
+                  </>
+                ))}
+            </QuoteContainer>
+            <GalleryContainer>
+              <GalleryTitle>
+                <Link to={`/ai/gallery`}>Prompt Gallery</Link>
+              </GalleryTitle>
+              <GalleryContent>
+                {galleries &&
+                  galleries.map((gallery) => (
+                    <GalleryCard key={gallery.slug} gallery={gallery as any} />
                   ))}
-              </QuoteContainer>
-              <GalleryContainer>
-                <GalleryTitle>
-                  <FontAwesomeIcon
-                    icon={faPalette}
-                    size="xs"
-                    style={{ marginRight: '5px', fontSize: '1.2rem' }}
-                  />{' '}
-                  <Link to={`/ai/gallery`}>Prompt Gallery</Link>
-                </GalleryTitle>
-                <GalleryContent>
-                  {galleries &&
-                    galleries.map((gallery) => (
-                      <GalleryCard
-                        key={gallery.slug}
-                        gallery={gallery as any}
-                      />
-                    ))}
-                </GalleryContent>
-              </GalleryContainer>
-            </TopContentContainer>
+              </GalleryContent>
+            </GalleryContainer>
           </TopBackground>
 
           <PostTitle>
-            지금 쓰러 갑니다 ...{' '}
-            <FontAwesomeIcon
-              icon={faPersonRunning}
-              style={{ marginLeft: '10px', fontSize: '1.2rem' }}
-              color="darkred"
-              bounce
-            />
+            지금 쓰러 갑니다 <span>.</span>
+            <span>.</span>
           </PostTitle>
           <PostContainer>
             {posts &&

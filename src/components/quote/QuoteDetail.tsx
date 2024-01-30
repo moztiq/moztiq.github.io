@@ -6,6 +6,7 @@ import Gisqus from '../post/Gisqus';
 import QuoteAnimation from './QuoteAnimation';
 
 const DetailWrapper = styled.div`
+  color: ${(props) => props.theme.colors.gray900};
   width: 100%;
   display: flex;
   flex-direction: column;

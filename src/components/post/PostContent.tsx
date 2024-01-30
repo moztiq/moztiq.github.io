@@ -5,6 +5,7 @@ import { IPostProps } from '../../interface/interfaces';
 import Gisqus from './Gisqus';
 
 const PostDetailContentWrapper = styled.div`
+  color: ${(props) => props.theme.colors.gray900};
   width: 75%;
 
   @media screen and (max-width: 430px) {
