@@ -41,7 +41,12 @@ export const rotateVariant: Variants = {
 };
 
 export const hoverScaleRotateRight: Variants = {
-  whileHover: { scale: 1.05, rotate: 3, willChange: 'transform' },
+  whileHover: {
+    scale: 1.05,
+    rotate: 3,
+    willChange: 'transform',
+    transition: { duration: 0.1 },
+  },
 };
 
 export const flipVariant: Variants = {
