@@ -23,7 +23,17 @@ const TopBackground = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.6);
+  //background-color: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(
+    135deg,
+    rgb(22, 135, 155, 0.9) 5%,
+    rgba(205, 187, 250, 0.8) 95%
+  );
+  //background: linear-gradient(
+  //  135deg,
+  //  rgba(57, 167, 201, 0.9) 20%,
+  //  rgba(187, 158, 255, 0.8) 80%
+  //);
   padding: 4rem 0 3rem 0;
 
   @media screen and (max-width: 768px) {

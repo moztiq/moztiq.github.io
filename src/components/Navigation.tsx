@@ -14,9 +14,16 @@ const MenuWrapper = styled.nav`
   width: 25%;
   min-width: 25%;
   height: 100vh;
-  background-image: url(${backgroundImage});
+  background: url(${backgroundImage});
   background-size: cover;
   background-position: center;
+
+  //background: linear-gradient(
+  //  135deg,
+  //  rgba(57, 167, 201, 0.9) 20%,
+  //  rgba(187, 158, 255, 0.8) 80%
+  //);
+
   padding: 30px 0 0 0;
   position: relative;
   z-index: 10;

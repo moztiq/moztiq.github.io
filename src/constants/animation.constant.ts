@@ -29,17 +29,19 @@ export const hoverSlideToTop: Variants = {
 
 export const rotateVariant: Variants = {
   initial: {
-    rotate: -5,
+    rotate: -3,
+    transition: { duration: 0.1, ease: defaultEasing },
     willChange: 'transform',
   },
   animate: {
     rotate: 0,
+    transition: { duration: 0.1, ease: defaultEasing },
     willChange: 'transform',
   },
 };
 
 export const hoverScaleRotateRight: Variants = {
-  whileHover: { scale: 1.05, rotate: 5, willChange: 'transform' },
+  whileHover: { scale: 1.05, rotate: 3, willChange: 'transform' },
 };
 
 export const flipVariant: Variants = {
