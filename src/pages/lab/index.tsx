@@ -16,8 +16,8 @@ import readersLibraImage from '../../assets/images/readers-libra.png';
 import mozartPortalImage from '../../assets/images/mozart-portal.png';
 import recapMailerImage from '../../assets/images/recap-mailer.png';
 import quoteInspirerImage from '../../assets/images/quote-inspirer.png';
-import lifeRelayImage from '../../assets/images/life-relay.png';
-import tenseMovementImage from '../../assets/images/tense-movement.png';
+import lifeRelayImage from '../../assets/images/liferelay_logo_400x400.png';
+import tenseMovementImage from '../../assets/images/tt_logo_400x400.png';
 import unknownImage from '../../assets/images/unknown.png';
 import ContentExplain from '../../components/ContentExplain';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -116,18 +116,20 @@ export default function LabPage() {
                 </LabTitle>
               </Lab>
             </Link>
-            <Lab>
-              <LabIcon source={tenseMovementImage} />
-              <LabTitle>
-                <span>Tense Movement</span>
-                <span className="sub">Innovative Business</span>
-              </LabTitle>
-            </Lab>
+            <a href="https://tensemovement.com" target="_blank">
+              <Lab active {...flipVariant}>
+                <LabIcon source={tenseMovementImage} />
+                <LabTitle>
+                  <span>Tense Movement</span>
+                  <span className="sub">Leading Innovative Company</span>
+                </LabTitle>
+              </Lab>
+            </a>
             <Lab>
               <LabIcon source={lifeRelayImage} />
               <LabTitle>
                 <span>Life Relay</span>
-                <span className="sub">Ordinary People Story</span>
+                <span className="sub">People Life Story</span>
               </LabTitle>
             </Lab>
             <Lab>
