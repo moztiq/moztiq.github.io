@@ -78,6 +78,7 @@ const QuoteContent = styled.h2`
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   text-align: justify;
+  color: ${(props) => props.theme.colors.gray100};
 
   a {
     color: ${(props) => props.theme.colors.gray100};
