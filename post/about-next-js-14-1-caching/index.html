@@ -264,7 +264,64 @@ Memoization 으로 동일한 렌더링 패스 안에서 렌더링 서버에서 D
 <blockquote>
 <p><strong>Vercel Data Cache</strong>
 Next.js 애플리케이션이 Vercel에 배포된 경우 Vercel Data Cache 문서를 통해 Vercel 특정 기능에 대해 더 잘 이해하는 것이 좋습니다.</p>
-</blockquote></div><ul class="PostContent__TagList-sc-13byr3c-5 cYhbLD"><li class="PostContent__Tag-sc-13byr3c-6 fWLono">#<!-- -->Nextjs</li><li class="PostContent__Tag-sc-13byr3c-6 fWLono">#<!-- -->Caching</li></ul><div class="PostContent__GisqusWrapper-sc-13byr3c-8 jhZfvM"><div id="gisqus"></div></div></div></div><div class="Toc__TocWrapper-sc-rwcuv2-0 lbqNuN toc"><div class="Toc__TableOfContents-sc-rwcuv2-1 ZSkFW"><h2 class="Toc__TocTitle-sc-rwcuv2-2 dwiyiU">Table of Contents</h2><div class="Toc__TocList-sc-rwcuv2-3 llgdaA"><ul>
+</blockquote>
+<h3 id="full-route-cache" style="position:relative;"><a href="#full-route-cache" aria-label="full route cache permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Full Route Cache</h3>
+<blockquote>
+<p><strong>관련 용어</strong>
+Automatic Static Optimization, Static Site Generation, Static Rendering 이라는 용어는 빌드 시 어플리케이션의 라우트를 렌더링하고 캐싱하는 프로세스를 언급할 때 혼용해서 사용될 수 있습니다.</p>
+</blockquote>
+<p>Next.js 는 빌드시점에 자동으로 라우트를 렌더링하고 캐싱합니다. 매 요청마다 서버에서 렌더링하는 대신 캐싱한 라우트를 제공하도록 최적화하여 페이지를 좀 더 빠르게 로딩할 수 있도록 합니다.</p>
+<p>Full Route Cache 가 어떻게 동작하는지 이해하기 위해서 React 가 렌더링을 어떻게 다루는지, Next.js 가 렌더링 결과를 어떻게 캐싱하는지를 살펴보는 것이 도움이 됩니다.</p>
+<h4 id="1-react-rendering-on-the-server" style="position:relative;"><a href="#1-react-rendering-on-the-server" aria-label="1 react rendering on the server permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. React Rendering on the Server</h4>
+<p>서버에서 Next.js 는 React API 를 사용하여 렌더링을 조율합니다. 렌더링 작업은 개별 라우트 세그먼트와 Suspense 경계에 의해 chunk 로 분할됩니다.</p>
+<p>각 chunk 는 두 단계로 렌더링됩니다.</p>
+<ol>
+<li>React 는 서버 컴포넌트를 스트리밍에 최적화된 특수한 데이터 포맷으로 렌더링하는데 이를 <em>React Server Component Payload</em> 라고 합니다.</li>
+<li>Next.js 는 React Server Component Payload 와 Client Component Javascript instructions 를 서버에서 HTML 을 렌더링하기 위해 사용합니다.</li>
+</ol>
+<p>이는 모든 작업이 렌더링될 때까지 기다릴 필요없이 응답을 스트리밍할 수 있다는 의미입니다.</p>
+<blockquote>
+<p><strong>React Server Component Payload 란?</strong>
+React Server Component Payload 는 렌더링된 React Server Components tree 의 압축된 바이너리 형태입니다. React Client 에서 브라우저 DOM 을 업데이트하기 위해 사용됩니다. 다음을 포함하고 있습니다.</p>
+<ul>
+<li>Server Component 의 렌더링된 결과</li>
+<li>클라이언트 컴포넌트가 렌더링될 위치에 대한 placeholder 와 해당 자바스크립트 파일에 대한 참조</li>
+<li>Server Component 에서 Client Component 로 전달된 props</li>
+</ul>
+</blockquote>
+<h4 id="2-nextjs-caching-on-the-server-full-route-cache" style="position:relative;"><a href="#2-nextjs-caching-on-the-server-full-route-cache" aria-label="2 nextjs caching on the server full route cache permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Next.js Caching on the Server (Full Route Cache)</h4>
+<p><img src="//images.ctfassets.net/vpyfljks33op/7JGFaKDKaleuHsAPSFLpG3/893f138a190e0cc4e98129c73f1dff57/full-route-cache.avif" alt="full-route-cache"></p>
+<p>Next.js 에서는 서버 상에서 라우트를 렌더링한 결과 (React Server Component Payload and HTML) 를 캐싱하는 것이 기본 동작입니다. 빌드시에 정적으로 렌더링된 라우트나 재검증중인 경로에 적용됩니다.</p>
+<h4 id="3-react-hydration-and-reconciliation-on-the-client" style="position:relative;"><a href="#3-react-hydration-and-reconciliation-on-the-client" aria-label="3 react hydration and reconciliation on the client permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. React Hydration and Reconciliation on the Client</h4>
+<p>요청 시에 클라이언트에서는 ..</p>
+<ol>
+<li>HTML 은 Client, Server Components 의 상호작용이 없는 초기 화면을 즉시 표시하는 데 사용됩니다.</li>
+<li>React Server Components Payload 는 Client 와 렌더링된 Server Component trees 를 조정하고 DOM 을 갱신하는 데 사용됩니다.</li>
+<li>JavaScript instructions 는 Client Components 를 활성화 (hydrate) 해서 어플리케이션이 상호작용할 수 있도록 합니다.</li>
+</ol>
+<h4 id="4-nextjs-caching-on-the-client-router-cache" style="position:relative;"><a href="#4-nextjs-caching-on-the-client-router-cache" aria-label="4 nextjs caching on the client router cache permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. Next.js Caching on the Client (Router Cache)</h4>
+<p>React Server Component Payload 는 클라이언트 측 Router Cache (개별 라우트 세그먼트에 의해 분할 된 인메모리 캐시) 에 저장됩니다. Router Cache 는 이전에 방문한 경로와 프리페칭된 라우트를 저장해서 탐색 경험을 향상시킵니다.</p>
+<h4 id="5-subsequent-navigations" style="position:relative;"><a href="#5-subsequent-navigations" aria-label="5 subsequent navigations permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. Subsequent Navigations</h4>
+<p>이후의 탐색이나 프리페칭 중에 Next.js 는 React Server Components Payload 가 Router Cache 에 저장되어 있는지 확인해서 있다면 서버에 새로운 요청을 보내지 않습니다. 라우트 세그먼트가 캐시에 없는 경우 Next.js 는 서버에서 React Server Components Payload 를 가져와서 클라이언트 Router Cache 에 채웁니다.</p>
+<h4 id="static-and-dynamic-rendering" style="position:relative;"><a href="#static-and-dynamic-rendering" aria-label="static and dynamic rendering permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Static and Dynamic Rendering</h4>
+<p>라우트가 빌드 시에 캐시될지 아닐지는 정적, 동적 렌더링 여부에 달려있습니다. 기본적으로 정적 라우트는 캐시하고 반면에 동적 라우트는 요청 시에 렌더링 되며 캐시되지 않습니다.
+아래 다이어그램은 캐시된 데이터와 캐시되지 않은 데이터를 사용하여 정적으로 렌더링된 라우트와 동적으로 렌더링된 라우트의 차이를 보여줍니다</p>
+<p><img src="//images.ctfassets.net/vpyfljks33op/1HYj3Zp3EqvkfW4SH78272/c2b1b3833d8d854411a2cb54a630a924/static-and-dynamic-routes.avif" alt="static-and-dynamic-routes"></p>
+<h4 id="duration-2" style="position:relative;"><a href="#duration-2" aria-label="duration 2 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Duration</h4>
+<p>기본적으로 Full Route Cache 는 영구적으로 지속됩니다. 렌더링 결과물이 사용자의 요청으로 캐시된다는 의미입니다.</p>
+<h4 id="invalidation" style="position:relative;"><a href="#invalidation" aria-label="invalidation permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Invalidation</h4>
+<p>Full Route Cache 를 무효화할 수 있는 두가지 방법이 있습니다.</p>
+<ul>
+<li>Revalidating Data: Data Cache 를 재검증하여 서버에서 컴포넌트를 다시 렌더링하고 새로운 렌더링 출력을 캐싱함으로써 Router Cache 를 무효화합니다.</li>
+<li>Redeploying: 배포간에 지속되는 Data Cache 와 다르게 Full Route Cache 는 신규 배포시 초기화됩니다.</li>
+</ul>
+<h4 id="opting-out-2" style="position:relative;"><a href="#opting-out-2" aria-label="opting out 2 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Opting out</h4>
+<p>Full Route Cache 를 선택하지 않는 법, 다시 말해 들어오는 매 요청마다 동적으로 컴포넌트를 렌더링 하는 법은 다음과 같습니다.</p>
+<ul>
+<li>Dynamic Function 사용: 이렇게 하면 Full Route Cache 에서 경로를 선택 해제하고 요청 시점에 동적으로 렌더링합니다. Data Cache 는 계속 사용할 수 있습니다.</li>
+<li>dynamic = 'force-dynamic' or revalidate = 0 route segment config options: 이렇게 하면 Full Route Cache 와 Data Cache 를 건너뜁니다. 즉, 서버로 들어오는 모든 요청에 대해 컴포넌트가 렌더링되고 데이터를 가져옵니다. Router Cache 는 클라이언트 측 캐시이므로 계속 적용됩니다.</li>
+<li>Data Cache 사용하지 않기: 캐시되지 않은 라우트 요청이 있는 경우 Full Route Cache 에서 해당 경로를 제외합니다. 특정 요청에 대한 데이터는 모든 요청에 대해 fetch 됩니다. 캐싱하도록 설정된 요청은 여전히 데이터 캐시에 캐시됩니다. 이렇게 하면 캐시된 데이터와 캐시되지 않은 데이터를 혼합하여 사용할 수 있습니다.</li>
+</ul></div><ul class="PostContent__TagList-sc-13byr3c-5 cYhbLD"><li class="PostContent__Tag-sc-13byr3c-6 fWLono">#<!-- -->Nextjs</li><li class="PostContent__Tag-sc-13byr3c-6 fWLono">#<!-- -->Caching</li></ul><div class="PostContent__GisqusWrapper-sc-13byr3c-8 jhZfvM"><div id="gisqus"></div></div></div></div><div class="Toc__TocWrapper-sc-rwcuv2-0 lbqNuN toc"><div class="Toc__TableOfContents-sc-rwcuv2-1 ZSkFW"><h2 class="Toc__TocTitle-sc-rwcuv2-2 dwiyiU">Table of Contents</h2><div class="Toc__TocList-sc-rwcuv2-3 llgdaA"><ul>
 <li>
 <p><a href="#%EA%B0%9C%EC%9A%94">개요</a></p>
 </li>
@@ -282,6 +339,20 @@ Next.js 애플리케이션이 Vercel에 배포된 경우 Vercel Data Cache 문�
 <li><a href="#duration-1">Duration</a></li>
 <li><a href="#revalidating-1">Revalidating</a></li>
 <li><a href="#opting-out-1">Opting out</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#full-route-cache">Full Route Cache</a></p>
+<ul>
+<li><a href="#1-react-rendering-on-the-server">1. React Rendering on the Server</a></li>
+<li><a href="#2-nextjs-caching-on-the-server-full-route-cache">2. Next.js Caching on the Server (Full Route Cache)</a></li>
+<li><a href="#3-react-hydration-and-reconciliation-on-the-client">3. React Hydration and Reconciliation on the Client</a></li>
+<li><a href="#4-nextjs-caching-on-the-client-router-cache">4. Next.js Caching on the Client (Router Cache)</a></li>
+<li><a href="#5-subsequent-navigations">5. Subsequent Navigations</a></li>
+<li><a href="#static-and-dynamic-rendering">Static and Dynamic Rendering</a></li>
+<li><a href="#duration-2">Duration</a></li>
+<li><a href="#invalidation">Invalidation</a></li>
+<li><a href="#opting-out-2">Opting out</a></li>
 </ul>
 </li>
 </ul></div></div></div></div></div></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-N7HF6P8HNP"></script><script>
