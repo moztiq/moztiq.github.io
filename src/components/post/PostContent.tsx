@@ -115,6 +115,7 @@ const LongContent = styled.div`
 
   li {
     list-style-type: disc;
+    line-height: 1.7;
     margin: 10px 0;
   }
 
