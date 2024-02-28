@@ -240,12 +240,10 @@ Memoization 으로 동일한 렌더링 패스 안에서 렌더링 서버에서 D
 <li>revalidate 로 최초 fetch 요청을 하면 외부 데이터소스에서 가져온 데이터가 Data Cache 에 저장됩니다.</li>
 <li>지정한 시간 내의 모든 요청은 캐시된 데이터를 반환합니다.</li>
 <li>지정한 시간 이후의 다음 요청도 여전히 캐시된 데이터 (now stale) 를 반환합니다.</li>
-</ol>
-<ul>
 <li>Next.js 는 백그라운드에서 데이터검증을 작동시킵니다.</li>
 <li>데이터를 성공적으로 가져오면 Next.js 는 신규 데이터로 Data Cache 를 갱신합니다.</li>
 <li>백그라운드 재검증이 실패하면 이전 데이터는 변경되지 않은 상태로 유지됩니다.</li>
-</ul>
+</ol>
 <p>위의 동작은 stale-while-revalidate 와 유사합니다.</p>
 <p><strong>On-demand Revalidation</strong></p>
 <p>데이터는 경로 (revalidatePath) 나 캐시 태그 (revalidateTag) 기반의 온디맨드 방식으로 재검증할 수 있습니다.</p>
@@ -257,7 +255,7 @@ Memoization 으로 동일한 렌더링 패스 안에서 렌더링 서버에서 D
 <li>다음 요청에서 캐시가 발견되지 않아 (cache MISS) 데이터를 외부에서 가져와 Data Cache 에 저장합니다.</li>
 </ol>
 <h4 id="option-out" style="position:relative;"><a href="#option-out" aria-label="option out permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Option out</h4>
-<p>개별 데이터 페이에서 cache 옵션을 선택적으로 no-store 로 지정할 수 있습니다. 이렇게 되면 fetch 가 호출될 때마다 데이터를 데이터 소스에서 가져옵니다.</p>
+<p>개별 데이터 요청의 cache 옵션을 no-store 로 지정할 수 있습니다. 이렇게 되면 fetch 가 호출될 때마다 데이터를 데이터 소스에서 가져옵니다.</p>
 <div class="gatsby-highlight" data-language="javascript"><pre style="counter-reset: linenumber NaN" class="language-javascript line-numbers"><code class="language-javascript"><span class="token comment">// Opt out of caching for an individual `fetch` request</span>
 <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">https://...</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">cache</span><span class="token operator">:</span> <span class="token string">'no-store'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span></span></pre></div>
 <p>또한 특정한 경로 세그먼트에 대해 캐싱하지 않으려면 Route Segment Config options 을 사용할 수 있습니다. 이렇게 하면 타사 라이브러리를 포함하여 경로 세그먼트의 모든 데이터 요청에 영향을 미칩니다.</p>
