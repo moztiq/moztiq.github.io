@@ -14,9 +14,9 @@ import bubbleImage from '../../assets/images/bubbleio.png';
 import yupQuizImage from '../../assets/images/yup-quiz.png';
 import readersLibraImage from '../../assets/images/readers-libra.png';
 import mozartPortalImage from '../../assets/images/mozart-portal.png';
-import recapMailerImage from '../../assets/images/recap-mailer.png';
+import rubatoImage from '../../assets/images/rubato.png';
 import quoteInspirerImage from '../../assets/images/quote-inspirer.png';
-import lifeRelayImage from '../../assets/images/liferelay_logo_400x400.png';
+import lifeRelayImage from '../../assets/images/liferelay_logo.png';
 import tenseMovementImage from '../../assets/images/tt_logo_400x400.png';
 import unknownImage from '../../assets/images/unknown.png';
 import ContentExplain from '../../components/ContentExplain';
@@ -125,13 +125,15 @@ export default function LabPage() {
                 </LabTitle>
               </Lab>
             </a>
-            <Lab>
-              <LabIcon source={lifeRelayImage} />
-              <LabTitle>
-                <span>Life Relay</span>
-                <span className="sub">People Life Story</span>
-              </LabTitle>
-            </Lab>
+            <a href="https://liferelay.me" target="_blank">
+              <Lab active {...flipVariant}>
+                <LabIcon source={lifeRelayImage} />
+                <LabTitle>
+                  <span>Life Relay</span>
+                  <span className="sub">People Life Story</span>
+                </LabTitle>
+              </Lab>
+            </a>
             <Lab>
               <LabIcon source={mozartPortalImage} />
               <LabTitle>
@@ -154,10 +156,10 @@ export default function LabPage() {
               </LabTitle>
             </Lab>
             <Lab>
-              <LabIcon source={recapMailerImage} />
+              <LabIcon source={rubatoImage} />
               <LabTitle>
-                <span>Recap Mailer</span>
-                <span className="sub">Simple Mail Alarm</span>
+                <span>Rubato Portal</span>
+                <span className="sub">CAU Rubato Orchestra Portal</span>
               </LabTitle>
             </Lab>
             <Lab>
