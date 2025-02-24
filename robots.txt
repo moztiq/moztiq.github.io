@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://moztiq.com/sitemap-index.xml
-Host: https://moztiq.com
+Sitemap: https://moztiq.github.io/sitemap-index.xml
+Host: https://moztiq.github.io
