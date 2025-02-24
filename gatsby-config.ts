@@ -6,7 +6,7 @@ const config: GatsbyConfig = {
     title: `MOZTIQ`,
     author: 'moztiq',
     description: 'Life is a journey',
-    siteUrl: `https://moztiq.com`,
+    siteUrl: `https://moztiq.github.io`,
   },
   graphqlTypegen: true,
   plugins: [
@@ -66,8 +66,8 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://moztiq.com',
-        sitemap: 'https://moztiq.com/sitemap-index.xml',
+        host: 'https://moztiq.github.io',
+        sitemap: 'https://moztiq.github.io/sitemap-index.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
