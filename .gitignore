@@ -5,3 +5,5 @@ src/gatsby-types.d.ts
 
 .env
 .idea
+
+.claude/*.local.*

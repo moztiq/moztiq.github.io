@@ -13,7 +13,7 @@ import {
 import bubbleImage from '../../assets/images/bubbleio.png';
 import yupQuizImage from '../../assets/images/yup-quiz.png';
 import readersLibraImage from '../../assets/images/readers-libra.png';
-import mozartPortalImage from '../../assets/images/mozart-portal.png';
+import mozartiadeImage from '../../assets/images/mozartiade-logo.png';
 import rubatoImage from '../../assets/images/rubato.png';
 import quoteInspirerImage from '../../assets/images/quote-inspirer.png';
 import lifeRelayImage from '../../assets/images/liferelay_logo.png';
@@ -134,13 +134,15 @@ export default function LabPage() {
                 </LabTitle>
               </Lab>
             </a>
-            <Lab>
-              <LabIcon source={mozartPortalImage} />
-              <LabTitle>
-                <span>Enjoy Mozart</span>
-                <span className="sub">Mozart Portal</span>
-              </LabTitle>
-            </Lab>
+            <a href="https://mozartia.de" target="_blank">
+              <Lab active {...flipVariant}>
+                <LabIcon source={mozartiadeImage} />
+                <LabTitle>
+                  <span>Mozartiade</span>
+                  <span className="sub">Mozart Portal</span>
+                </LabTitle>
+              </Lab>
+            </a>
             <Lab>
               <LabIcon source={yupQuizImage} />
               <LabTitle>
@@ -160,13 +162,6 @@ export default function LabPage() {
               <LabTitle>
                 <span>Rubato Portal</span>
                 <span className="sub">CAU Rubato Orchestra Portal</span>
-              </LabTitle>
-            </Lab>
-            <Lab>
-              <LabIcon source={bubbleImage} />
-              <LabTitle>
-                <span>No Code & Automation Archive</span>
-                <span className="sub">No Code & Automation Posts</span>
               </LabTitle>
             </Lab>
             <Lab>
